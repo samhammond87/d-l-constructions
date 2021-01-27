@@ -25,9 +25,9 @@ const Home = () => {
       <Navbar toggle={toggle} />
       <HeroSection />
       <button onClick={handleClick}>Get Timesheets</button>
-      {timesheet.map((timesheet) => {
+      {timesheet.map((timesheet, index) => {
       return (
-        <ul>
+        <ul key={index}>
           <li>Name: {timesheet.name}</li>
           <li>Date: {timesheet.date}</li>
           <li>Start Time: {timesheet.startTime}</li>

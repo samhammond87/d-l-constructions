@@ -19,20 +19,20 @@ export const Sidebar = ({ isOpen, toggle }) => {
       <SidebarWrapper>
         <SidebarMenu>
           <SidebarLink to="about" onClick={toggle}>
-            About
-          </SidebarLink>
-          <SidebarLink to="projects" onClick={toggle}>
-            Projects
+            About Us
           </SidebarLink>
           <SidebarLink to="services" onClick={toggle}>
             Services
           </SidebarLink>
-          <SidebarLink to="contactus" onClick={toggle}>
-            Contact Us
+          <SidebarLink to="whyus" onClick={toggle}>
+            Why Us
+          </SidebarLink>
+          <SidebarLink to="careers" onClick={toggle}>
+            Careers
           </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute to="employeelogin">Employee Login</SidebarRoute>
+          <SidebarRoute to="/">Employee Login</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

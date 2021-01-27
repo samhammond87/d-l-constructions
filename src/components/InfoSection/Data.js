@@ -24,7 +24,7 @@ export const homeObjTwo = {
   topLine: "Our Services",
   headline: "Plastering & Gyprock Specialist",
   description:
-    "We can take on any type of construction work from small complex works to large-scale projects. Our services include cladding, rendering, partitioning, plastering, glass partition, insulation and so much more.",
+    "We can take on any type of construction work from small complex works to large-scale projects. Our services include cladding, rendering, partitioning, plastering, glass partition, insulation and more.",
   buttonLabel: "Contact Us",
   imgStart: true,
   img: require("../../images/svg-2.png").default,
@@ -42,7 +42,7 @@ export const homeObjThree = {
   topLine: "Careers",
   headline: "Join our team",
   description:
-    "If you are interested in working for us, please feel free contact us.",
+    "If you are interested in working for us, please feel free to contact us.",
   buttonLabel: "Work With Us",
   imgStart: false,
   img: require("../../images/svg-3.png").default,

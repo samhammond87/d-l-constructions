@@ -27,7 +27,7 @@ const HeroSection = () => {
       </HeroBg>
       <HeroContent>
         <HeroH1>Get A Free Quote Today!</HeroH1>
-        <HeroP>Contact us for a free quote today.</HeroP>
+        <HeroP>Plastering Services Sydney Wide</HeroP>
         <HeroBtnWrapper>
           <Button
             to="contactus"

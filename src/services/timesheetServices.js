@@ -2,10 +2,8 @@ import constructionAPI from '../config/api';
 
 
 function transformTimesheet(timesheet) {
-	// const category = categories.find(category => category.id === timesheet.category_id)
+
 	return {
-		// author: "Test",
-		// category: category.name, 
 		name: timesheet.name, 
 		date: timesheet.date, 
 		start_time: timesheet.start_time, 

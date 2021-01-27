@@ -30,8 +30,8 @@ const Home = () => {
         <ul key={index}>
           <li>Name: {timesheet.name}</li>
           <li>Date: {timesheet.date}</li>
-          <li>Start Time: {timesheet.startTime}</li>
-          <li>End Time: {timesheet.endTime}</li>
+          <li>Start Time: {timesheet.start_time}</li>
+          <li>End Time: {timesheet.end_time}</li>
           <li>Total Hours: {timesheet.total_hours}</li>
           <li>Comments: {timesheet.comments}</li>
           {/* <li>Posted: {timesheet.created_at}</li> */}

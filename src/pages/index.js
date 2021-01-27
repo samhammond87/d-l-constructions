@@ -10,11 +10,34 @@ const Home = () => {
     setIsOpen(!isOpen);
   };
 
+  const [timesheet, setTimesheet] = useState([]);
+
+  const handleClick = () => {
+    fetch("http://localhost:3000/api/timesheets")
+      .then((response) => response.json())
+      .then((data) => setTimesheet(data))
+      .catch((err) => console.log(err))
+  }
+
   return (
     <>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <HeroSection />
+      <button onClick={handleClick}>Get Timesheets</button>
+      {timesheet.map((timesheet) => {
+      return (
+        <ul>
+          <li>Name: {timesheet.name}</li>
+          <li>Date: {timesheet.date}</li>
+          <li>Start Time: {timesheet.startTime}</li>
+          <li>End Time: {timesheet.endTime}</li>
+          <li>Total Hours: {timesheet.total_hours}</li>
+          <li>Comments: {timesheet.comments}</li>
+          {/* <li>Posted: {timesheet.created_at}</li> */}
+        </ul>
+        )
+      })}
     </>
   );
 };

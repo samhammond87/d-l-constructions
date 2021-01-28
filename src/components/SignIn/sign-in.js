@@ -19,14 +19,12 @@ const LoginUser = () => {
     e.preventDefault()
     // console.log(userEmail, userPassword)
     const config = {
-      auth: {
-        email: "basic@test.com",
-        password: "password",
-      },
+        email: userEmail,
+        password: userPassword,
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/auth/sign_up",
+        "http://localhost:3000/api/auth/sign_in",
         config
       );
       console.log(response);
@@ -37,36 +35,40 @@ const LoginUser = () => {
     }
   }
 
-  // function handleChange(event) {
-	// 	setFormState({
-	// 		...formState,
-	// 		[event.target.name]: event.target.value
-	// 	})
-	// }
+  const [timesheet, setTimesheet] = useState([]);
 
-	// function handleSubmit(event) {
-	// 	event.preventDefault()
-	// 	signIn(formState)
-	// 	.then(({username,jwt}) => {
-	// 		console.log(username, jwt);
-	// 		dispatch({type: 'setLoggedInUser', data: username})
-	// 		dispatch({type: 'setToken', data: jwt})
-	// 		history.push('/')
-	// 	})
-  //   .catch((error) => console.log(error))
-
-  
-
-
+  const handleClick = () => {
+    fetch("http://localhost:3000/api/timesheets")
+      .then((response) => response.json())
+      .then((data) => setTimesheet(data))
+      .catch((err) => console.log(err))
+  }
 
   return (
+    <>
     <form >
       <label>Email:</label>
       <input type='email' name='email' value={userEmail} onChange={handleChange} />
       <label>Password:</label>
       <input type='password' name='password' value={userPassword} onChange={handleChange} />
-      <button onClick={handleSubmit}>Login</button>
+      <button onClick={(e) => handleSubmit(e, userEmail, userPassword)}>Login</button>
     </form>
+  
+  <button onClick={handleClick}>Get Timesheets</button>
+  {timesheet.map((timesheet, index) => {
+  return (
+    <ul key={index}>
+      <li>Name: {timesheet.name}</li>
+      <li>Date: {timesheet.date}</li>
+      <li>Start Time: {timesheet.start_time}</li>
+      <li>End Time: {timesheet.end_time}</li>
+      <li>Total Hours: {timesheet.total_hours}</li>
+      <li>Comments: {timesheet.comments}</li>
+      {/* <li>Posted: {timesheet.created_at}</li> */}
+    </ul>
+    )
+  })}
+  </>
   )
 };
 

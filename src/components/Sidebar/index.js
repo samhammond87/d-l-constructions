@@ -32,7 +32,7 @@ export const Sidebar = ({ isOpen, toggle }) => {
           </SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute to="/">Employee Login</SidebarRoute>
+          <SidebarRoute to="/signin">Employee Login</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

@@ -1,9 +1,9 @@
-import styled from "styled-components";
-import { Link as LinkR } from "react-router-dom";
 import { Link as LinkS } from "react-scroll";
+import { Link as LinkR } from "react-router-dom";
+import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? "#4a4a4a" : "transparent")};
+  background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -52,7 +52,6 @@ export const MobileIcon = styled.div`
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
     cursor: pointer;
-    color: #fff;
   }
 `;
 
@@ -61,7 +60,7 @@ export const NavMenu = styled.ul`
   align-items: center;
   list-style: none;
   text-align: center;
-  margin-right: --22px;
+  margin-right: -22px;
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -70,6 +69,15 @@ export const NavMenu = styled.ul`
 
 export const NavItem = styled.li`
   height: 80px;
+`;
+
+export const NavBtn = styled.nav`
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const NavLinks = styled(LinkS)`
@@ -82,16 +90,7 @@ export const NavLinks = styled(LinkS)`
   cursor: pointer;
 
   &.active {
-    border-bottom: 3px solid #01bf71;
-  }
-`;
-
-export const NavBtn = styled.nav`
-  display: flex;
-  align-items: center;
-
-  @media screen and (max-width: 768px) {
-    display: none;
+    border-bottom: 3px solid #faed64;
   }
 `;
 

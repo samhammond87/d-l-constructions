@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import Video from "../../videos/video.mp4";
-import { Button } from "../ButtonElements";
+import React, { useState } from 'react';
+import Video from '../../videos/video.mp4';
+import { Button } from '../ButtonElements';
 import {
   HeroContainer,
   HeroBg,
@@ -11,7 +11,7 @@ import {
   HeroBtnWrapper,
   ArrowForward,
   ArrowRight,
-} from "./HeroElements";
+} from './HeroElements';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -23,18 +23,18 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type="video/mp4" />
+        <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
       </HeroBg>
       <HeroContent>
         <HeroH1>Get A Free Quote Today!</HeroH1>
         <HeroP>Plastering Services Sydney Wide</HeroP>
         <HeroBtnWrapper>
           <Button
-            to="contactus"
+            to='contact'
             onMouseEnter={onHover}
             onMouseLeave={onHover}
-            primary="true"
-            dark="true"
+            primary='true'
+            dark='true'
           >
             Contact Us {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>

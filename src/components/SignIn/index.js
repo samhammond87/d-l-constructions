@@ -9,7 +9,6 @@ import {
   FormLabel,
   FormInput,
   FormButton,
-  Text,
 } from "./SigninElements";
 
 const SignIn = () => {

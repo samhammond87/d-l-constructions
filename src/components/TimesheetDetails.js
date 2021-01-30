@@ -7,7 +7,7 @@ import {useGlobalState} from '../utils/stateContext'
 import {deleteTimesheet} from '../services/timesheetServices'
 
 export default function TimesheetDetails() {
-	const [timesheet,setTimesheet] = useState(null)
+	const [timesheet, setTimesheet] = useState(null)
 	const {id} = useParams()
 	let history = useHistory()
 	const {store,dispatch} = useGlobalState()

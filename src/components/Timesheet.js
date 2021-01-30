@@ -9,7 +9,6 @@ export default function Timesheet({timesheet,index}) {
 	return (
 		<Line colour={isOdd(index) ? COLOUR1 : COLOUR2}>
 			{timesheet.name}
-			{/* {timesheet.total_hours}	 */}
 		</Line>
 	)
 }

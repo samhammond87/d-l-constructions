@@ -1,21 +1,6 @@
 import constructionAPI from '../config/api';
 
 
-// function transformTimesheet(timesheet) {
-// 	return {
-
-// 		name: timesheet.name, 
-// 		date: timesheet.date, 
-// 		start_time: timesheet.start_time, 
-// 		end_time: timesheet.end_time, 
-// 		total_hours: timesheet.total_hours,
-// 		comments: timesheet.comments,
-// 		posted: timesheet.created_at
-
-// 	}
-
-// }
-
 export async function getTimesheets() {
 	const response = await constructionAPI.get('/api/timesheets')
 	return response.data
@@ -41,7 +26,7 @@ export async function deleteTimesheet(id) {
 }
 
 export async function updateTimesheet(data) {
-	const response = await constructionAPI.put(`/api/timesheets/${data.id}`, {body: data.name,})
+	const response = await constructionAPI.put(`/api/timesheets/${data.id}`, {nam: data.name,})
 	return response.data
 	
 }

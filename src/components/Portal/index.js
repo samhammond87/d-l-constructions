@@ -35,10 +35,10 @@ const Portal= () => {
 				<Router>
 					<Nav />
 					<Switch>
-						<Route exact path='/timesheets' component={Timesheets}/> 
-						<Route exact path='/timesheets/new' component={NewTimesheet} />
-						<Route exact path='/timesheets/update/:id' component={NewTimesheet} />
-						<Route path='/timesheets/:id' component={TimesheetDetails}/> 
+						<Route exact path='/portal' component={Timesheets}/> 
+						<Route exact path='/portal/new' component={NewTimesheet} />
+						<Route exact path='/portal/update/:id' component={NewTimesheet} />
+						<Route path='/portal/:id' component={TimesheetDetails}/> 
 						<Route path='/sign_in' component={SignIn}></Route>
 						<Route path='/register' component={NewUser}></Route>
 					</Switch>

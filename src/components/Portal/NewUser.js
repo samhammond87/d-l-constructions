@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import {Panel,Label, Input, Button} from './Styled'
-import {signUp} from '../services/authServices'
-import {useGlobalState} from '../utils/stateContext'
+import {signUp} from '../../services/authServices'
+import {useGlobalState} from './utils/stateContext'
 
 export default function NewUser() {
 	const initialFormState = {

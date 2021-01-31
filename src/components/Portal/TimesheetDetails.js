@@ -1,10 +1,10 @@
 import React,{ useState,useEffect} from 'react'
 import {useParams,useHistory} from 'react-router-dom'
 import Moment from 'react-moment'
-import {getTimesheet} from '../services/timesheetServices'
+import {getTimesheet} from '../../services/timesheetServices'
 import {Button, Panel} from './Styled'
-import {useGlobalState} from '../utils/stateContext'
-import {deleteTimesheet} from '../services/timesheetServices'
+import {useGlobalState} from './utils/stateContext'
+import {deleteTimesheet} from '../../services/timesheetServices'
 
 export default function TimesheetDetails() {
 	const [timesheet, setTimesheet] = useState(null)

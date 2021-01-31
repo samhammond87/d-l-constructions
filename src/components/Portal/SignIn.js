@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import {Button, Label, Input} from './Styled'
-import {signIn} from '../services/authServices'
-import {useGlobalState} from '../utils/stateContext'
+import {signIn} from '../../services/authServices'
+import {useGlobalState} from './utils/stateContext'
 
 export default function SignIn({history}) {
 	const initialFormState = {

@@ -22,10 +22,10 @@ export default function Nav() {
 
 	return (
 		<Panel>
-			<Button onClick={() => history.push('/timesheets')}>Home</Button>
+			<Button onClick={() => history.push('/portal')}>Home</Button>
 			{loggedInUser ?
 				<>
-				<Button onClick={() => history.push('/timesheets/new') }>Add Timesheet</Button>	
+				<Button onClick={() => history.push('/portal/new') }>Add Timesheet</Button>	
 				<Button onClick={handleSignOut}>Sign Out</Button>	
 				<Span>{loggedInUser}</Span>
 				</>

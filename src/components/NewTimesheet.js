@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory, useParams} from 'react-router-dom'
-import {Button, Label, Input} from './Styled'
+import {Button, Label, Input, CommentTextInput} from './Styled'
 import {createTimesheet, getTimesheet, updateTimesheet} from '../services/timesheetServices'
 import {useGlobalState} from '../utils/stateContext'
 
@@ -52,7 +52,7 @@ export default function NewTimesheet() {
 			updateTimesheet( {id: id, ...formState})
 			.then(() => {
 				dispatch({type: 'updateTimesheet', data: {id: id, ...formState}})
-				history.push(`/timesheets/${id}`)
+				history.push(`/portal/${id}`)
 			})
 		}
 		else {
@@ -60,7 +60,7 @@ export default function NewTimesheet() {
 			.then((timesheet) => {
 		
 				dispatch({type: 'addTimesheet', data: timesheet})
-				history.push('/timesheets')
+				history.push('/portal')
 			})
 			.catch((error) => console.log(error))
 		}
@@ -68,24 +68,30 @@ export default function NewTimesheet() {
 	return (
 		<form>
 
-			<Label>Name:</Label>			
+			<Label>Name:</Label>
+			<div></div>			
 			<Input type='text' name='name' value={formState.name} onChange={handleChange}></Input>
-
-			<Label>Date:</Label>			
+			<div></div>
+			<Label>Date:</Label>
+			<div></div>			
 			<Input type='date' name='date' value={formState.date} onChange={handleChange}></Input>
+			<div></div>
 
-			<Label>Start Time:</Label>			
+			<Label>Start Time:</Label>		<div></div>
 			<Input type='text' name='start_time' value={formState.start_time} onChange={handleChange}></Input>
+			<div></div>
 			
-			<Label>End Time:</Label>			
+			<Label>End Time:</Label>		<div></div>	
 			<Input type='text' name='end_time' value={formState.end_time} onChange={handleChange}></Input>
+			<div></div>
 
-			<Label>Total Hours:</Label>			
+			<Label>Total Hours:</Label>		<div></div>	
 			<Input type='integer' name='total_hours' value={formState.total_hours} onChange={handleChange}></Input>
+			<div></div>
 
-			<Label>Comments:</Label>			
-			<Input type='text' name='comments' value={formState.comments} onChange={handleChange}></Input>
-
+			<Label>Comments:</Label>		<div></div>	
+			<CommentTextInput type='text' name='comments' value={formState.comments} onChange={handleChange}></CommentTextInput>
+			<div></div>
 
 			<Button onClick={handleClick}>{id ? 'Update' : 'Create'}</Button>
 		</form>

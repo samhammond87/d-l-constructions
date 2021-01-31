@@ -23,7 +23,7 @@ export default function TimesheetDetails() {
 		deleteTimesheet(id)
 		.then(() => {
 			dispatch({type: 'deleteTimesheet', data: id})
-			history.push('/timesheets')
+			history.push('/portal')
 		})
 	}
 	return (
@@ -39,7 +39,7 @@ export default function TimesheetDetails() {
 			<p>Comments: {timesheet.comments}</p>
 			{loggedInUser === timesheet.name &&
 				<Panel>
-					<Button onClick={() => history.push(`/timesheets/update/${id}`)}>Update</Button>
+					<Button onClick={() => history.push(`/portal/update/${id}`)}>Update</Button>
 					<Button onClick={handleDelete}>Delete</Button>
 				</Panel>
 			}

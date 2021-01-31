@@ -24,7 +24,14 @@ export async function deleteTimesheet(id) {
 }
 
 export async function updateTimesheet(data) {
-	const response = await constructionAPI.put(`/api/timesheets/${data.id}`, {name: data.name,})
+	const response = await constructionAPI.put(`/api/timesheets/${data.id}`, {
+		name: data.name, 
+		date: data.date,
+		start_time: data.start_time,
+		end_time: data.end_time, 
+		total_hours: data.total_hours,
+		comments: data.comments
+	})
 	return response.data
 	
 }

@@ -1,15 +1,15 @@
 import React,{useReducer, useEffect} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import {getTimesheets} from '../../services/timesheetServices'
-import stateReducer from '../../utils/stateReducer'
-import {StateContext} from '../../utils/stateContext'
-import Timesheets from '../Timesheets'
-import TimesheetDetails from '../TimesheetDetails'
-import Nav from '../Nav'
-import SignIn from '../SignIn'
-import NewTimesheet from '../NewTimesheet'
-import NewUser from '../NewUser'
-import {Header} from '../Styled'
+import stateReducer from './utils/stateReducer'
+import {StateContext} from './utils/stateContext'
+import Timesheets from './Timesheets'
+import TimesheetDetails from './TimesheetDetails'
+import Nav from './Nav'
+import SignIn from './SignIn'
+import NewTimesheet from './NewTimesheet'
+import NewUser from './NewUser'
+import {Header} from './Styled'
 
 const Portal= () => {
 	const initialState = {
@@ -35,10 +35,10 @@ const Portal= () => {
 				<Router>
 					<Nav />
 					<Switch>
-						<Route exact path='/timesheets' component={Timesheets}/> 
-						<Route exact path='/timesheets/new' component={NewTimesheet} />
-						<Route exact path='/timesheets/update/:id' component={NewTimesheet} />
-						<Route path='/timesheets/:id' component={TimesheetDetails}/> 
+						<Route exact path='/portal' component={Timesheets}/> 
+						<Route exact path='/portal/new' component={NewTimesheet} />
+						<Route exact path='/portal/update/:id' component={NewTimesheet} />
+						<Route path='/portal/:id' component={TimesheetDetails}/> 
 						<Route path='/sign_in' component={SignIn}></Route>
 						<Route path='/register' component={NewUser}></Route>
 					</Switch>

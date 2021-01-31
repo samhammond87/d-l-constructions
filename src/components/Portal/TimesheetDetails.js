@@ -1,10 +1,10 @@
 import React,{ useState,useEffect} from 'react'
 import {useParams,useHistory} from 'react-router-dom'
 import Moment from 'react-moment'
-import {getTimesheet} from '../services/timesheetServices'
+import {getTimesheet} from '../../services/timesheetServices'
 import {Button, Panel} from './Styled'
-import {useGlobalState} from '../utils/stateContext'
-import {deleteTimesheet} from '../services/timesheetServices'
+import {useGlobalState} from './utils/stateContext'
+import {deleteTimesheet} from '../../services/timesheetServices'
 
 export default function TimesheetDetails() {
 	const [timesheet, setTimesheet] = useState(null)
@@ -23,7 +23,7 @@ export default function TimesheetDetails() {
 		deleteTimesheet(id)
 		.then(() => {
 			dispatch({type: 'deleteTimesheet', data: id})
-			history.push('/timesheets')
+			history.push('/portal')
 		})
 	}
 	return (
@@ -39,7 +39,7 @@ export default function TimesheetDetails() {
 			<p>Comments: {timesheet.comments}</p>
 			{loggedInUser === timesheet.name &&
 				<Panel>
-					<Button onClick={() => history.push(`/timesheets/update/${id}`)}>Update</Button>
+					<Button onClick={() => history.push(`/portal/update/${id}`)}>Update</Button>
 					<Button onClick={handleDelete}>Delete</Button>
 				</Panel>
 			}

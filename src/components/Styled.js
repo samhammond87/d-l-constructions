@@ -1,13 +1,7 @@
 import styled from 'styled-components' 
- 
-const WHITE = 0xffffff
-
-export const COLOUR1 = 0xeddc1f
-export const COLOUR2 = parseInt(getComplementaryColour(COLOUR1),16)
 
 export const Header = styled.h1 `
 	font-family: Arial,sans-serif;
-	color: ${toHexColourString(COLOUR1)};
 `
 
 export const Panel = styled.div `
@@ -20,11 +14,11 @@ export const Span = styled.span `
 	padding: .5em;
 	margin: 1em;
 	font-family: Arial, sans-serif;
-	color: ${toHexColourString(getComplementaryColour(COLOUR1))};
+
 `
 
 export const Button = styled(Span) `
-	border: ${"1px solid " + toHexColourString(COLOUR1)};
+	border: 1px solid black;
 	cursor: pointer;
 `
 
@@ -33,31 +27,20 @@ export const Input = styled.input `
 	margin: .5em;
 `
 
-export const BigTextInput = styled(Input) `
+export const CommentTextInput = styled(Input) `
 	height: 100px;
-	width: 50%;
+	width: 400px;
 `
 
 export const Label = styled.span `
 	font-family: Arial,sans-serif;
-	color: ${props => props.colour ? `${toHexColourString(props.colour)}` : "black"};
+	color: black;
 `
 
 export const Line = styled.div `
-	color: ${props => props.colour ? `${toHexColourString(props.colour)}` : "black"};
-	background-color: ${props => props.colour ? toHexColourString(getComplementaryColour(props.colour)) : "white"};
+	color: black;
+	background-color: white;
 	font-size: 1.5em;
 	font-family: Arial,sans-serif;
 	padding: .5em;
 `
-
-function getComplementaryColour(colour) {
-	const compColour = (WHITE - colour).toString(16)
-	return compColour
-}
-
-function toHexColourString(colour) {
-	let hexColourString = colour.toString(16)
-	hexColourString = `#${"000000".substr(0, 6-hexColourString.length)}${hexColourString}`
-	return hexColourString
-}

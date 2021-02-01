@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import {useHistory, useParams} from 'react-router-dom'
 import {Button, Label, Input, CommentTextInput} from './Styled'
-import {createTimesheet, getTimesheet, updateTimesheet} from '../services/timesheetServices'
-import {useGlobalState} from '../utils/stateContext'
+import {createTimesheet, getTimesheet, updateTimesheet} from './services/timesheetServices'
+import {useGlobalState} from './utils/stateContext'
 
 export default function NewTimesheet() {
 	const initialFormState = {

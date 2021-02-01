@@ -2,7 +2,7 @@ import React from 'react'
 import {useHistory} from 'react-router-dom'
 import {Button, Panel, Span} from './Styled'
 import {useGlobalState} from './utils/stateContext'
-import {signOut} from '../../services/authServices'
+import {signOut} from './services/authServices'
 
 export default function Nav() {
 	let history = useHistory()

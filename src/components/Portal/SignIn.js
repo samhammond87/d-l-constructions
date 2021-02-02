@@ -1,5 +1,16 @@
 import React,{useState} from 'react'
-import {Button, Label, Input} from './Styled'
+import {Button, 
+		Label, 
+		Input,
+		Container,
+		FormWrap,
+		Icon,
+		FormContent,
+		Form,
+		FormH1,
+		FormLabel,
+		FormInput,
+		FormButton,} from './Styled'
 import {signIn} from './services/authServices'
 import {useGlobalState} from './utils/stateContext'
 
@@ -30,12 +41,22 @@ export default function SignIn({history}) {
 
 	}
 	return (
-		<form >
-			<Label>Email:</Label>
-			<Input type='email' name='email' value={formState.username} onChange={handleChange}></Input>
-			<Label>Password:</Label>
-			<Input type='password' name='password' value={formState.password} onChange={handleChange}></Input>
-			<Button onClick={handleSubmit}>Login</Button>
-		</form>
+	<>
+		<Container>
+			<FormWrap>
+				<Icon to="../">D & L Constructions</Icon>
+				<FormContent>
+					<Form action="#">
+						<FormH1>Employee Login:</FormH1>
+						<FormLabel htmlFor="for">Email</FormLabel>
+						<FormInput type='email' name='email' value={formState.username} onChange={handleChange}></FormInput>
+						<FormLabel htmlFor="for">Password:</FormLabel>
+						<FormInput type='password' name='password' value={formState.password} onChange={handleChange}></FormInput>
+						<FormButton onClick={handleSubmit}>Log in</FormButton>
+					</Form>
+				</FormContent>
+			</FormWrap>
+		</Container>
+	</>
 	)
 }

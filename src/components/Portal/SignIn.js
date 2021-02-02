@@ -24,7 +24,7 @@ export default function SignIn({history}) {
 			sessionStorage.setItem("user", username)
 			dispatch({type: 'setLoggedInUser', data: username})
 			dispatch({type: 'setToken', data: jwt})
-			history.push('/')
+			history.push('/portal')
 		})
 		.catch((error) => console.log(error))
 

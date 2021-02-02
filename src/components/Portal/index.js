@@ -5,7 +5,7 @@ import stateReducer from './utils/stateReducer'
 import {StateContext} from './utils/stateContext'
 import Timesheets from './Timesheets'
 import TimesheetDetails from './TimesheetDetails'
-import Nav from './Nav'
+import PortalNav from './PortalNav'
 import SignIn from './SignIn'
 import NewTimesheet from './NewTimesheet'
 import NewUser from './NewUser'
@@ -33,7 +33,7 @@ const Portal= () => {
 			<StateContext.Provider value={{store,dispatch}}>
 				<Header> Timesheets </Header>
 				<Router>
-					<Nav />
+					<PortalNav />
 					<Switch>
 						<Route exact path='/portal' component={Timesheets}/> 
 						<Route exact path='/portal/new' component={NewTimesheet} />

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import ContactForm from "../ContactForm";
 
 it("contact form renders without error", () => {
   const div = document.createElement("div");

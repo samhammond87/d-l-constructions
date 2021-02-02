@@ -27,7 +27,7 @@ export default function NewUser() {
 			sessionStorage.setItem("token", data.jwt)
 			sessionStorage.setItem("user", data.username)
 			dispatch({type: 'setLoggedInUser', data: data.username})
-			history.push('/timesheets')
+			history.push('/portal')
 		})
 	}
 	return (

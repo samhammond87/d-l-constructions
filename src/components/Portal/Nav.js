@@ -27,7 +27,7 @@ export default function Nav() {
 				<>
 				<Button onClick={() => history.push('/portal/new') }>Add Timesheet</Button>	
 				<Button onClick={handleSignOut}>Sign Out</Button>	
-				<Span>{loggedInUser}</Span>
+				<Span>Welcome {loggedInUser}</Span>
 				</>
 			:
 				<>

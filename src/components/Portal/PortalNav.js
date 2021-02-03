@@ -24,7 +24,7 @@ export default function PortalNav() {
 
 	return (
 		<Navbar bg="dark" variant="dark">
-			<Navbar.Brand>Welcome {loggedInUser}</Navbar.Brand>
+			<Navbar.Brand>{loggedInUser}'s Timesheets</Navbar.Brand>
 			<Navbar.Brand><Button onClick={() => history.push('/portal')}>Home</Button></Navbar.Brand>
 			{loggedInUser ?
 				<>

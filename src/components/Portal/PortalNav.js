@@ -3,6 +3,7 @@ import {useHistory} from 'react-router-dom'
 import {Button, Panel, Span} from './Styled'
 import {useGlobalState} from './utils/stateContext'
 import {signOut} from './services/authServices'
+import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 
 export default function PortalNav() {

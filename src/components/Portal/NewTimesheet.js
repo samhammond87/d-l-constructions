@@ -10,7 +10,7 @@ export default function NewTimesheet() {
 		date: '',
 		start_time: '',
 		end_time: '',
-		total_hours: 0,
+		total_hours: '',
 		comments: ''
 
 	}

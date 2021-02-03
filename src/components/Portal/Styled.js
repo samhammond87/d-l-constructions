@@ -142,9 +142,10 @@ export const FormButton = styled.button`
   font-size: 20px;
   cursor: pointer;
 `;
-// export const Text = styled.span`
-//   text-align: center;
-//   margin-top: 24px;
-//   color: #fff;
-//   font-size: 14px;
-// `;
+export const idLink = styled.link`
+  text-align: center;
+  margin-top: 24px;;
+  font-color: red;
+  font-size: 14px;
+  background: red;
+`;

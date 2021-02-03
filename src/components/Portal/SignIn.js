@@ -1,7 +1,5 @@
 import React,{useState} from 'react'
-import {Button, 
-		Label, 
-		Input,
+import {
 		Container,
 		FormWrap,
 		Icon,
@@ -10,7 +8,8 @@ import {Button,
 		FormH1,
 		FormLabel,
 		FormInput,
-		FormButton,} from './Styled'
+		FormButton
+		} from './Styled'
 import {signIn} from './services/authServices'
 import {useGlobalState} from './utils/stateContext'
 

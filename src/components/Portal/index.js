@@ -31,9 +31,9 @@ const Portal= () => {
 	return (
 		<div>
 			<StateContext.Provider value={{store,dispatch}}>
-				<Header> Employee Portal </Header>
 				<Router>
 					<PortalNav />
+					<Header> Employee Portal </Header>
 					<Switch>
 						<Route exact path='/portal' component={Timesheets}/> 
 						<Route exact path='/portal/new' component={NewTimesheet} />

@@ -20,23 +20,37 @@ export default function PortalNav() {
     });
   }
 
-  return (
-    <Panel>
-      <Button onClick={() => history.push("/portal")}>Home</Button>
-      {loggedInUser ? (
-        <>
-          <Button onClick={() => history.push("/portal/new")}>
-            Add Timesheet
-          </Button>
-          <Button onClick={handleSignOut}>Sign Out</Button>
-          <Span>Welcome {loggedInUser}</Span>
-        </>
-      ) : (
-        <>
-          <Button onClick={() => history.push("/register")}>Register</Button>
-          <Button onClick={() => history.push("/sign_in")}>Sign In</Button>
-        </>
-      )}
-    </Panel>
-  );
+
+	function handleSignOut(event) {
+		event.preventDefault()
+		signOut(loggedInUser)
+		.then(() => {
+			dispatch({type: 'setLoggedInUser', data: null})
+			dispatch({type: 'setToken', data: null})
+		})
+	}
+
+	return (
+		<Navbar bg="dark" variant="dark">
+			<Navbar.Brand>{loggedInUser}'s Timesheets</Navbar.Brand>
+			<Navbar.Brand><Button onClick={() => history.push('/portal')}>Home</Button></Navbar.Brand>
+			{loggedInUser ?
+				<>
+				<Navbar.Brand><Button onClick={() => history.push('/portal/new') }>Add Timesheet</Button></Navbar.Brand>
+
+				<Navbar.Brand><Button onClick={handleSignOut}>Sign Out</Button>	</Navbar.Brand>	
+				</>
+			:
+				<>
+				<Navbar.Brand>
+				<Button onClick={() => history.push('/register')}>Register</Button>
+				</Navbar.Brand>
+				<Navbar.Brand>
+				<Button onClick={() => history.push('/sign_in')}>Sign In</Button>
+				</Navbar.Brand>
+				</>
+			}
+		</Navbar>
+	)
+
 }

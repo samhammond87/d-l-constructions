@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 
 export const Header = styled.h1 `
 	font-family: Arial,sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
 `
 
 export const Panel = styled.div `

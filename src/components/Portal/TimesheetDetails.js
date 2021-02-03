@@ -37,7 +37,13 @@ export default function TimesheetDetails() {
 			<p>End Time: {timesheet.end_time}</p>		
 			<p>Total Hours: {timesheet.total_hours}</p>
 			<p>Comments: {timesheet.comments}</p>
-			{loggedInUser === timesheet.name &&
+			{loggedInUser === timesheet.name && // && is used for hiding and showing in jsx
+				<Panel>
+					<Button onClick={() => history.push(`/portal/update/${id}`)}>Update</Button>
+					<Button onClick={handleDelete}>Delete</Button>
+				</Panel>
+			}
+			{loggedInUser.admin === true &&
 				<Panel>
 					<Button onClick={() => history.push(`/portal/update/${id}`)}>Update</Button>
 					<Button onClick={handleDelete}>Delete</Button>

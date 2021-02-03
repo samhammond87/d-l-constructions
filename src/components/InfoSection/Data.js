@@ -9,7 +9,9 @@ export const homeObjOne = {
     "Established over 10 years ago, we have extensive project experience across all areas of construction from commercial works through to industrial and mining projects. D&L Constructions have successfully delivered a broad range of projects, positioning us as leading contractors within the industry.",
   buttonLabel: "Get In Touch",
   imgStart: false,
-  img: require("../../images/svg-1.png").default,
+  // img: require("../../images/svg-1.png").default,
+  img:
+    "https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/svg-1.png",
   alt: "Apartment",
   dark: false,
   primary: true,
@@ -27,7 +29,9 @@ export const homeObjTwo = {
     "We can take on any type of construction work from small complex works to large-scale projects. Our services include cladding, rendering, partitioning, plastering, glass partition, insulation and more.",
   buttonLabel: "Contact Us",
   imgStart: true,
-  img: require("../../images/svg-2.png").default,
+  // img: require("../../images/svg-2.png").default,
+  img:
+    "https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/svg-2.png",
   alt: "Piggybank",
   dark: false,
   primary: true,
@@ -45,7 +49,9 @@ export const homeObjThree = {
     "If you are interested in working for us, please feel free to contact us.",
   buttonLabel: "Work With Us",
   imgStart: false,
-  img: require("../../images/svg-3.png").default,
+  // img: require("../../images/svg-3.png").default,
+  img:
+    "https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/svg-3.png",
   alt: "Papers",
   dark: false,
   primary: true,

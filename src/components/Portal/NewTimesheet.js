@@ -10,14 +10,14 @@ import { useGlobalState } from "./utils/stateContext";
 import "./NewTimesheetElements.css";
 
 export default function NewTimesheet() {
-	const initialFormState = {
-		name: '',
-		date: '',
-		start_time: '',
-		end_time: '',
-		total_hours: '',
-		comments: ''
-
+  const initialFormState = {
+    name: "",
+    date: "",
+    start_time: "",
+    end_time: "",
+    total_hours: "",
+    comments: "",
+  };
 
   const [formState, setFormState] = useState(initialFormState);
   let history = useHistory();

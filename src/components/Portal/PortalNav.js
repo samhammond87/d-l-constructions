@@ -1,16 +1,24 @@
-import React from 'react'
-import {useHistory} from 'react-router-dom'
-import {Button, Panel, Span} from './Styled'
-import {useGlobalState} from './utils/stateContext'
-import {signOut} from './services/authServices'
-import Navbar from 'react-bootstrap/Navbar'
-import Nav from 'react-bootstrap/Nav'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import { Button, Panel, Span } from "./Styled";
+import { useGlobalState } from "./utils/stateContext";
+import { signOut } from "./services/authServices";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 
 export default function PortalNav() {
-	let history = useHistory()
+  let history = useHistory();
 
-	const {store,dispatch} = useGlobalState()
-	const {loggedInUser} = store
+  const { store, dispatch } = useGlobalState();
+  const { loggedInUser } = store;
+
+  function handleSignOut(event) {
+    event.preventDefault();
+    signOut(loggedInUser).then(() => {
+      dispatch({ type: "setLoggedInUser", data: null });
+      dispatch({ type: "setToken", data: null });
+    });
+  }
 
 
 	function handleSignOut(event) {
@@ -44,4 +52,5 @@ export default function PortalNav() {
 			}
 		</Navbar>
 	)
+
 }

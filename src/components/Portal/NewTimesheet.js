@@ -10,6 +10,7 @@ import { useGlobalState } from "./utils/stateContext";
 import "./NewTimesheetElements.css";
 
 export default function NewTimesheet() {
+
 	const initialFormState = {
 		name: '',
 		date: '',
@@ -22,6 +23,7 @@ export default function NewTimesheet() {
   const [formState, setFormState] = useState(initialFormState)
   let history = useHistory()
   let { id } = useParams()
+
   const { dispatch } = useGlobalState();
 
   useEffect(() => {

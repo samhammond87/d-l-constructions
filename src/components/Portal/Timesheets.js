@@ -1,21 +1,15 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import styled from 'styled-components'
-import Timesheet from './Timesheet'
-import {useGlobalState} from './utils/stateContext'
-import {
-	Card,
-	Table,
-	Container,
-	Row,
-	Col
-  } from "react-bootstrap";
-
+import React from "react";
+import { Link } from "react-router-dom";
+// import styled from 'styled-components'
+// import Timesheet from './Timesheet'
+import { useGlobalState } from "./utils/stateContext";
+import { Card, Table, Container, Row, Col } from "react-bootstrap";
 
 export default function Timesheets() {
   const { store } = useGlobalState();
   const { timesheets } = store;
   if (!timesheets) return null;
+
 
 	const list = timesheets.map((timesheet, index) => {
 		return (
@@ -68,4 +62,24 @@ export default function Timesheets() {
 						</Row>
 					</Container>
 				)}
+
+  const list = timesheets.map((timesheet, index) => {
+    return (
+      <tr>
+        <td key={index}>
+          <Link
+            style={{ color: "black" }}
+            key={timesheet.id}
+            to={`/portal/${timesheet.id}`}
+          >
+            {timesheet.name}
+          </Link>
+        </td>
+        <td>{timesheet.date}</td>
+        <td>{timesheet.start_time}</td>
+        <td>{timesheet.end_time}</td>
+        <td>{timesheet.total_hours}</td>
+      </tr>
+    );
+  });
 

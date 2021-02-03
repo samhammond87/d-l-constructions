@@ -36,7 +36,7 @@ export default function Timesheets() {
 				</td>
 				<td>
 					{timesheet.total_hours}
-			</td>
+				</td>
 			</tr>
 		)
 	}

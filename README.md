@@ -130,7 +130,7 @@ The target audience are current and potential customers and all company employee
 
 **The Owner**
 
-![docs/adminicon.png](docs/adminicon.png)
+![docs/adminIcon.png](docs/adminIcon.png)
 
 The owner and his management team are hard workers that have brought the company great success. Unfortunately, they lack the proper time to deal with employee paperwork, pay and communication.
 

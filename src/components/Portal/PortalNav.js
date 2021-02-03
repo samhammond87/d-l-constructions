@@ -23,21 +23,25 @@ export default function PortalNav() {
 	}
 
 	return (
-		<Panel>
-		
-			<Button onClick={() => history.push('/portal')}>Home</Button>
+		<Navbar bg="dark" variant="dark">
+			<Navbar.Brand>Welcome {loggedInUser}</Navbar.Brand>
+			<Navbar.Brand><Button onClick={() => history.push('/portal')}>Home</Button></Navbar.Brand>
 			{loggedInUser ?
 				<>
-				<Button onClick={() => history.push('/portal/new') }>Add Timesheet</Button>	
-				<Button onClick={handleSignOut}>Sign Out</Button>	
-				<Span>Welcome {loggedInUser}</Span>
+				<Navbar.Brand><Button onClick={() => history.push('/portal/new') }>Add Timesheet</Button></Navbar.Brand>
+
+				<Navbar.Brand><Button onClick={handleSignOut}>Sign Out</Button>	</Navbar.Brand>	
 				</>
 			:
 				<>
+				<Navbar.Brand>
 				<Button onClick={() => history.push('/register')}>Register</Button>
+				</Navbar.Brand>
+				<Navbar.Brand>
 				<Button onClick={() => history.push('/sign_in')}>Sign In</Button>
+				</Navbar.Brand>
 				</>
 			}
-		</Panel>
+		</Navbar>
 	)
 }

@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Header = styled.h1`
-  font-family: Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
+  color: #009879;
 `;
 
 export const Panel = styled.div`
@@ -18,7 +19,7 @@ export const Panel = styled.div`
 export const Span = styled.span`
   padding: 0.5em;
   margin: 1em;
-  font-family: Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
 `;
 
 export const Button = styled(Span)`
@@ -37,7 +38,7 @@ export const CommentTextInput = styled(Input)`
 `;
 
 export const Label = styled.span`
-  font-family: Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   color: black;
 `;
 
@@ -45,7 +46,7 @@ export const Line = styled.div`
   color: black;
   background-color: white;
   font-size: 1.5em;
-  font-family: Arial, sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   padding: 0.5em;
 `;
 

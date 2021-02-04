@@ -7,7 +7,7 @@ const constructionAPI = axios.create({
 constructionAPI.interceptors.request.use((req) => {
     //sets the interceptor
     const token = sessionStorage.getItem('token')
-    console.log("Set token header:", token)
+    // console.log("Set token header:", token)
     if (token) {
         req.headers["Authorization"] = `Bearer ${token}`
     }

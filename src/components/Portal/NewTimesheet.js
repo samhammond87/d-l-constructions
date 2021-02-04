@@ -54,8 +54,10 @@ export default function NewTimesheet() {
       updateTimesheet({ id: id, ...formState }).then(() => {
         dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
         history.push(`/portal/${id}`);
-      });
-    } else {
+      })
+      .catch((error) => console.log(error));
+    } 
+    else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
           dispatch({ type: "addTimesheet", data: timesheet });
@@ -126,8 +128,8 @@ export default function NewTimesheet() {
           <div className="buttonContainer">
             <input
               type="submit"
-              value={id ? "Update" : "Create"}
               onClick={handleClick}
+              value={id ? "Update" : "Create"}
               className="btn"
             />
           </div>

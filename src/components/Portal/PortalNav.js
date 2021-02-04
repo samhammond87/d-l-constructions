@@ -7,6 +7,7 @@ import { signOut } from "./services/authServices";
 // import Nav from "react-bootstrap/Nav";
 import "./PortalNav.css";
 
+
 export default function PortalNav() {
   let history = useHistory();
 
@@ -98,6 +99,7 @@ export default function PortalNav() {
                 Add Timesheet
               </Button>
             </Navbar.Brand>
+>>>>>>> c19bf6a309be46f7b76c618779fd6434a38eefc2
 
             <Navbar.Brand>
               <Button onClick={handleSignOut}>Sign Out</Button>{" "}

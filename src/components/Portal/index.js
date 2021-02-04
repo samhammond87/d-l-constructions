@@ -12,11 +12,13 @@ import NewUser from './NewUser'
 import {Header} from './Styled'
 
 const Portal= () => {
+	
 	const initialState = {
 		timesheets: [],
 		loggedInUser: sessionStorage.getItem("user") || null,
 		auth: {token:sessionStorage.getItem("token") || null}
 	}
+
 	const [store, dispatch] = useReducer(stateReducer,initialState)
 
 
@@ -25,7 +27,7 @@ const Portal= () => {
 		.then((timesheets) => dispatch({type: 'setTimesheets', data: timesheets}))
 		.catch((error) => console.log(error))
 	},[])
-
+	
 
 
 	return (

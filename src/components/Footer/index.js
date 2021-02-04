@@ -1,5 +1,7 @@
 import React from "react";
+// enable react scroll effect for smoother user experience
 import { animateScroll as scroll } from "react-scroll";
+// import icons from react icons library
 import { FaFacebook, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import {
   FooterContainer,
@@ -18,6 +20,7 @@ import {
 } from "./FooterElements";
 
 const Footer = () => {
+  // react-scroll built in method to scroll page all the way to the top when clicked
   const toggleHome = () => {
     scroll.scrollToTop();
   };
@@ -61,6 +64,7 @@ const Footer = () => {
               D & L Constructions
             </SocialLogo>
             <WebsiteRights>
+              {/* current year retrieved automatically */}
               {new Date().getFullYear()} © All rights reserved.
             </WebsiteRights>
             <SocialIcons>

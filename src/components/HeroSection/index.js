@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Video from '../../videos/video.mp4';
+// import Video from "../../videos/video.mp4";
 import { Button } from '../ButtonElements';
 import {
   HeroContainer,
@@ -24,7 +24,14 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <HeroBg>
-        <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
+        {/* <VideoBg autoPlay loop muted src={Video} type='video/mp4' /> */}
+        <VideoBg
+          autoPlay
+          loop
+          muted
+          src='https://full-stack-app.s3-ap-southeast-2.amazonaws.com/videos/video.mp4'
+          type='video/mp4'
+        />
       </HeroBg>
       <HeroContent>
         <Spring

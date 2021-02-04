@@ -20,6 +20,10 @@ export const Panel = styled.div`
 
 export const UserPanel = styled.div`
   text-align: center;
+  height: 720px;
+  margin-bottom: 30px;
+  width: 480px;
+  padding: 32px;
 `;
 
 export const Span = styled.span`
@@ -48,12 +52,39 @@ export const Button = styled(Span)`
   }
 `;
 
+export const UserButton = styled.button`
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
+`;
+
 export const Input = styled.input`
   height: 1em;
   margin: 0.5em;
 `;
 
-export const UserInput = styled.input``;
+export const UserInput = styled.input`
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+
+  &:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+`;
 
 export const CommentTextInput = styled(Input)`
   height: 100px;
@@ -67,6 +98,8 @@ export const Label = styled.span`
 
 export const UserLabel = styled.label`
   font-family: "Encode Sans Expanded", sans-serif;
+  color: white;
+  text-align: left;
 `;
 
 export const Line = styled.div`

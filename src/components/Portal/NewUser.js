@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { Panel, Label, Input, Button, UserPanel } from "./Styled";
+import { UserLabel, UserInput, UserButton, UserPanel } from "./Styled";
 import { signUp } from "./services/authServices";
 import { useGlobalState } from "./utils/stateContext";
 import "./NewUserElements.css";
@@ -37,13 +37,13 @@ export default function NewUser() {
 				<h1>Register</h1>
 				<p>Please fill in this form to create an account.</p>
 
-				<label for="email"><b>Email</b></label>
+				<UserUserUserUserLabel for="email"><b>Email</b></UserUserUserUserLabel>
 				<input type="text" placeholder="Enter Email" name="email" id="email" required>
 
-				<label for="psw"><b>Password</b></label>
+				<UserUserUserUserLabel for="psw"><b>Password</b></UserUserUserUserLabel>
 				<input type="password" placeholder="Enter Password" name="psw" id="psw" required>
 
-				<label for="psw-repeat"><b>Repeat Password</b></label>
+				<UserUserUserUserLabel for="psw-repeat"><b>Repeat Password</b></UserUserUserUserLabel>
 				<input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
 
 				<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
@@ -56,41 +56,45 @@ export default function NewUser() {
 		</div> */}
 
       <UserPanel className="formContainer">
-        <h1>Employee Registration Form</h1>
+        <h3>Employee Registration Form</h3>
         <p>Please complete this form to create an account.</p>
-        <Label>Username:</Label>
-        <Input
+        <UserLabel>Username:</UserLabel>
+        <UserInput
           type="text"
           name="username"
           value={formState.username}
           onChange={handleChange}
-        ></Input>
+          placeholder="Create a username"
+        ></UserInput>
         <br />
-        <Label>Email:</Label>
-        <Input
+        <UserLabel>Email:</UserLabel>
+        <UserInput
           type="email"
           name="email"
           value={formState.email}
           onChange={handleChange}
-        ></Input>
+          placeholder="Enter your email"
+        ></UserInput>
         <br />
-        <Label>Password:</Label>
-        <Input
+        <UserLabel>Password:</UserLabel>
+        <UserInput
           type="password"
           name="password"
           value={formState.password}
           onChange={handleChange}
-        ></Input>
+          placeholder="Enter password"
+        ></UserInput>
         <br />
-        <Label>Password Confirmation:</Label>
-        <Input
+        <UserLabel>Password Confirmation:</UserLabel>
+        <UserInput
           type="password"
           name="password_confirmation"
           value={formState.password_confirmation}
           onChange={handleChange}
-        ></Input>
+          placeholder="Confirm your password"
+        ></UserInput>
         <br />
-        <Button onClick={handleRegister}>Register</Button>
+        <UserButton onClick={handleRegister}>Register</UserButton>
       </UserPanel>
     </>
   );

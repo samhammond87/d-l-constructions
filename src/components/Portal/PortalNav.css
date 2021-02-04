@@ -3,7 +3,6 @@
 :root {
   --darkgray: #212329;
   --yellow: #e4c304;
-  --lightred: #f9433d;
   --white: #fff;
 }
 
@@ -36,10 +35,6 @@
   font-size: 1.5rem;
 }
 
-#navbar-logo {
-  cursor: pointer;
-}
-
 .nav-menu {
   display: grid;
   grid-template-columns: repeat(3, auto);
@@ -67,14 +62,26 @@
 
 .nav-links-btn:hover {
   background: transparent;
-  color: var(--white);
   padding: 5px 15px;
   border-radius: 4px;
   border: solid 1px var(--yellow);
   transition: all 0.3s ease-out;
 }
 
-.menu-toggle .bar {
+span {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    padding-bottom: 25px;
+  }
+
+  .nav-links-btn {
+    width: 100px;
+  }
+}
+/* .menu-toggle .bar {
   width: 25px;
   height: 3px;
   margin: all 0.3s ease-in-out;
@@ -150,9 +157,9 @@
     top: 20%;
     right: 5%;
     transform: translate(5%, 20%);
-  }
+  } */
 
-  .menu-toggle .bar {
+/* .menu-toggle .bar {
     display: block;
     cursor: pointer;
   }
@@ -172,8 +179,4 @@
   #mobile-menu.is-active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(45deg);
   }
-}
-
-span {
-  cursor: pointer;
-}
+} */

@@ -1,8 +1,8 @@
 import React,{useReducer, useEffect} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {getTimesheets} from './services/timesheetServices'
-import stateReducer from './utils/stateReducer'
-import {StateContext} from './utils/stateContext'
+import {getTimesheets} from '../../axios/timesheetServices'
+import stateReducer from '../../utils/stateReducer'
+import {StateContext} from '../../utils/stateContext'
 import Timesheets from './Timesheets'
 import TimesheetDetails from './TimesheetDetails'
 import PortalNav from './PortalNav'
@@ -52,8 +52,3 @@ const Portal= () => {
 
 
 export default Portal;
-
-
-
-// Harry rules
-

@@ -63,23 +63,4 @@ export default function Timesheets() {
 					</Container>
 				)}
 
-  const list = timesheets.map((timesheet, index) => {
-    return (
-      <tr>
-        <td key={index}>
-          <Link
-            style={{ color: "black" }}
-            key={timesheet.id}
-            to={`/portal/${timesheet.id}`}
-          >
-            {timesheet.name}
-          </Link>
-        </td>
-        <td>{timesheet.date}</td>
-        <td>{timesheet.start_time}</td>
-        <td>{timesheet.end_time}</td>
-        <td>{timesheet.total_hours}</td>
-      </tr>
-    );
-  });
 

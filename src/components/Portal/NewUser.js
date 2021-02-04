@@ -5,6 +5,7 @@ import { signUp } from "./services/authServices";
 import { useGlobalState } from "./utils/stateContext";
 import "./NewUserElements.css";
 
+
 export default function NewUser() {
   const initialFormState = {
     username: "",

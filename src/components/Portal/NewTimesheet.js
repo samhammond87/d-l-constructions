@@ -5,8 +5,8 @@ import {
   createTimesheet,
   getTimesheet,
   updateTimesheet,
-} from "./services/timesheetServices";
-import { useGlobalState } from "./utils/stateContext";
+} from "../../axios/timesheetServices";
+import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
 
 export default function NewTimesheet() {

@@ -10,8 +10,8 @@ import {
 		FormInput,
 		FormButton
 		} from './Styled'
-import {signIn} from './services/authServices'
-import {useGlobalState} from './utils/stateContext'
+import {signIn} from '../../axios/authServices'
+import {useGlobalState} from '../../utils/stateContext'
 
 export default function SignIn({history}) {
 	const initialFormState = {

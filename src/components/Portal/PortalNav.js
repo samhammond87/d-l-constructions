@@ -1,9 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Button } from "./Styled";
+// import { Button } from "./Styled";
 import { useGlobalState } from "./utils/stateContext";
 import { signOut } from "./services/authServices";
-import Navbar from "react-bootstrap/Navbar";
+// import Navbar from "react-bootstrap/Navbar";
 // import Nav from "react-bootstrap/Nav";
 import "./PortalNav.css";
 
@@ -30,11 +30,21 @@ export default function PortalNav() {
   // 	})
   // }
 
+  const menu = document.querySelector("#mobile-menu");
+  const menuLinks = document.querySelector(".nav-menu");
+
+  //   menu.addEventListener("click", function () {
+  //     menu.classList.toggle("is-active");
+  //     menuLinks.classList.toggle("active");
+  //   });
+
   return (
     <>
       <div className="nav-container">
         <nav className="navbar">
-          <h1 id="navbar-logo">D&L Constructions</h1>
+          <h1 id="navbar-logo">
+            {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}
+          </h1>
           <div className="menu-toggle" id="mobile-menu">
             <span className="bar"></span>
             <span className="bar"></span>
@@ -42,24 +52,49 @@ export default function PortalNav() {
           </div>
           <ul className="nav-menu">
             <li>
-              <a href="#" className="nav-link">
+              <span
+                className="nav-link"
+                onClick={() => history.push("/portal")}
+              >
                 Home
-              </a>
+              </span>
             </li>
-            <li>
-              <a href="#" className="nav-link">
-                Register
-              </a>
-            </li>
-            <li>
-              <a href="#" className="nav-link nav-links-btn">
-                Sign In
-              </a>
-            </li>
+            {loggedInUser ? (
+              <>
+                <span
+                  className="nav-link"
+                  onClick={() => history.push("/portal/new")}
+                >
+                  Add Timesheet
+                </span>
+                <span
+                  className="nav-link nav-links-btn"
+                  onClick={handleSignOut}
+                >
+                  Sign Out
+                </span>
+              </>
+            ) : (
+              <>
+                <span
+                  className="nav-link"
+                  onClick={() => history.push("/register")}
+                >
+                  Register
+                </span>
+                <span
+                  className="nav-link nav-links-btn"
+                  onClick={() => history.push("/sign_in")}
+                >
+                  Sign In
+                </span>
+              </>
+            )}
           </ul>
         </nav>
       </div>
-      <Navbar bg="dark" variant="dark">
+
+      {/* <Navbar bg="dark" variant="dark">
         <Navbar.Brand>{loggedInUser}'s Timesheets</Navbar.Brand>
         <Navbar.Brand>
           <Button onClick={() => history.push("/portal")}>Home</Button>
@@ -88,7 +123,7 @@ export default function PortalNav() {
             </Navbar.Brand>
           </>
         )}
-      </Navbar>
+      </Navbar> */}
     </>
   );
 }

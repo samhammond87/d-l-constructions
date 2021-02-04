@@ -2,7 +2,7 @@
 
 :root {
   --darkgray: #212329;
-  --brightred: #f9423d;
+  --yellow: #e4c304;
   --lightred: #f9433d;
   --white: #fff;
 }
@@ -33,6 +33,7 @@
   color: white;
   justify-self: start;
   margin-left: 20px;
+  font-size: 1.5rem;
 }
 
 #navbar-logo {
@@ -54,12 +55,12 @@
 }
 
 .nav-link:hover {
-  color: var(--brightred);
+  color: var(--yellow);
   transition: all 0.2s ease-out;
 }
 
 .nav-links-btn {
-  background-color: var(--brightred);
+  background-color: var(--yellow);
   padding: 6px 16px;
   border-radius: 4px;
 }
@@ -69,6 +70,110 @@
   color: var(--white);
   padding: 5px 15px;
   border-radius: 4px;
-  border: solid 1px var(--brightred);
+  border: solid 1px var(--yellow);
   transition: all 0.3s ease-out;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  margin: all 0.3s ease-in-out;
+  background: var(--white);
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    position: relative;
+  }
+
+  .nav-menu {
+    display: grid;
+    grid-template-columns: auto;
+    background: var(--yellow);
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  #navbar-logo {
+    margin-left: 20px;
+  }
+
+  .nav-menu.active {
+    background: var(--darkgray);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-link {
+    text-align: center;
+    line-height: 60px;
+    width: 100%;
+    display: table;
+  }
+
+  .nav-link:hover {
+    background-color: var(--yellow);
+    color: var(--white);
+    transition: all 0.4s ease-out;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .nav-links-btn {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--darkgray);
+    color: var(--white);
+    transition: all 0.4s ease-out;
+  }
+
+  .nav-links-btn:hover {
+    border: none;
+    padding: 0;
+    border-radius: 0;
+    background-color: var(--yellow);
+    color: var(--white);
+    transition: all 0.4s ease-out;
+  }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    cursor: pointer;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(45deg);
+  }
+}
+
+span {
+  cursor: pointer;
 }

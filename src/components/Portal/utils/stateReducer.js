@@ -43,10 +43,10 @@ export default function reducer(state, action) {
 
     case "updateTimesheet": {
       const timesheet = state.timesheets.find(
-        (timesheet) => timesheet.id === action.data.id
+        (timesheet) => timesheet.id == action.data.id
       );
       const theRest = state.timesheets.filter(
-        (timesheet) => timesheet.id !== action.data.id
+        (timesheet) => timesheet.id != action.data.id
       );
       const updatedTimesheet = Object.assign(timesheet, action.data);
       return {

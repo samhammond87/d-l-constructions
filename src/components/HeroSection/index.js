@@ -12,6 +12,7 @@ import {
   ArrowForward,
   ArrowRight,
 } from './HeroElements';
+import { Spring } from 'react-spring/renderprops';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -26,8 +27,18 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
       </HeroBg>
       <HeroContent>
-        <HeroH1>Get A Free Quote Today!</HeroH1>
-        <HeroP>Plastering Services Sydney Wide</HeroP>
+        <Spring
+          from={{ opacity: 0, marginTop: -1000 }}
+          to={{ opacity: 1, marginTop: 0 }}
+        >
+          {(props) => (
+            <div style={props}>
+              <HeroH1>Get A Free Quote Today!</HeroH1>
+              <HeroP>Plastering Services Sydney Wide</HeroP>
+            </div>
+          )}
+        </Spring>
+
         <HeroBtnWrapper>
           <Button
             to='contact'

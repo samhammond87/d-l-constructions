@@ -55,7 +55,8 @@ export default function NewTimesheet() {
         dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
         history.push(`/portal/${id}`);
       });
-    } else {
+    } 
+    else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
           dispatch({ type: "addTimesheet", data: timesheet });

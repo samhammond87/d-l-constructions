@@ -1,10 +1,9 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Button, Panel, Span } from "./Styled";
+import { Button} from "./Styled";
 import { useGlobalState } from "./utils/stateContext";
 import { signOut } from "./services/authServices";
 import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
 
 export default function PortalNav() {
   let history = useHistory();
@@ -20,15 +19,6 @@ export default function PortalNav() {
     });
   }
 
-
-	function handleSignOut(event) {
-		event.preventDefault()
-		signOut(loggedInUser)
-		.then(() => {
-			dispatch({type: 'setLoggedInUser', data: null})
-			dispatch({type: 'setToken', data: null})
-		})
-	}
 
 	return (
 		<Navbar bg="dark" variant="dark">

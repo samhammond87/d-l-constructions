@@ -6,12 +6,31 @@ export default function reducer(state, action) {
         timesheets: action.data,
       };
     }
+    
     case "addTimesheet": {
       return {
         ...state,
         timesheets: [action.data, ...state.timesheets],
       };
     }
+
+    case "setLoggedInUser": {
+      return {
+        ...state,
+        loggedInUser: action.data,
+      };
+    }
+
+    case "setToken": {
+      return {
+        ...state,
+        auth: {
+          ...state.auth,
+          token: action.data,
+        },
+      };
+    }
+
     case "deleteTimesheet": {
       const updatedTimesheets = state.timesheets.filter((timesheet) => {
         return timesheet.id !== parseInt(action.data);
@@ -21,6 +40,7 @@ export default function reducer(state, action) {
         timesheets: updatedTimesheets,
       };
     }
+
     case "updateTimesheet": {
       const timesheet = state.timesheets.find(
         (timesheet) => timesheet.id === action.data.id
@@ -32,21 +52,6 @@ export default function reducer(state, action) {
       return {
         ...state,
         timesheets: [updatedTimesheet, ...theRest],
-      };
-    }
-    case "setLoggedInUser": {
-      return {
-        ...state,
-        loggedInUser: action.data,
-      };
-    }
-    case "setToken": {
-      return {
-        ...state,
-        auth: {
-          ...state.auth,
-          token: action.data,
-        },
       };
     }
     default:

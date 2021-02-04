@@ -1,56 +1,114 @@
-import styled from 'styled-components' 
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Header = styled.h1 `
-	font-family: Arial,sans-serif;
+export const Header = styled.h1`
+  font-family: "Encode Sans Expanded", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 30px;
-`
+  color: #009879;
+`;
 
-export const Panel = styled.div `
-	display: flex;
-	align-items: center;
-	flex-wrap: wrap;
-`
+export const Panel = styled.div`
+  /* display: flex;
+  align-items: center;
+  flex-wrap: wrap; */
+  text-align: center;
+  margin-top: 33px;
+`;
 
-export const Span = styled.span `
-	padding: .5em;
-	margin: 1em;
-	font-family: Arial, sans-serif;
+export const UserPanel = styled.div`
+  text-align: center;
+  height: 720px;
+  margin-bottom: 30px;
+  width: 480px;
+  padding: 32px;
+`;
 
-`
+export const Span = styled.span`
+  padding: 0.5em;
+  margin: 1em;
+  font-family: "Encode Sans Expanded", sans-serif;
+`;
 
-export const Button = styled(Span) `
-	border: 1px solid black;
-	cursor: pointer;
-`
+export const Button = styled(Span)`
+  /* border: 1px solid black; */
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid black;
+  background: #009879;
+  color: white;
 
-export const Input = styled.input `
-	height: 1em;
-	margin: .5em;
-`
+  &:hover {
+    background: white;
+    color: #009879;
+    padding: 6px 15px;
+    border-radius: 10px;
+    border: solid 2px #009879;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+  }
+`;
 
-export const CommentTextInput = styled(Input) `
-	height: 100px;
-	width: 400px;
-`
+export const UserButton = styled.button`
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.7;
 
-export const Label = styled.span `
-	font-family: Arial,sans-serif;
-	color: black;
-`
+  &:hover {
+    opacity: 1;
+  }
+`;
 
-export const Line = styled.div `
-	color: black;
-	background-color: white;
-	font-size: 1.5em;
-	font-family: Arial,sans-serif;
-	padding: .5em;
-`
+export const Input = styled.input`
+  height: 1em;
+  margin: 0.5em;
+`;
 
+export const UserInput = styled.input`
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 
+  &:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+`;
+
+export const CommentTextInput = styled(Input)`
+  height: 100px;
+  width: 400px;
+`;
+
+export const Label = styled.span`
+  font-family: "Encode Sans Expanded", sans-serif;
+  color: black;
+`;
+
+export const UserLabel = styled.label`
+  font-family: "Encode Sans Expanded", sans-serif;
+  color: white;
+  text-align: left;
+`;
+
+export const Line = styled.div`
+  color: black;
+  background-color: white;
+  font-size: 1.5em;
+  font-family: "Encode Sans Expanded", sans-serif;
+  padding: 0.5em;
+`;
 
 export const Container = styled.div`
   min-height: 692px;
@@ -148,7 +206,7 @@ export const FormButton = styled.button`
 `;
 export const idLink = styled.link`
   text-align: center;
-  margin-top: 24px;;
+  margin-top: 24px;
   font-color: red;
   font-size: 14px;
   background: red;

@@ -11,9 +11,19 @@ export const Header = styled.h1`
 `;
 
 export const Panel = styled.div`
-  display: flex;
+  /* display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  text-align: center;
+  margin-top: 33px;
+`;
+
+export const UserPanel = styled.div`
+  text-align: center;
+  height: 720px;
+  margin-bottom: 30px;
+  width: 480px;
+  padding: 32px;
 `;
 
 export const Span = styled.span`
@@ -25,11 +35,55 @@ export const Span = styled.span`
 export const Button = styled(Span)`
   /* border: 1px solid black; */
   cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid black;
+  background: #009879;
+  color: white;
+
+  &:hover {
+    background: white;
+    color: #009879;
+    padding: 6px 15px;
+    border-radius: 10px;
+    border: solid 2px #009879;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+  }
+`;
+
+export const UserButton = styled.button`
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 export const Input = styled.input`
   height: 1em;
   margin: 0.5em;
+`;
+
+export const UserInput = styled.input`
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+
+  &:focus {
+    background-color: #ddd;
+    outline: none;
+  }
 `;
 
 export const CommentTextInput = styled(Input)`
@@ -40,6 +94,12 @@ export const CommentTextInput = styled(Input)`
 export const Label = styled.span`
   font-family: "Encode Sans Expanded", sans-serif;
   color: black;
+`;
+
+export const UserLabel = styled.label`
+  font-family: "Encode Sans Expanded", sans-serif;
+  color: white;
+  text-align: left;
 `;
 
 export const Line = styled.div`

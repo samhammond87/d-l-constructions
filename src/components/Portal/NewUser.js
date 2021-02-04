@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { UserLabel, UserInput, UserButton, UserPanel } from "./Styled";
-import { signUp } from "./services/authServices";
-import { useGlobalState } from "./utils/stateContext";
+import { signUp } from "../../axios/authServices";
+import { useGlobalState } from "../../utils/stateContext";
 import "./NewUserElements.css";
 
 

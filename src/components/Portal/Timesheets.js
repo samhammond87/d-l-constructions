@@ -70,7 +70,6 @@ export default function Timesheets() {
         </thead>
         <tbody>{list}</tbody>
       </table>
-
-      </>
+    </>
   );
 }

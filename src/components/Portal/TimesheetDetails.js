@@ -64,14 +64,14 @@ export default function TimesheetDetails() {
             <Button onClick={handleDelete}>Delete</Button>
           </Panel>
         )}
-        {loggedInUser.admin === true && (
+        {/* {loggedInUser.admin === true && (
           <Panel>
             <Button onClick={() => history.push(`/portal/update/${id}`)}>
               Update
             </Button>
             <Button onClick={handleDelete}>Delete</Button>
           </Panel>
-        )}
+        )} */}
       </div>
     </>
   );

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import styled from 'styled-components'
-// import Timesheet from './Timesheet'
 import { useGlobalState } from "../../utils/stateContext";
 // import { Card, Table, Container, Row, Col } from "react-bootstrap";
 
@@ -10,7 +8,7 @@ export default function Timesheets() {
 
   const { store } = useGlobalState();
   const { timesheets } = store;
-  if (!timesheets) return null;
+
 
   const list = timesheets
     .filter((entry) => {
@@ -43,6 +41,7 @@ export default function Timesheets() {
         </tr>
       );
     });
+
 
   return (
     <>

@@ -24,15 +24,23 @@ const Portal= () => {
 
 	useEffect(() => {
 		getTimesheets()
+		.then((timesheets) => {
+			console.log(store.auth.token)
+			return timesheets
+		})
 		.then((timesheets) => dispatch({type: 'setTimesheets', data: timesheets}))
-		.catch((error) => console.log(error))
-	},[])
+		.catch((error) => {
+			dispatch({type: 'setTimesheets', data: []})
+			console.log(error)
+		})
+	},[store.auth.token])
+
 	
 
 
 	return (
 		<div>
-			<StateContext.Provider value={{store,dispatch}}>
+			<StateContext.Provider value={{store, dispatch}}>
 				<Router>
 					<PortalNav />
 					<Header> Employee Portal </Header>

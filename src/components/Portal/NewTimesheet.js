@@ -79,6 +79,7 @@ export default function NewTimesheet() {
                 onChange={handleChange}
                 className="input"
                 placeholder="Your Name"
+                required
               />
               <input
                 type="date"
@@ -86,6 +87,7 @@ export default function NewTimesheet() {
                 value={formState.date}
                 onChange={handleChange}
                 className="input"
+                required
               />
               <input
                 type="text"

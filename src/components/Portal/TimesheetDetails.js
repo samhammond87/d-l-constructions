@@ -8,11 +8,15 @@ import { deleteTimesheet } from "../../axios/timesheetServices";
 import "./TimesheetDetailsElements.css";
 
 export default function TimesheetDetails() {
+  
   const [timesheet, setTimesheet] = useState(null);
   const { id } = useParams();
   let history = useHistory();
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
+  console.log(store.loggedInUser);
+  
+  
   useEffect(() => {
     getTimesheet(id)
       .then((timesheet) => setTimesheet(timesheet))
@@ -64,14 +68,14 @@ export default function TimesheetDetails() {
             <Button onClick={handleDelete}>Delete</Button>
           </Panel>
         )}
-        {/* {loggedInUser.admin === true && (
+        {loggedInUser === 'Andrew' && (
           <Panel>
             <Button onClick={() => history.push(`/portal/update/${id}`)}>
               Update
             </Button>
             <Button onClick={handleDelete}>Delete</Button>
           </Panel>
-        )} */}
+        )}
       </div>
     </>
   );

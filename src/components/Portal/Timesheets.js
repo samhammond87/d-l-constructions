@@ -1,22 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import styled from 'styled-components'
-// import Timesheet from './Timesheet'
 import { useGlobalState } from "../../utils/stateContext";
 import { Card, Table, Container, Row, Col } from "react-bootstrap";
 
 export default function Timesheets() {
   const { store } = useGlobalState();
   const { timesheets } = store;
-  if (!timesheets) return null;
 
-  const list = timesheets.map((timesheet, index) => {
+
+  const list = timesheets.map((timesheet) => {
     return (
-      <tr className="active-row">
-        <td key={index}>
+      <tr className="active-row" key={timesheet.id}>
+        <td>
           <Link
             style={{ color: "#009879" }}
-            key={timesheet.id}
             to={`/portal/${timesheet.id}`}
           >
             {timesheet.name}

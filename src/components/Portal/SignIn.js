@@ -29,10 +29,11 @@ export default function SignIn({history}) {
 	function handleSubmit(event) {
 		event.preventDefault()
 		signIn(formState)
-		.then(({username, jwt}) => {
+		.then(({admin, username, jwt}) => {
 			sessionStorage.setItem("token", jwt) // setItem allows a key and a value 
 			sessionStorage.setItem("user", username)
 			dispatch({type: 'setLoggedInUser', data: username})
+			dispatch({type: 'setLoggedInUser', data: admin})
 			dispatch({type: 'setToken', data: jwt})
 			history.push('/portal')
 		})

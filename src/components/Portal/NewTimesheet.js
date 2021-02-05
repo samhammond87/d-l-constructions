@@ -5,24 +5,23 @@ import {
   createTimesheet,
   getTimesheet,
   updateTimesheet,
-} from "./services/timesheetServices";
-import { useGlobalState } from "./utils/stateContext";
+} from "../../axios/timesheetServices";
+import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
 
 export default function NewTimesheet() {
+  const initialFormState = {
+    name: "",
+    date: "",
+    start_time: "",
+    end_time: "",
+    total_hours: "",
+    comments: "",
+  };
 
-	const initialFormState = {
-		name: '',
-		date: '',
-		start_time: '',
-		end_time: '',
-		total_hours: '',
-		comments: ''
-  }
-
-  const [formState, setFormState] = useState(initialFormState)
-  let history = useHistory()
-  let { id } = useParams()
+  const [formState, setFormState] = useState(initialFormState);
+  let history = useHistory();
+  let { id } = useParams();
 
   const { dispatch } = useGlobalState();
 
@@ -51,13 +50,13 @@ export default function NewTimesheet() {
   function handleClick(event) {
     event.preventDefault();
     if (id) {
-      updateTimesheet({ id: id, ...formState }).then(() => {
-        dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
-        history.push(`/portal/${id}`);
-      })
-      .catch((error) => console.log(error));
-    } 
-    else {
+      updateTimesheet({ id: id, ...formState })
+        .then(() => {
+          dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
+          history.push(`/portal/${id}`);
+        })
+        .catch((error) => console.log(error));
+    } else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
           dispatch({ type: "addTimesheet", data: timesheet });
@@ -69,7 +68,7 @@ export default function NewTimesheet() {
   return (
     <>
       <div className="formContainer">
-        <h3>New Timesheet</h3>
+        <h3 className="formHeader">New Timesheet</h3>
         <form>
           <div className="contact-form">
             <div className="input-fields">
@@ -131,6 +130,7 @@ export default function NewTimesheet() {
               onClick={handleClick}
               value={id ? "Update" : "Create"}
               className="btn"
+              id="btn"
             />
           </div>
         </form>

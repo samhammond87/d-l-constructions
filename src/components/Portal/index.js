@@ -1,8 +1,8 @@
 import React,{useReducer, useEffect} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {getTimesheets} from './services/timesheetServices'
-import stateReducer from './utils/stateReducer'
-import {StateContext} from './utils/stateContext'
+import {getTimesheets} from '../../axios/timesheetServices'
+import stateReducer from '../../utils/stateReducer'
+import {StateContext} from '../../utils/stateContext'
 import Timesheets from './Timesheets'
 import TimesheetDetails from './TimesheetDetails'
 import PortalNav from './PortalNav'
@@ -24,15 +24,23 @@ const Portal= () => {
 
 	useEffect(() => {
 		getTimesheets()
+		.then((timesheets) => {
+			console.log(store.auth.token)
+			return timesheets
+		})
 		.then((timesheets) => dispatch({type: 'setTimesheets', data: timesheets}))
-		.catch((error) => console.log(error))
-	},[])
+		.catch((error) => {
+			dispatch({type: 'setTimesheets', data: []})
+			console.log(error)
+		})
+	},[store.auth.token])
+
 	
 
 
 	return (
 		<div>
-			<StateContext.Provider value={{store,dispatch}}>
+			<StateContext.Provider value={{store, dispatch}}>
 				<Router>
 					<PortalNav />
 					<Header> Employee Portal </Header>
@@ -52,8 +60,3 @@ const Portal= () => {
 
 
 export default Portal;
-
-
-
-// Harry rules
-

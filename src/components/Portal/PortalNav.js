@@ -1,10 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-// import { Button } from "./Styled";
-import { useGlobalState } from "./utils/stateContext";
-import { signOut } from "./services/authServices";
-// import Navbar from "react-bootstrap/Navbar";
-// import Nav from "react-bootstrap/Nav";
+import { useGlobalState } from "../../utils/stateContext";
+import { signOut } from "../../axios/authServices";
 import "./PortalNav.css";
 
 
@@ -21,15 +18,6 @@ export default function PortalNav() {
       dispatch({ type: "setToken", data: null });
     });
   }
-
-  // function handleSignOut(event) {
-  // 	event.preventDefault()
-  // 	signOut(loggedInUser)
-  // 	.then(() => {
-  // 		dispatch({type: 'setLoggedInUser', data: null})
-  // 		dispatch({type: 'setToken', data: null})
-  // 	})
-  // }
 
   return (
     <>

@@ -10,19 +10,19 @@
 
 .formContainer {
   position: absolute;
-  top: 55%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 500px;
-  background: #faed64;
+  background: #009879;
   padding: 30px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .formContainer h3 {
-  color: black;
+  color: white;
   font-weight: bold;
   text-align: center;
   margin-bottom: 16px;
@@ -50,7 +50,7 @@
   border: 0px;
   border-bottom: 2px solid white;
   padding: 10px;
-  color: black;
+  color: white;
   width: 100%;
 }
 
@@ -63,11 +63,11 @@
 }
 
 .btn {
-  background: #39b7dd;
+  background: white;
   text-align: center;
   padding: 15px;
   border-radius: 5px;
-  color: #fff;
+  color: #009879;
   cursor: pointer;
   text-transform: uppercase;
 }
@@ -87,7 +87,7 @@
 
 .buttonContainer {
   border-radius: 11px;
-  background: rgb(199, 199, 199);
+  background: white;
   display: inline-block;
   border: none;
   padding: 10px 20px;
@@ -101,5 +101,20 @@
 
 .buttonContainer:hover {
   transition: all 0.2s ease-in-out;
-  background: gray;
+  background: white;
+  border-radius: 20px;
+  transition: all 0.3s ease-out;
+  border: solid 1px white;
+  padding: 15px 25px;
+  color: white;
+}
+
+#btn {
+  color: #009879;
+}
+
+@media screen and (max-width: 768px) {
+  .formContainer {
+    top: 70%;
+  }
 }

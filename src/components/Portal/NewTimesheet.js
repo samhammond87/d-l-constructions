@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-// import { Button, Label, Input, CommentTextInput } from "./Styled";
 import {
   createTimesheet,
   getTimesheet,

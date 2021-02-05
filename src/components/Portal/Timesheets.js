@@ -66,8 +66,6 @@ export default function Timesheets() {
             <th>Start Time</th>
             <th>End Time</th>
             <th>Total Hours</th>
-            <th>Update?</th>
-            <th>Delete?</th>
           </tr>
         </thead>
         <tbody>{list}</tbody>

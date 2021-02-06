@@ -16,20 +16,23 @@ export default function NewUser() {
   const [formState, setFormState] = useState(initialFormState);
   const { dispatch } = useGlobalState();
   let history = useHistory();
-  function handleChange(event) {
+  function handleChange(e) {
     setFormState({
       ...formState,
-      [event.target.name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   }
-  function handleRegister(event) {
-    event.preventDefault();
+  function handleRegister(e) {
+    e.preventDefault();
     signUp(formState).then((data) => {
       sessionStorage.setItem("token", data.jwt);
       sessionStorage.setItem("user", data.username);
       dispatch({ type: "setLoggedInUser", data: data.username });
       history.push("/portal");
-    });
+    })
+    .catch(err => { 
+      setFormState({errorMessage: err.message})
+    })
   }
   return (
     <>
@@ -96,6 +99,10 @@ export default function NewUser() {
         ></UserInput>
         <br />
         <UserButton onClick={handleRegister}>Register</UserButton>
+          <div>
+            { formState.errorMessage &&
+              <h3 className="error"> { "Please check your details and try again"} </h3> }
+          </div>
       </UserPanel>
     </>
   );

@@ -140,7 +140,7 @@ export default function NewTimesheet() {
           </div>
           <div>
           { formState.errorMessage &&
-            <h3 className="error"> { formState.errorMessage } </h3> }
+            <h3 className="error"> { "Oops! Please check your details and try again" } </h3> }
           </div>
         </form>
       </div>

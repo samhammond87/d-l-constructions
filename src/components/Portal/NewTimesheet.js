@@ -16,6 +16,7 @@ export default function NewTimesheet() {
     end_time: "",
     total_hours: "",
     comments: "",
+    errorMessage: ""
   };
 
   const [formState, setFormState] = useState(initialFormState);
@@ -61,8 +62,11 @@ export default function NewTimesheet() {
           dispatch({ type: "addTimesheet", data: timesheet });
           history.push("/portal");
         })
-        .catch((error) => console.log(error));
-    }
+        .catch(err => { 
+          setFormState({errorMessage: err.message})
+        })
+      }
+
   }
   return (
     <>
@@ -133,6 +137,10 @@ export default function NewTimesheet() {
               className="btn"
               id="btn"
             />
+          </div>
+          <div>
+          { formState.errorMessage &&
+            <h3 className="error"> { formState.errorMessage } </h3> }
           </div>
         </form>
       </div>

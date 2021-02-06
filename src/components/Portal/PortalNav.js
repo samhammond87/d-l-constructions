@@ -11,8 +11,8 @@ export default function PortalNav() {
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
 
-  function handleSignOut(event) {
-    event.preventDefault();
+  function handleSignOut(e) {
+    e.preventDefault();
     signOut(loggedInUser).then(() => {
       dispatch({ type: "setLoggedInUser", data: null });
       dispatch({ type: "setToken", data: null });

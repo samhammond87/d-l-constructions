@@ -22,8 +22,8 @@ export default function Timesheets() {
     })
     .map((timesheet, index) => {
       return (
-        <tr className="active-row">
-          <td key={index}>
+        <tr className="active-row" key={index}>
+          <td>
             <Link
               style={{ color: "#009879" }}
               key={timesheet.id}

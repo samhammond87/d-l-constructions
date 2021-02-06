@@ -40,14 +40,14 @@ export default function NewTimesheet() {
     }
   }, [id]);
 
-  function handleChange(event) {
+  function handleChange(e) {
     setFormState({
       ...formState,
-      [event.target.name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   }
-  function handleClick(event) {
-    event.preventDefault();
+  function handleClick(e) {
+    e.preventDefault();
     if (id) {
       updateTimesheet({ id: id, ...formState })
         .then(() => {

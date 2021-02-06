@@ -1,0 +1,26 @@
+.testimonialSlideContainer {
+  background-color: #4a4a4a;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+}
+
+.testimonialElementContainer {
+  margin: 0px 25px 0px 25px;
+  width: 330px;
+  padding: 50px 0px 50px 0px;
+  color: #ffff;
+}
+
+h1 {
+  color: #fff;
+}
+
+.testimonialProfileImage {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0px 0px 25px 0px;
+}

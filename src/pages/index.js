@@ -14,6 +14,7 @@ import ContactUs from '../components/Contact';
 import { Spring } from 'react-spring/renderprops';
 import TestimonialCarusel from '../components/Testimonials/Testimonial';
 
+
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -29,19 +30,13 @@ const Home = () => {
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
       <Services />
-      <Spring
-        from={{ opacity: 0 }}
-        to={{ opacity: 2 }}
-        config={{ delay: 9000, duration: 2000 }}
-      >
-        {(props) => (
-          <div style={props}>
-            <InfoSection {...homeObjThree} />
-          </div>
-        )}
-      </Spring>
+
+      <InfoSection {...homeObjThree} />
+
       <ContactUs />
+
       <TestimonialCarusel />
+
       <Footer />
     </>
   );

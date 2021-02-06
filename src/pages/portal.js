@@ -10,4 +10,3 @@ function PortalPage() {
 }
 
 export default PortalPage;
-

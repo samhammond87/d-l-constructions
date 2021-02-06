@@ -18,6 +18,7 @@ export default function NewTimesheet() {
     end_time: "",
     total_hours: "",
     comments: "",
+    errorMessage: ""
   };
 
   const [formState, setFormState] = useState(initialFormState);
@@ -42,14 +43,14 @@ export default function NewTimesheet() {
     }
   }, [id]);
 
-  function handleChange(event) {
+  function handleChange(e) {
     setFormState({
       ...formState,
-      [event.target.name]: event.target.value,
+      [e.target.name]: e.target.value,
     });
   }
-  function handleClick(event) {
-    event.preventDefault();
+  function handleClick(e) {
+    e.preventDefault();
     if (id) {
       updateTimesheet({ id: id, ...formState })
         .then(() => {
@@ -63,8 +64,11 @@ export default function NewTimesheet() {
           dispatch({ type: "addTimesheet", data: timesheet });
           history.push("/portal");
         })
-        .catch((error) => console.log(error));
-    }
+        .catch(err => { 
+          setFormState({errorMessage: err.message})
+        })
+      }
+
   }
   return (
     <>
@@ -135,6 +139,10 @@ export default function NewTimesheet() {
               className="btn"
               id="btn"
             />
+          </div>
+          <div>
+          { formState.errorMessage &&
+            <h3 className="error"> { "Oops! Please check your details and try again" } </h3> }
           </div>
         </form>
       </div>

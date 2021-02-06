@@ -6,8 +6,13 @@ export const Header = styled.h1`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 16px;
   color: #009879;
+
+  @media (max-width: 500px) {
+    font-size: 22px;
+    color: black;
+  }
 `;
 
 export const Panel = styled.div`

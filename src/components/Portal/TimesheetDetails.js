@@ -32,7 +32,31 @@ export default function TimesheetDetails() {
   }
   return (
     <>
-      <table className="styled-table">
+      <table class="rTable">
+        <thead>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Total Hours</th>
+          <th>Comments</th>
+          <th>Submitted By</th>
+          <th>Posted On</th>
+        </thead>
+        <tbody>
+          <tr className="active-row">
+            <td data-label="Date">{timesheet.date}</td>
+            <td data-label="Start Time">{timesheet.start_time}</td>
+            <td data-label="End Time">{timesheet.end_time}</td>
+            <td data-label="Total Hours">{timesheet.total_hours}</td>
+            <td data-label="Comments">{"" ? "N/A" : timesheet.comments}</td>
+            <td data-label="Submitted By">{timesheet.name}</td>
+            <td data-label="Submitted On">
+              <Moment format="D MMM YYYY">{timesheet.posted}</Moment>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      {/* <table className="styled-table">
         <thead>
           <tr>
             <th>Date</th>
@@ -57,7 +81,7 @@ export default function TimesheetDetails() {
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
 
       <div>
         {loggedInUser === timesheet.name && ( // && is used for hiding and showing in jsx

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useGlobalState } from "../../utils/stateContext";
 import { signOut } from "../../axios/authServices";
 import "./PortalNav.css";
+import { Navbar, Nav } from "react-bootstrap";
 
 // employee portal navbar component
 
@@ -22,6 +23,59 @@ export default function PortalNav() {
 
   return (
     <>
+      <Navbar bg="dark" expand="lg" variant="dark" id="respNavbar">
+        <Navbar.Brand>
+          {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link
+              className="ml-auto"
+              style={{ color: " #e3e3e3" }}
+              onClick={() => history.push("/portal")}
+            >
+              Home
+            </Nav.Link>
+            {loggedInUser ? (
+              <>
+                <Nav.Link
+                  className="ml-auto"
+                  style={{ color: " #e3e3e3" }}
+                  onClick={() => history.push("/portal/new")}
+                >
+                  Add Timesheet
+                </Nav.Link>
+                <Nav.Link
+                  className="ml-auto"
+                  style={{ color: " #e3e3e3" }}
+                  onClick={handleSignOut}
+                >
+                  Sign Out
+                </Nav.Link>
+              </>
+            ) : (
+              <>
+                <Nav.Link
+                  className="ml-auto"
+                  style={{ color: " #e3e3e3" }}
+                  onClick={() => history.push("/register")}
+                >
+                  Register
+                </Nav.Link>
+                <Nav.Link
+                  className="ml-auto"
+                  style={{ color: " #e3e3e3" }}
+                  onClick={() => history.push("/sign_in")}
+                >
+                  Sign In
+                </Nav.Link>
+              </>
+            )}
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+      <br />
       <div className="nav-container">
         <nav className="navbar">
           <h1 id="navbar-logo">

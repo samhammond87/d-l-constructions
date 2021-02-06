@@ -18,7 +18,6 @@ export default function NewTimesheet() {
     end_time: "",
     total_hours: "",
     comments: "",
-    errorMessage: ""
   };
 
   const [formState, setFormState] = useState(initialFormState);

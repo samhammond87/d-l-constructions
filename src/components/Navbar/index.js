@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import react icons
 import { FaBars } from "react-icons/fa";
 import { IconContext } from "react-icons/lib";
 import { animateScroll as scroll } from "react-scroll";
@@ -17,6 +18,7 @@ import {
 const Navbar = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
+  // change navbar background depending on how far down the app is scroll
   const changeNav = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true);
@@ -25,10 +27,12 @@ const Navbar = ({ toggle }) => {
     }
   };
 
+  // add event listener to track scroll event
   useEffect(() => {
     window.addEventListener("scroll", changeNav);
   }, []);
 
+  // scroll the page all the way to the top using react scroll built in method
   const toggleHome = () => {
     scroll.scrollToTop();
   };
@@ -46,6 +50,7 @@ const Navbar = ({ toggle }) => {
             </MobileIcon>
             <NavMenu>
               <NavItem>
+                {/* react scroll effect attributes */}
                 <NavLinks
                   to="about"
                   smooth={true}
@@ -58,6 +63,7 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
               <NavItem>
+                {/* react scroll effect attributes */}
                 <NavLinks
                   to="services"
                   smooth={true}
@@ -70,6 +76,7 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
               <NavItem>
+                {/* react scroll effect attributes */}
                 <NavLinks
                   to="whyus"
                   smooth={true}
@@ -82,6 +89,7 @@ const Navbar = ({ toggle }) => {
                 </NavLinks>
               </NavItem>
               <NavItem>
+                {/* react scroll effect attributes */}
                 <NavLinks
                   to="careers"
                   smooth={true}

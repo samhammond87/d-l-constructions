@@ -11,6 +11,8 @@ import {
   FormButton,
 } from "./SigninElements";
 
+// employee sign in page component
+
 const SignIn = () => {
   return (
     <>
@@ -29,7 +31,6 @@ const SignIn = () => {
                 placeholder="Enter Password"
               />
               <FormButton type="submit">Log In</FormButton>
-              {/* <Text>Forgot password?</Text> */}
             </Form>
           </FormContent>
         </FormWrap>

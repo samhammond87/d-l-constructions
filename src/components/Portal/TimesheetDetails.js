@@ -7,16 +7,16 @@ import { useGlobalState } from "../../utils/stateContext";
 import { deleteTimesheet } from "../../axios/timesheetServices";
 import "./TimesheetDetailsElements.css";
 
+// show timesheet component
+
 export default function TimesheetDetails() {
-  
   const [timesheet, setTimesheet] = useState(null);
   const { id } = useParams();
   let history = useHistory();
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
   console.log(store.loggedInUser);
-  
-  
+
   useEffect(() => {
     getTimesheet(id)
       .then((timesheet) => setTimesheet(timesheet))
@@ -68,7 +68,7 @@ export default function TimesheetDetails() {
             <Button onClick={handleDelete}>Delete</Button>
           </Panel>
         )}
-        {loggedInUser === 'Andrew' && (
+        {loggedInUser === "Andrew" && (
           <Panel>
             <Button onClick={() => history.push(`/portal/update/${id}`)}>
               Update

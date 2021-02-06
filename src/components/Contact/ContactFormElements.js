@@ -1,5 +1,7 @@
+// import a library to style react components
 import styled from "styled-components";
-// import { Link } from 'react-router-dom';
+
+// this file contains all the styling for contact form component
 
 export const ContactFormWrap = styled.div`
   height: 100%;
@@ -51,6 +53,7 @@ export const ContactFormLabel = styled.label`
   font-size: 18px;
   color: #000000;
 `;
+
 export const ContactFormInput = styled.input`
   padding: 16px 16px;
   margin-bottom: 32px;
@@ -74,9 +77,3 @@ export const ContactFormButton = styled.button`
   font-size: 20px;
   cursor: pointer;
 `;
-// export const Text = styled.span`
-//   text-align: center;
-//   margin-top: 24px;
-//   color: #fff;
-//   font-size: 14px;
-// `;

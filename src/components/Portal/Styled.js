@@ -11,9 +11,6 @@ export const Header = styled.h1`
 `;
 
 export const Panel = styled.div`
-  /* display: flex;
-  align-items: center;
-  flex-wrap: wrap; */
   text-align: center;
   margin-top: 33px;
 `;
@@ -33,7 +30,6 @@ export const Span = styled.span`
 `;
 
 export const Button = styled(Span)`
-  /* border: 1px solid black; */
   cursor: pointer;
   text-align: center;
   border-radius: 4px;
@@ -207,7 +203,7 @@ export const FormButton = styled.button`
 export const idLink = styled.link`
   text-align: center;
   margin-top: 24px;
-  font-color: red;
+  color: red;
   font-size: 14px;
   background: red;
 `;

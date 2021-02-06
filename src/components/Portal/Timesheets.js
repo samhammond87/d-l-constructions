@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalState } from "../../utils/stateContext";
-// import { Card, Table, Container, Row, Col } from "react-bootstrap";
 
 export default function Timesheets() {
   const [searchEntry, setSearchEntry] = useState("");
-
   const { store } = useGlobalState();
   const { timesheets } = store;
 
-
+  // search function logic and map timesheets to display in browser
   const list = timesheets
     .filter((entry) => {
       if (searchEntry === "") {
@@ -41,7 +39,6 @@ export default function Timesheets() {
         </tr>
       );
     });
-
 
   return (
     <>

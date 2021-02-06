@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+// employee sign in page styling
+
 export const Container = styled.div`
   min-height: 692px;
   position: fixed;
@@ -95,9 +97,3 @@ export const FormButton = styled.button`
   font-size: 20px;
   cursor: pointer;
 `;
-// export const Text = styled.span`
-//   text-align: center;
-//   margin-top: 24px;
-//   color: #fff;
-//   font-size: 14px;
-// `;

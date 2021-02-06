@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-scroll";
 
+// go to employee portal button in the navbar
+
 export const Button = styled(Link)`
   border-radius: 50px;
   background: ${({ primary }) => (primary ? "#faed64" : "#010606")};

@@ -9,35 +9,35 @@ export default function Timesheets() {
   const { timesheets } = store;
 
   // search function logic and map timesheets to display in browser
-  const list = timesheets
-    .filter((entry) => {
-      if (searchEntry === "") {
-        return entry;
-      } else if (entry.name.toLowerCase().includes(searchEntry.toLowerCase())) {
-        return entry;
-      } else if (entry.date.toLowerCase().includes(searchEntry.toLowerCase())) {
-        return entry;
-      }
-    })
-    .map((timesheet, index) => {
-      return (
-        <tr className="active-row" key={index}>
-          <td>
-            <Link
-              style={{ color: "#009879" }}
-              key={timesheet.id}
-              to={`/portal/${timesheet.id}`}
-            >
-              {timesheet.name}
-            </Link>
-          </td>
-          <td>{timesheet.date}</td>
-          <td>{timesheet.start_time}</td>
-          <td>{timesheet.end_time}</td>
-          <td>{timesheet.total_hours}</td>
-        </tr>
-      );
-    });
+  // const list = timesheets
+  //   .filter((entry) => {
+  //     if (searchEntry === "") {
+  //       return entry;
+  //     } else if (entry.name.toLowerCase().includes(searchEntry.toLowerCase())) {
+  //       return entry;
+  //     } else if (entry.date.toLowerCase().includes(searchEntry.toLowerCase())) {
+  //       return entry;
+  //     }
+  //   })
+  //   .map((timesheet, index) => {
+  //     return (
+  //       <tr className="active-row" key={index}>
+  //         <td>
+  //           <Link
+  //             style={{ color: "#009879" }}
+  //             key={timesheet.id}
+  //             to={`/portal/${timesheet.id}`}
+  //           >
+  //             {timesheet.name}
+  //           </Link>
+  //         </td>
+  //         <td>{timesheet.date}</td>
+  //         <td>{timesheet.start_time}</td>
+  //         <td>{timesheet.end_time}</td>
+  //         <td>{timesheet.total_hours}</td>
+  //       </tr>
+  //     );
+  //   });
 
   const list2 = timesheets
     .filter((entry) => {
@@ -54,10 +54,11 @@ export default function Timesheets() {
         <tr className="active-row" key={index}>
           <td>
             <Link
-              style={{ color: "#009879" }}
+              style={{ color: "black" }}
               key={timesheet.id}
               to={`/portal/${timesheet.id}`}
               data-label="Name"
+              id="tName"
             >
               {timesheet.name}
             </Link>
@@ -85,7 +86,7 @@ export default function Timesheets() {
           }}
         />
       </div>
-      <table className="styled-table">
+      {/* <table className="styled-table">
         <thead>
           <tr>
             <th data-label="name">Employee Name</th>
@@ -98,7 +99,7 @@ export default function Timesheets() {
         <tbody>{list}</tbody>
       </table>
       <br />
-      <br />
+      <br /> */}
       <table class="rTable">
         <thead>
           <th>Employee Name</th>

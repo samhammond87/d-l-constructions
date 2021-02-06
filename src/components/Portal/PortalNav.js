@@ -75,7 +75,7 @@ export default function PortalNav() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <br />
+      {/* <br />
       <div className="nav-container">
         <nav className="navbar">
           <h1 id="navbar-logo">
@@ -128,7 +128,7 @@ export default function PortalNav() {
             )}
           </ul>
         </nav>
-      </div>
+      </div> */}
     </>
   );
 }

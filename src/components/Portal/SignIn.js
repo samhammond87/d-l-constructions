@@ -37,7 +37,9 @@ export default function SignIn({history}) {
 			dispatch({type: 'setToken', data: jwt})
 			history.push('/portal')
 		})
-		.catch((error) => console.log(error))
+		.catch(err => { 
+			setFormState({errorMessage: err.message})
+		})
 
 	}
 	return (
@@ -53,6 +55,11 @@ export default function SignIn({history}) {
 						<FormLabel htmlFor="for">Password:</FormLabel>
 						<FormInput type='password' name='password' value={formState.password} onChange={handleChange}></FormInput>
 						<FormButton onClick={handleSubmit}>Log in</FormButton>
+						<div>
+							<br/>
+            	{ formState.errorMessage &&
+								<h3 className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </h3> }
+          	</div>
 					</Form>
 				</FormContent>
 			</FormWrap>

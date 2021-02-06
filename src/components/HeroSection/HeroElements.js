@@ -2,7 +2,7 @@ import styled from "styled-components";
 // import react icons
 import { MdKeyboardArrowRight, MdArrowForward } from "react-icons/md";
 
-// hero section elements styling
+// this file contains styling for the hero section component
 export const HeroContainer = styled.div`
   background: #0c0c0c;
   display: flex;

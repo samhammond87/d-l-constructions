@@ -4,6 +4,7 @@ import { useGlobalState } from "../../utils/stateContext";
 import { signOut } from "../../axios/authServices";
 import "./PortalNav.css";
 
+// employee portal navbar component
 
 export default function PortalNav() {
   let history = useHistory();
@@ -74,38 +75,6 @@ export default function PortalNav() {
           </ul>
         </nav>
       </div>
-
-      {/* <Navbar bg="dark" variant="dark">
-        <Navbar.Brand>{loggedInUser}'s Timesheets</Navbar.Brand>
-        <Navbar.Brand>
-          <Button onClick={() => history.push("/portal")}>Home</Button>
-        </Navbar.Brand>
-        {loggedInUser ? (
-          <>
-            <Navbar.Brand>
-              <Button onClick={() => history.push("/portal/new")}>
-                Add Timesheet
-              </Button>
-            </Navbar.Brand>
->>>>>>> c19bf6a309be46f7b76c618779fd6434a38eefc2
-
-            <Navbar.Brand>
-              <Button onClick={handleSignOut}>Sign Out</Button>{" "}
-            </Navbar.Brand>
-          </>
-        ) : (
-          <>
-            <Navbar.Brand>
-              <Button onClick={() => history.push("/register")}>
-                Register
-              </Button>
-            </Navbar.Brand>
-            <Navbar.Brand>
-              <Button onClick={() => history.push("/sign_in")}>Sign In</Button>
-            </Navbar.Brand>
-          </>
-        )}
-      </Navbar> */}
     </>
   );
 }

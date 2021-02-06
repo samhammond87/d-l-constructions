@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Video from "../../videos/video.mp4";
 import { Button } from "../ButtonElements";
 import {
   HeroContainer,
@@ -12,8 +11,8 @@ import {
   ArrowForward,
   ArrowRight,
 } from "./HeroElements";
+// import react spring library to implement animation and effects
 import { Spring } from "react-spring/renderprops";
-import { animateScroll } from "react-scroll";
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -25,7 +24,6 @@ const HeroSection = () => {
   return (
     <HeroContainer>
       <HeroBg>
-        {/* <VideoBg autoPlay loop muted src={Video} type='video/mp4' /> */}
         <VideoBg
           autoPlay
           loop
@@ -48,6 +46,7 @@ const HeroSection = () => {
         </Spring>
 
         <HeroBtnWrapper>
+          {/* add react scroll effect with required attributes */}
           <Button
             to="contact"
             smooth={true}

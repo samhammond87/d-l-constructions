@@ -10,6 +10,8 @@ import {
   SidebarRoute,
 } from "./SidebarElements";
 
+// burger bar component
+
 export const Sidebar = ({ isOpen, toggle }) => {
   return (
     <SidebarContainer isOpen={isOpen} onClick={toggle}>

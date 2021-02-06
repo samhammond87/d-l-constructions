@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+// services component styling
+
 export const ServicesContainer = styled.div`
   height: 800px;
   display: flex;

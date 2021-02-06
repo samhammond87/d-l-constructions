@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import Video from "../../videos/video.mp4";
-import { Button } from '../ButtonElements';
+import { Button } from "../ButtonElements";
 import {
   HeroContainer,
   HeroBg,
@@ -11,8 +11,9 @@ import {
   HeroBtnWrapper,
   ArrowForward,
   ArrowRight,
-} from './HeroElements';
-import { Spring } from 'react-spring/renderprops';
+} from "./HeroElements";
+import { Spring } from "react-spring/renderprops";
+import { animateScroll } from "react-scroll";
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
@@ -29,8 +30,8 @@ const HeroSection = () => {
           autoPlay
           loop
           muted
-          src='https://full-stack-app.s3-ap-southeast-2.amazonaws.com/videos/video.mp4'
-          type='video/mp4'
+          src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/videos/video.mp4"
+          type="video/mp4"
         />
       </HeroBg>
       <HeroContent>
@@ -48,11 +49,16 @@ const HeroSection = () => {
 
         <HeroBtnWrapper>
           <Button
-            to='contact'
+            to="contact"
+            smooth={true}
+            duration={500}
+            spy={true}
+            exact="true"
+            offset={-80}
             onMouseEnter={onHover}
             onMouseLeave={onHover}
-            primary='true'
-            dark='true'
+            primary="true"
+            dark="true"
           >
             Contact Us {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>

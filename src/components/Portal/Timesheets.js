@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalState } from "../../utils/stateContext";
+import "./Timesheets.css";
 
 export default function Timesheets() {
   const [searchEntry, setSearchEntry] = useState("");
@@ -34,8 +35,37 @@ export default function Timesheets() {
           <td>{timesheet.start_time}</td>
           <td>{timesheet.end_time}</td>
           <td>{timesheet.total_hours}</td>
-          <td></td>
-          <td></td>
+        </tr>
+      );
+    });
+
+  const list2 = timesheets
+    .filter((entry) => {
+      if (searchEntry === "") {
+        return entry;
+      } else if (entry.name.toLowerCase().includes(searchEntry.toLowerCase())) {
+        return entry;
+      } else if (entry.date.toLowerCase().includes(searchEntry.toLowerCase())) {
+        return entry;
+      }
+    })
+    .map((timesheet, index) => {
+      return (
+        <tr className="active-row" key={index}>
+          <td>
+            <Link
+              style={{ color: "#009879" }}
+              key={timesheet.id}
+              to={`/portal/${timesheet.id}`}
+              data-label="Name"
+            >
+              {timesheet.name}
+            </Link>
+          </td>
+          <td data-label="Date">{timesheet.date}</td>
+          <td data-label="Start Time">{timesheet.start_time}</td>
+          <td data-label="End Time">{timesheet.end_time}</td>
+          <td data-label="Total Hours">{timesheet.total_hours}</td>
         </tr>
       );
     });
@@ -58,14 +88,26 @@ export default function Timesheets() {
       <table className="styled-table">
         <thead>
           <tr>
-            <th>Employee Name</th>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Total Hours</th>
+            <th data-label="name">Employee Name</th>
+            <th data-label="date">Date</th>
+            <th data-label="start">Start Time</th>
+            <th data-label="end">End Time</th>
+            <th data-label="total">Total Hours</th>
           </tr>
         </thead>
         <tbody>{list}</tbody>
+      </table>
+      <br />
+      <br />
+      <table class="rTable">
+        <thead>
+          <th>Employee Name</th>
+          <th>Date</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+          <th>Total Hours</th>
+        </thead>
+        <tbody>{list2}</tbody>
       </table>
     </>
   );

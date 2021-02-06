@@ -43,13 +43,13 @@
   .rTable tr,
   .rTable td {
     display: block;
-    color: white;
-    background: #009879;
+    color: black;
+    /* background: #009879; */
+    width: 100%;
   }
 
   .rTable tr {
-    margin-bottom: 1rem;
-    background: white;
+    margin-bottom: 15px;
   }
 
   .rTable td {

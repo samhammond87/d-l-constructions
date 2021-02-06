@@ -67,6 +67,8 @@ export default function Timesheets() {
           <td data-label="Start Time">{timesheet.start_time}</td>
           <td data-label="End Time">{timesheet.end_time}</td>
           <td data-label="Total Hours">{timesheet.total_hours}</td>
+          <br />
+          <br />
         </tr>
       );
     });

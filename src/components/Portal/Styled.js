@@ -11,7 +11,7 @@ export const Header = styled.h1`
 
   @media (max-width: 500px) {
     font-size: 22px;
-    display: none;
+    color: black;
   }
 `;
 

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// styling for infosection component
 export const InfoContainer = styled.div`
   color: #fff;
   background: ${({ lightBg }) => (lightBg ? "#f9f9f9" : "#4a4a4a")};
@@ -27,7 +28,6 @@ export const InfoRow = styled.div`
   align-items: center;
   grid-template-areas: ${({ imgStart }) =>
     imgStart ? "'col2 col1'" : "'col1 col2'"};
-  /* Must use '\' css class \'' */
 
   @media screen and (max-width: 768px) {
     grid-template-areas: ${({ imgStart }) =>
@@ -53,7 +53,6 @@ export const TextWrapper = styled.div`
   padding-bottom: 60px;
 `;
 
-// p or div tag?
 export const TopLine = styled.div`
   color: #faed64;
   font-size: 16px;

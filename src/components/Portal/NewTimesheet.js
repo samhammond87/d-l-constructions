@@ -8,6 +8,8 @@ import {
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
 
+// create new timesheet form
+
 export default function NewTimesheet() {
   const initialFormState = {
     name: "",

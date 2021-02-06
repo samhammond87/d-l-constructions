@@ -1,17 +1,18 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 import {
-		Container,
-		FormWrap,
-		Icon,
-		FormContent,
-		Form,
-		FormH1,
-		FormLabel,
-		FormInput,
-		FormButton
-		} from './Styled'
-import {signIn} from '../../axios/authServices'
-import {useGlobalState} from '../../utils/stateContext'
+  Container,
+  FormWrap,
+  Icon,
+  FormContent,
+  Form,
+  FormH1,
+  FormLabel,
+  FormInput,
+  FormButton,
+} from "./Styled";
+import { signIn } from "../../axios/authServices";
+import { useGlobalState } from "../../utils/stateContext";
+
 
 export default function SignIn({history}) {
 	const initialFormState = {

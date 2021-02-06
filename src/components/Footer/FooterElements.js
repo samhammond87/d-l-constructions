@@ -1,9 +1,11 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import a library to style react components
+import styled from 'styled-components';
+// import component from react router
+import { Link } from 'react-router-dom';
 
-// footer elements styling
+// this file contains the styling for the footer component
 export const FooterContainer = styled.footer`
-  background-color: #4a4a4a;
+  background-color: #000000;
 `;
 
 export const FooterWrap = styled.div`

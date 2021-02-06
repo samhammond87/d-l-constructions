@@ -48,10 +48,6 @@
     width: 100%;
   }
 
-  .rTable tr {
-    margin-bottom: 15px;
-  }
-
   .rTable td {
     text-align: right;
     padding-left: 50%;

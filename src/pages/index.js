@@ -12,6 +12,8 @@ import {
 } from '../components/InfoSection/Data';
 import ContactUs from '../components/Contact';
 import { Spring } from 'react-spring/renderprops';
+import TestimonialCarusel from '../components/Testimonials/Testimonial';
+
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,6 +34,8 @@ const Home = () => {
       <InfoSection {...homeObjThree} />
 
       <ContactUs />
+
+      <TestimonialCarusel />
 
       <Footer />
     </>

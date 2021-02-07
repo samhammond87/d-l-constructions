@@ -90,7 +90,7 @@ export default function NewUser() {
         <UserButton onClick={handleRegister}>Register</UserButton>
           <div>
             { formState.errorMessage &&
-              <h3 className="error"> { "Oops! Please check your details and try again"} </h3> }
+              <h3 className="error" style={{color: "black"}}> { "Oops! Please check your details and try again"} </h3> }
           </div>
       </UserPanel>
     </>

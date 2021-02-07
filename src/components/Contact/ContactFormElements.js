@@ -76,4 +76,8 @@ export const ContactFormButton = styled.button`
   color: #000000;
   font-size: 20px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;

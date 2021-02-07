@@ -11,7 +11,7 @@ import {
   homeObjThree,
 } from "../components/InfoSection/Data";
 import ContactUs from "../components/Contact";
-import { Spring } from "react-spring/renderprops";
+// import { Spring } from "react-spring/renderprops";
 import TestimonialCarusel from "../components/Testimonials/Testimonial";
 
 const Home = () => {
@@ -29,13 +29,9 @@ const Home = () => {
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
       <Services />
-
       <InfoSection {...homeObjThree} />
-
       <ContactUs />
-
       <TestimonialCarusel />
-
       <Footer />
     </>
   );

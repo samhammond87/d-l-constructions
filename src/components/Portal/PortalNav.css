@@ -54,6 +54,8 @@
 .nav-link:hover {
   color: var(--green);
   transition: all 0.2s ease-out;
+  /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+  text-decoration: none !important;
 }
 
 .nav-links-btn {

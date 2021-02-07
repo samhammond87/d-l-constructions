@@ -13,6 +13,13 @@ import {
 export default function ContactUs() {
   const [loading, setLoading] = useState(false);
 
+  function fun() {
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
+  }
+
   function sendEmail(e) {
     // prevents browser from refreshing when the button is clicked
     e.preventDefault();
@@ -45,6 +52,7 @@ export default function ContactUs() {
     setTimeout(function () {
       alert("Thank you for getting in touch! We'll be in contact soon");
     }, 2000);
+    fun();
   }
 
   return (
@@ -53,23 +61,31 @@ export default function ContactUs() {
         <ContactForm onSubmit={sendEmail}>
           <ContactFormH1>Contact Us</ContactFormH1>
           <ContactFormLabel htmlFor="for">Name</ContactFormLabel>
-          <ContactFormInput type="text" className="form-control" name="name" />
+          <ContactFormInput
+            type="text"
+            className="form-control"
+            name="name"
+            id="name"
+          />
           <ContactFormLabel htmlFor="for">Email</ContactFormLabel>
           <ContactFormInput
             type="email"
             className="form-control"
             name="email"
+            id="email"
           />
           <ContactFormLabel htmlFor="for">Subject</ContactFormLabel>
           <ContactFormInput
             type="text"
             className="form-control"
             name="subject"
+            id="subject"
           />
           <ContactFormLabel htmlFor="for">Message</ContactFormLabel>
           <ContactFormTextMessageInput
             className="form-control"
             name="message"
+            id="message"
           />
           <ContactFormButton
             type="submit"

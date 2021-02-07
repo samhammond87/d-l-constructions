@@ -34,14 +34,18 @@
 }
 
 .input-fields {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  margin-right: 4%;
+  margin-right: 4%; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .input-fields,
 .msg {
-  width: 48%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .input-fields .input,
@@ -53,6 +57,7 @@
   padding: 10px;
   color: white;
   width: 100%;
+  text-align: center;
 }
 
 .msg textarea {
@@ -71,6 +76,9 @@
   color: #009879;
   cursor: pointer;
   text-transform: uppercase;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 @media screen and (max-width: 600px) {
@@ -89,7 +97,7 @@
 .buttonContainer {
   border-radius: 11px;
   background: white;
-  display: inline-block;
+  /* display: inline-block; */
   border: none;
   padding: 10px 20px;
   margin: 5px;
@@ -98,6 +106,10 @@
   font-size: 15px;
   font-family: inherit;
   transition: all 0.2s ease-in-out;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 60%;
 }
 
 .buttonContainer:hover {
@@ -118,4 +130,9 @@
   .formContainer {
     top: 70%;
   }
+}
+
+.input-fields input,
+.msg textarea {
+  text-align: center;
 }

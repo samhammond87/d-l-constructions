@@ -1,30 +1,21 @@
-import React from 'react';
-import './style.css';
-import Carousel from 'react-bootstrap/Carousel';
-import ProfileImage01 from './Images/01.jpg';
-import ProfileImage02 from './Images/02.jpg';
-import ProfileImage03 from './Images/03.jpg';
-import ProfileImage04 from './Images/04.jpg';
-import ProfileImage05 from './Images/05.jpg';
-import ProfileImage06 from './Images/06.jpg';
-import ProfileImage07 from './Images/07.jpg';
-import ProfileImage08 from './Images/08.jpg';
-import ProfileImage09 from './Images/09.jpg';
+import React from "react";
+import "./style.css";
+import Carousel from "react-bootstrap/Carousel";
 
 function TestimonialCarusel() {
   return (
     <div>
-      <h1 className='TestimonialHeader'>Client Testimonials</h1>
+      <h1 className="TestimonialHeader">Client Testimonials</h1>
       <Carousel>
         <Carousel.Item>
-          <div className='testimonialSlideContainer'>
-            <div className='testimonialElementContainer'>
+          <div className="testimonialSlideContainer">
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage01}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/01.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
                   "Thank you for guiding us through the construction process,
                   being kind, understanding, and always ready to accommodate our
@@ -35,13 +26,13 @@ function TestimonialCarusel() {
                 <p> Fulton Hogan</p>
               </div>
             </div>
-            <div className='testimonialElementContainer'>
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage02}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/02.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
                   "Thank you for all of your hard work on our project…I
                   seriously don’t know how you did it but it came together SO
@@ -52,15 +43,15 @@ function TestimonialCarusel() {
                 <p> Varde</p>
               </div>
             </div>
-            <div className='testimonialElementContainer'>
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage03}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/03.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
-                  "D&L Construction could not have taken better care of us. The
+                  "D&L Constructions could not have taken better care of us. The
                   entire team lives and breathes excellence in everything they
                   do. Integrity, initiative and intelligence are built into this
                   project. What an awesome job! Thank you!"
@@ -72,32 +63,32 @@ function TestimonialCarusel() {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className='testimonialSlideContainer'>
-            <div className='testimonialElementContainer'>
+          <div className="testimonialSlideContainer">
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage04}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/04.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
-                  "D&L Construction had great input from the time we were
+                  "D&L Constructions had great input from the time we were
                   initially selecting the land through the successful
-                  construction of our new building. We felt D&L Construction was
-                  our partner in this endeavor and kept our best interests in
-                  mind.
+                  construction of our new building. We felt D&L Constructions
+                  was our partner in this endeavor and kept our best interests
+                  in mind.
                 </p>
                 <h3>Craig Levering</h3>
                 <p> Electric Supply Company</p>
               </div>
             </div>
-            <div className='testimonialElementContainer'>
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage05}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/05.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
                   "We are totally pleased with your company, your people, and
                   your subcontractors on the craftsmanship of your product. We
@@ -108,18 +99,18 @@ function TestimonialCarusel() {
                 <p> United Notions/Moda Lani</p>
               </div>
             </div>
-            <div className='testimonialElementContainer'>
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage06}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/06.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
-                  "D&L Construction has built a facility for me that I take
+                  "D&L Constructions has built a facility for me that I take
                   great pride in. I believe the best testimonial I could give is
                   that given the opportunity to build again, I would choose D&L
-                  Construction. Thanks for a beautiful building!"
+                  Constructions. Thanks for a beautiful building!"
                 </p>
                 <h3>Byron Branscum</h3>
                 <p> Elite Transport, Inc</p>
@@ -128,14 +119,14 @@ function TestimonialCarusel() {
           </div>
         </Carousel.Item>
         <Carousel.Item>
-          <div className='testimonialSlideContainer'>
-            <div className='testimonialElementContainer'>
+          <div className="testimonialSlideContainer">
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage07}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/07.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
                   "I have enjoyed working with you and your company on many
                   projects over the years. I have worked with many contractors,
@@ -146,15 +137,15 @@ function TestimonialCarusel() {
                 <p> Corporate Real Estate</p>
               </div>
             </div>
-            <div className='testimonialElementContainer'>
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage08}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/08.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
-                  "I cannot say enough about Raymond Construction. They were
+                  "I cannot say enough about D&L Constructions. They were
                   absolutely great! They met their project dates and were so
                   organized throughout the project..I would recommend them to
                   anyone.
@@ -163,13 +154,13 @@ function TestimonialCarusel() {
                 <p>Savage Precision Fabrication</p>
               </div>
             </div>
-            <div className='testimonialElementContainer'>
+            <div className="testimonialElementContainer">
               <img
-                src={ProfileImage09}
-                alt='randomProfileImage01'
-                className='testimonialProfileImage'
+                src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/09.jpg"
+                alt="Customer Photo"
+                className="testimonialProfileImage"
               />
-              <div className='testimonialTextContainer'>
+              <div className="testimonialTextContainer">
                 <p>
                   "Your efforts were instrumental in getting this project onto a
                   successful track after all the stops, starts and design

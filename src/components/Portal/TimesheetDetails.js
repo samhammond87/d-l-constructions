@@ -15,7 +15,6 @@ export default function TimesheetDetails() {
   let history = useHistory();
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
-  console.log(store.loggedInUser);
 
   useEffect(() => {
     getTimesheet(id)

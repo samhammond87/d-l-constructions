@@ -25,7 +25,6 @@ const Portal = () => {
   useEffect(() => {
     getTimesheets()
       .then((timesheets) => {
-        console.log(store.auth.token);
         return timesheets;
       })
       .then((timesheets) =>

@@ -25,7 +25,13 @@ export default function PortalNav() {
     <>
       <Navbar bg="dark" expand="lg" variant="dark" id="respNavbar">
         <Navbar.Brand>
+          <Nav.Link
+            className="ml-auto"
+            style={{ color: " #ffffff" }}
+            onClick={() => history.push("/")}
+          >
           {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}
+          </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

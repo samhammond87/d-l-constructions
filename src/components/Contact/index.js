@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import {
   ContactFormContent,
@@ -11,6 +11,8 @@ import {
 } from "./ContactFormElements";
 
 export default function ContactUs() {
+  const [loading, setLoading] = useState(false);
+
   function sendEmail(e) {
     // prevents browser from refreshing when the button is clicked
     e.preventDefault();
@@ -36,7 +38,13 @@ export default function ContactUs() {
 
   // prompt to inform user that message has been sent successfully
   function emailAlert() {
-    alert("Thank you for getting in touch! We'll be in contact soon");
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+    setTimeout(function () {
+      alert("Thank you for getting in touch! We'll be in contact soon");
+    }, 2000);
   }
 
   return (
@@ -63,10 +71,16 @@ export default function ContactUs() {
             className="form-control"
             name="message"
           />
-          <ContactFormButton type="submit" onClick={emailAlert}>
-            Send Message
+          <ContactFormButton
+            type="submit"
+            onClick={emailAlert}
+            disabled={loading}
+          >
+            {loading && <i style={{ marginRight: "5px" }} />}
+            {loading && <span>Sending your message...</span>}
+            {!loading && <span>Send Message</span>}
+            {/* Send Message */}
           </ContactFormButton>
-          {/* <Text>Forgot password?</Text> */}
         </ContactForm>
       </ContactFormContent>
     </>

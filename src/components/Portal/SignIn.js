@@ -21,20 +21,19 @@ export default function SignIn({history}) {
 	}
 	const [formState, setFormState] = useState(initialFormState)
 	const {dispatch} = useGlobalState()
-	function handleChange(event) {
+	function handleChange(e) {
 		setFormState({
 			...formState,
-			[event.target.name]: event.target.value
+			[e.target.name]: e.target.value
 		})
 	}
-	function handleSubmit(event) {
-		event.preventDefault()
+	function handleSubmit(e) {
+		e.preventDefault()
 		signIn(formState)
-		.then(({admin, username, jwt}) => {
+		.then(({username, jwt}) => {
 			sessionStorage.setItem("token", jwt) // setItem allows a key and a value 
 			sessionStorage.setItem("user", username)
 			dispatch({type: 'setLoggedInUser', data: username})
-			dispatch({type: 'setLoggedInUser', data: admin})
 			dispatch({type: 'setToken', data: jwt})
 			history.push('/portal')
 		})

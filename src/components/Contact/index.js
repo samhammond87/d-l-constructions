@@ -45,10 +45,7 @@ export default function ContactUs() {
 
   // prompt to inform user that message has been sent successfully
   function emailAlert() {
-    setTimeout(function () {
-      alert("Thank you for getting in touch! We'll be in contact soon");
-    }, 2000);
-    fun();
+    alert("Thank you for getting in touch! We'll be in contact soon");
   }
 
   return (

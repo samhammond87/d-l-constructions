@@ -8,7 +8,9 @@ import {
   FormH1,
   FormLabel,
   FormInput,
-  FormButton,
+	FormButton,
+	Button,
+	Panel
 } from "./Styled";
 import { signIn } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";
@@ -60,6 +62,13 @@ export default function SignIn({history}) {
             	{ formState.errorMessage &&
 								<h3 className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </h3> }
           	</div>
+						<div>
+							<Panel>
+              	<Button onClick={() => history.push(`/portal`)}>
+                	Back
+              	</Button>
+            	</Panel>
+          </div>
 					</Form>
 				</FormContent>
 			</FormWrap>

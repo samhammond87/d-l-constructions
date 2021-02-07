@@ -63,11 +63,10 @@ export default function NewTimesheet() {
           dispatch({ type: "addTimesheet", data: timesheet });
           history.push("/portal");
         })
-        .catch(err => { 
-          setFormState({errorMessage: err.message})
-        })
-      }
-
+        .catch((err) => {
+          setFormState({ errorMessage: err.message });
+        });
+    }
   }
   return (
     <>
@@ -126,7 +125,7 @@ export default function NewTimesheet() {
               name="comments"
               value={formState.comments}
               onChange={handleChange}
-              cols="5"
+              cols="3"
             />
           </div>
 
@@ -140,8 +139,12 @@ export default function NewTimesheet() {
             />
           </div>
           <div>
-          { formState.errorMessage &&
-            <h3 className="error"> { "Oops! Please check your details and try again" } </h3> }
+            {formState.errorMessage && (
+              <h3 className="error">
+                {" "}
+                {"Oops! Please check your details and try again"}{" "}
+              </h3>
+            )}
           </div>
         </form>
       </div>

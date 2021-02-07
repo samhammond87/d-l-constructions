@@ -25,14 +25,20 @@ export default function PortalNav() {
     <>
       <Navbar bg="dark" expand="lg" variant="dark" id="respNavbar">
         <Navbar.Brand>
+          <Nav.Link
+            className="ml-auto"
+            style={{ color: " #ffffff" }}
+            onClick={() => history.push("/")}
+          >
           {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}
+          </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link
               className="ml-auto"
-              style={{ color: " #e3e3e3" }}
+              style={{ color: " #009879" }}
               onClick={() => history.push("/portal")}
             >
               Home
@@ -41,14 +47,14 @@ export default function PortalNav() {
               <>
                 <Nav.Link
                   className="ml-auto"
-                  style={{ color: " #e3e3e3" }}
+                  style={{ color: " #009879" }}
                   onClick={() => history.push("/portal/new")}
                 >
                   Add Timesheet
                 </Nav.Link>
                 <Nav.Link
                   className="ml-auto"
-                  style={{ color: " #e3e3e3" }}
+                  style={{ color: " #009879" }}
                   onClick={handleSignOut}
                 >
                   Sign Out
@@ -58,14 +64,14 @@ export default function PortalNav() {
               <>
                 <Nav.Link
                   className="ml-auto"
-                  style={{ color: " #e3e3e3" }}
+                  style={{ color: " #009879" }}
                   onClick={() => history.push("/register")}
                 >
                   Register
                 </Nav.Link>
                 <Nav.Link
                   className="ml-auto"
-                  style={{ color: " #e3e3e3" }}
+                  style={{ color: " #009879" }}
                   onClick={() => history.push("/sign_in")}
                 >
                   Sign In
@@ -132,3 +138,4 @@ export default function PortalNav() {
     </>
   );
 }
+

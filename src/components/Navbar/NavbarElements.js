@@ -1,10 +1,10 @@
-import { Link as LinkS } from "react-scroll";
-import { Link as LinkR } from "react-router-dom";
-import styled from "styled-components";
+import { Link as LinkS } from 'react-scroll';
+import { Link as LinkR } from 'react-router-dom';
+import styled from 'styled-components';
 
 // navbar component styling
 export const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? "#000" : "transparent")};
+  background: ${({ scrollNav }) => (scrollNav ? '#000' : 'transparent')};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -118,7 +118,6 @@ export const NavBtnLink = styled(LinkR)`
   border: none;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
-  text-decoration: none;
 
   &:hover {
     /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */

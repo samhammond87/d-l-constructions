@@ -12,7 +12,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/01.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -29,7 +29,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/02.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -46,7 +46,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/03.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -67,7 +67,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/04.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -85,7 +85,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/05.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -102,7 +102,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/06.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -123,7 +123,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/07.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -140,7 +140,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/08.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">
@@ -157,7 +157,7 @@ function TestimonialCarusel() {
             <div className="testimonialElementContainer">
               <img
                 src="https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/09.jpg"
-                alt="Customer Photo"
+                alt="Past Customer"
                 className="testimonialProfileImage"
               />
               <div className="testimonialTextContainer">

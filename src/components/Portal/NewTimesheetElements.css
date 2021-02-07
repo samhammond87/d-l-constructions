@@ -120,6 +120,8 @@
   border: solid 1px white;
   padding: 15px 25px;
   color: white;
+  /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+  text-decoration: none !important;
 }
 
 #btn {

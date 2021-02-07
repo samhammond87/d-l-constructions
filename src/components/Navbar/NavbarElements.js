@@ -40,6 +40,12 @@ export const NavLogo = styled(LinkR)`
   margin-left: 24px;
   font-weight: bold;
   text-decoration: none;
+
+  &:hover {
+    /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+    text-decoration: none !important;
+    color: #faed64;
+  }
 `;
 
 export const MobileIcon = styled.div`
@@ -93,6 +99,12 @@ export const NavLinks = styled(LinkS)`
   &.active {
     border-bottom: 3px solid #faed64;
   }
+
+  &:hover {
+    /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+    text-decoration: none !important;
+    color: #faed64;
+  }
 `;
 
 export const NavBtnLink = styled(LinkR)`
@@ -109,6 +121,8 @@ export const NavBtnLink = styled(LinkR)`
   text-decoration: none;
 
   &:hover {
+    /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+    text-decoration: none !important;
     transition: all 0.2s ease-in-out;
     background: #fff;
     color: #010606;

@@ -1,7 +1,7 @@
 // import a library to style react components
-import styled from 'styled-components';
+import styled from "styled-components";
 // import component from react router
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 // this file contains the styling for the footer component
 export const FooterContainer = styled.footer`
@@ -64,6 +64,8 @@ export const FooterLink = styled(Link)`
   font-size: 14px;
 
   &:hover {
+    /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+    text-decoration: none !important;
     color: #faed64;
     transition: 0.3s ease-out;
   }

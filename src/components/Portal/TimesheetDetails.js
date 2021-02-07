@@ -83,13 +83,14 @@ export default function TimesheetDetails() {
       </table> */}
 
       <div>
-        <Panel>
+
+  
+
+        {loggedInUser === timesheet.name && ( // && is used for hiding and showing in jsx
+          <Panel>
           <Button onClick={() => history.push(`/portal`)}>
             Back
           </Button>
-        </Panel>
-        {loggedInUser === timesheet.name && ( // && is used for hiding and showing in jsx
-          <Panel>
             <Button onClick={() => history.push(`/portal/update/${id}`)}>
               Update
             </Button>

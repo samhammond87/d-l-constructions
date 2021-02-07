@@ -7,6 +7,7 @@ import {
 } from "../../axios/timesheetServices";
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
+import {Button, Panel} from "./Styled";
 
 // create new timesheet form
 
@@ -56,18 +57,19 @@ export default function NewTimesheet() {
           dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
           history.push(`/portal/${id}`);
         })
-        .catch((error) => console.log(error));
+        .catch((err) => {
+          setFormState({ errorMessage: err.message });
+        });
     } else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
           dispatch({ type: "addTimesheet", data: timesheet });
           history.push("/portal");
         })
-        .catch(err => { 
-          setFormState({errorMessage: err.message})
-        })
-      }
-
+        .catch((err) => {
+          setFormState({ errorMessage: err.message });
+        });
+    }
   }
   return (
     <>
@@ -126,7 +128,7 @@ export default function NewTimesheet() {
               name="comments"
               value={formState.comments}
               onChange={handleChange}
-              cols="5"
+              cols="3"
             />
           </div>
 
@@ -140,8 +142,19 @@ export default function NewTimesheet() {
             />
           </div>
           <div>
-          { formState.errorMessage &&
-            <h3 className="error"> { "Oops! Please check your details and try again" } </h3> }
+            <Panel>
+              <Button onClick={() => history.push(`/portal`)}>
+                Back
+              </Button>
+            </Panel>
+          </div>
+          <div>
+            {formState.errorMessage && (
+              <h3 className="error">
+                {" "}
+                {"Oops! Please check your details and try again"}{" "}
+              </h3>
+            )}
           </div>
         </form>
       </div>

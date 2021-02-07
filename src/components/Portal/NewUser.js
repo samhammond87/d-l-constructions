@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { UserLabel, UserInput, UserButton, UserPanel } from "./Styled";
 import { signUp } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";
+import {Button, Panel} from "./Styled"
 
 // new user registration page
 
@@ -79,6 +80,13 @@ export default function NewUser() {
           placeholder="Confirm your password"
         ></UserInput>
         <br />
+        <div>
+          <Panel>
+            <Button onClick={() => history.push(`/portal`)}>
+              Back
+            </Button>
+          </Panel>
+        </div>
         <UserButton onClick={handleRegister}>Register</UserButton>
           <div>
             { formState.errorMessage &&

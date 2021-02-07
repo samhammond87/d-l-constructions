@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const constructionAPI = axios.create({
-    baseURL: 'https://dl-constructions-api.herokuapp.com'
+    baseURL: 'http://localhost:3000'
 })
 
 constructionAPI.interceptors.request.use((req) => {

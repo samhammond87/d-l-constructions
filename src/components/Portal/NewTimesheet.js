@@ -7,6 +7,7 @@ import {
 } from "../../axios/timesheetServices";
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
+import {Button, Panel} from "./Styled";
 
 // create new timesheet form
 
@@ -56,7 +57,9 @@ export default function NewTimesheet() {
           dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
           history.push(`/portal/${id}`);
         })
-        .catch((error) => console.log(error));
+        .catch((err) => {
+          setFormState({ errorMessage: err.message });
+        });
     } else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
@@ -137,6 +140,13 @@ export default function NewTimesheet() {
               className="btn"
               id="btn"
             />
+          </div>
+          <div>
+            <Panel>
+              <Button onClick={() => history.push(`/portal`)}>
+                Back
+              </Button>
+            </Panel>
           </div>
           <div>
             {formState.errorMessage && (

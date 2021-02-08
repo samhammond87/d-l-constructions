@@ -62,11 +62,6 @@ export default function SignIn({history}) {
 						<FormInput type='password' name='password' value={formState.password} onChange={handleChange}></FormInput>
 						<FormButton disabled={!isEnabled} onClick={handleSubmit}>Log in</FormButton>
 						<div>
-							<br/>
-            	{ formState.errorMessage &&
-								<h3 className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </h3> }
-          	</div>
-						<div>
 							<Panel>
               	<Button onClick={() => history.push(`/portal`)}>
                 	Back

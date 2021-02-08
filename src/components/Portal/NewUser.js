@@ -92,10 +92,6 @@ export default function NewUser() {
           </Panel>
         </div>
         <UserButton onClick={handleRegister} disabled={!isEnabled}>Register</UserButton>
-          <div>
-            { formState.errorMessage &&
-              <h3 className="error" style={{color: "black"}}> { "Oops! Please check your details and try again"} </h3> }
-          </div>
       </UserPanel>
     </>
   );

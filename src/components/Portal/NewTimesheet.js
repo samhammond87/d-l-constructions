@@ -149,14 +149,6 @@ export default function NewTimesheet() {
               </Button>
             </Panel>
           </div>
-          <div>
-            {formState.errorMessage && (
-              <h3 className="error">
-                {" "}
-                {"Oops! Please check your details and try again"}{" "}
-              </h3>
-            )}
-          </div>
         </form>
       </div>
     </>

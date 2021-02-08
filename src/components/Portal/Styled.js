@@ -87,7 +87,7 @@ export const UserInput = styled.input`
   background: #97979b;
 
   &:focus {
-    background-color: black;
+    background-color: white;
     outline: none;
   }
 `;

@@ -42,6 +42,7 @@ export default function TimesheetDetails() {
           <th>Comments</th>
           <th>Submitted By</th>
           <th>Posted On</th>
+          <th>Paid?</th>
         </thead>
         <tbody>
           <tr className="active-row">
@@ -54,6 +55,7 @@ export default function TimesheetDetails() {
             <td data-label="Submitted On">
               <Moment format="D MMM YYYY">{timesheet.posted}</Moment>
             </td>
+            <td data-label="Processed">{timesheet.processed ? '✅' : '❌'}</td>
           </tr>
         </tbody>
       </table>

@@ -21,7 +21,7 @@ export default function NewTimesheet() {
     comments: ""
   };
   // const [processed, setProcessed] = useState({});
-  const [processed, setProcessed] = useState({
+  const [paid, setPaid] = useState({
     processed: false,
   });
 
@@ -62,14 +62,14 @@ export default function NewTimesheet() {
   
 
   if (e.target.name === 'processed') {
-    if (processed.processed == false) {
-      setProcessed(Object.assign({}, processed, { processed: true }));
+    if (paid.processed == false) {
+      setPaid(Object.assign({}, paid, { processed: true }));
     } else {
-      setProcessed(Object.assign({}, processed, { processed: false }));
+      setPaid(Object.assign({}, paid, { processed: false }));
     }
   } else {
-    setProcessed(
-      Object.assign({}, processed, { [e.target.name]: e.target.value })
+    setPaid(
+      Object.assign({}, paid, { [e.target.name]: e.target.value })
     );
   }
   console.log(e.target.value)
@@ -163,7 +163,7 @@ export default function NewTimesheet() {
             <input
               type="checkbox"
               name="processed"
-              value={!processed.processed}
+              value={!paid.processed}
               onChange={handleChange}
               className="input"
               id='processed'

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import {
   Container,
   FormWrap,
@@ -16,13 +18,14 @@ import { signIn } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";
 
 
-export default function SignIn({history}) {
+const SignIn = () => {
 	const initialFormState = {
 		email: '',
 		password: ''
 	}
 	const [formState, setFormState] = useState(initialFormState)
 	const {dispatch} = useGlobalState()
+	let history = useHistory();
 
 
 	function handleChange(e) {
@@ -80,3 +83,5 @@ export default function SignIn({history}) {
 	</>
 	)
 }
+
+export default SignIn;

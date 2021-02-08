@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { UserLabel, UserInput, UserButton, UserPanel } from './Styled';
+import {
+  UserLabel,
+  UserParagraph,
+  UserInput,
+  UserButton,
+  UserPanel,
+} from './Styled';
 import { signUp } from '../../axios/authServices';
 import { useGlobalState } from '../../utils/stateContext';
 // import { Button, Panel } from "./Styled";
@@ -17,9 +23,10 @@ export default function NewUser() {
 
   const [formState, setFormState] = useState(initialFormState);
   const { dispatch } = useGlobalState();
-  const isEnabled = formState.username.length > 0 && 
-                    formState.email.length > 0 && 
-                    formState.password.length > 0;
+  const isEnabled =
+    formState.username.length > 0 &&
+    formState.email.length > 0 &&
+    formState.password.length > 0;
 
   let history = useHistory();
 
@@ -28,7 +35,7 @@ export default function NewUser() {
       ...formState,
       [e.target.name]: e.target.value,
     });
-    console.log(formState)
+    console.log(formState);
   }
 
   function handleRegister(e) {
@@ -48,7 +55,9 @@ export default function NewUser() {
     <>
       <UserPanel className='formContainer'>
         <h3>Employee Registration Form</h3>
-        <p>Please complete this form to create an account.</p>
+        <UserParagraph>
+          Please complete this form to create an account.
+        </UserParagraph>
         <UserLabel>Username:</UserLabel>
         <UserInput
           type='text'
@@ -85,7 +94,7 @@ export default function NewUser() {
           placeholder='Confirm your password'
         ></UserInput>
         <br />
-        <UserButton onClick={handleRegister}>Register</UserButton>
+        <UserButton onClick={handleRegister} disabled={!isEnabled}>Register</UserButton>
         <UserButton onClick={() => history.push(`/portal`)}>Back</UserButton>
       </UserPanel>
     </>

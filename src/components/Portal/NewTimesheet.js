@@ -163,11 +163,9 @@ export default function NewTimesheet() {
             <input
               type="checkbox"
               name="processed"
-              value={processed.processed}
+              value={!processed.processed}
               onChange={handleChange}
               className="input"
-            // onChange={props.handleChange}
-            // value={props.daily_update.ate_food}
               id='processed'
               >
             </input>

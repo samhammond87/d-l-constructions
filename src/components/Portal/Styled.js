@@ -22,10 +22,11 @@ export const Panel = styled.div`
 
 export const UserPanel = styled.div`
   text-align: center;
-  height: 720px;
-  margin-bottom: 30px;
-  width: 480px;
-  padding: 32px;
+  /* height: 720px; */
+  /* margin-bottom 30px; */
+  /* width: 480px; */
+  /* padding: 32px; */
+  margin-top: -23px;
 `;
 
 export const Span = styled.span`

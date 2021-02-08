@@ -114,34 +114,60 @@ Run `npm test` in the terminal.
 
 Please refer to the first section of this document.
 
-### Rubric Check Summary
+### Rubric Check Brief & Summary
 
-#### Demonstrate DRY (Don’t Repeat Yourself) principles in all code.
+#### Demonstrate DRY (Don’t Repeat Yourself) principles in all code. ✅
 
-#### Appropriate use of libraries used in the app
+...
 
-#### Demonstrate code flow control
+#### Appropriate use of libraries used in the app ✅
 
-#### Apply Object oriented principles/patterns
+- jest-dom
+  - Used for performimg unit testing
+- axios
+  - Used to send HTTP requests
+- bootstrap
+  - Used provided classes to style certain components
+- moment
+  - ???
+- react-bootstrap
+  - Used to improve productivity in the styling process
+- react-icons
+  - Used to import icons provided by the library
+- react-moment
+  - ???
+- react-scroll
+  - Used to enable smooth scrolling on the website
+- react-spring
+  - Used to add animations for better user experience
+- styled-components
+  - Used to style React components in JavaScript file
+  - Enable React components to be reusable without having to re-create the component and styling
+- emailjs
+  - Used to receive messages sent through the contact form
 
-#### Demonstrate use of functions
+#### Demonstrate code flow control ✅
 
-#### Utilises functions, ranges and classes
+#### Apply Object oriented principles/patterns ✅
 
-#### Employ and utilise proper source control methodology
+#### Demonstrate use of functions ✅
 
-#### Employ and utilise project management methodology
+#### Utilises functions, ranges and classes ✅
 
-#### App functionality
+#### Employ and utilise proper source control methodology ✅
 
-#### Deployment
+#### Employ and utilise project management methodology ✅
 
-#### User interface
+#### App functionality ✅
 
-#### Development testing
+#### Deployment ✅
 
-#### Production testing
+#### User interface ✅
 
-#### Utilises a formal testing framework
+#### Development testing ✅
 
-#### Employ and utilise task delegation methodology
+#### Production testing ✅
+
+#### Utilises a formal testing framework ✅
+
+#### Employ and utilise task delegation methodology ✅

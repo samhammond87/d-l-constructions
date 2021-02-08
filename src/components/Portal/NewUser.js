@@ -85,7 +85,7 @@ export default function NewUser() {
           placeholder='Confirm your password'
         ></UserInput>
         <br />
-        <UserButton onClick={handleRegister}>Register</UserButton>
+        <UserButton onClick={handleRegister} disabled={!isEnabled}>Register</UserButton>
         <UserButton onClick={() => history.push(`/portal`)}>Back</UserButton>
       </UserPanel>
     </>

@@ -94,3 +94,54 @@ The end product is deployed to two cloud hosting services: Netlify (web app) and
 ![./jest.png]
 
 Run `npm test` in the terminal.
+
+### R10
+
+#### A link (URL) to your deployed website ✅
+
+[D&L Constructions](https://dl-constructions.netlify.app/)
+
+### R11
+
+#### A link to your GitHub repository (repo) ✅
+
+[Frontend Repository](https://github.com/yee-codes/d-l-constructions)
+[Backend Repository](https://github.com/samhammond87/dlConstruction)
+
+### R12
+
+#### The contents of your README.md as submitted for Full Stack App - Part A ✅
+
+Please refer to the first section of this document.
+
+### Rubric Check Summary
+
+#### Demonstrate DRY (Don’t Repeat Yourself) principles in all code.
+
+#### Appropriate use of libraries used in the app
+
+#### Demonstrate code flow control
+
+#### Apply Object oriented principles/patterns
+
+#### Demonstrate use of functions
+
+#### Utilises functions, ranges and classes
+
+#### Employ and utilise proper source control methodology
+
+#### Employ and utilise project management methodology
+
+#### App functionality
+
+#### Deployment
+
+#### User interface
+
+#### Development testing
+
+#### Production testing
+
+#### Utilises a formal testing framework
+
+#### Employ and utilise task delegation methodology

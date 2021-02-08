@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import {
   Container,
@@ -13,14 +13,14 @@ import {
   FormButton,
   Button,
   Panel,
-} from "./Styled";
-import { signIn } from "../../axios/authServices";
-import { useGlobalState } from "../../utils/stateContext";
+} from './Styled';
+import { signIn } from '../../axios/authServices';
+import { useGlobalState } from '../../utils/stateContext';
 
 const SignIn = () => {
   const initialFormState = {
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   };
   const [formState, setFormState] = useState(initialFormState);
   const { dispatch } = useGlobalState();
@@ -37,11 +37,11 @@ const SignIn = () => {
     e.preventDefault();
     signIn(formState)
       .then(({ username, jwt }) => {
-        sessionStorage.setItem("token", jwt);
-        sessionStorage.setItem("user", username);
-        dispatch({ type: "setLoggedInUser", data: username });
-        dispatch({ type: "setToken", data: jwt });
-        history.push("/portal");
+        sessionStorage.setItem('token', jwt);
+        sessionStorage.setItem('user', username);
+        dispatch({ type: 'setLoggedInUser', data: username });
+        dispatch({ type: 'setToken', data: jwt });
+        history.push('/portal');
       })
       .catch((err) => {
         setFormState(
@@ -54,30 +54,31 @@ const SignIn = () => {
     <>
       <Container>
         <FormWrap>
-          <Icon to="../">D & L Constructions</Icon>
+          {/*<Icon to="../">D & L Constructions</Icon>*/}
+
           <FormContent>
-            <Form action="#">
+            <Form action='#'>
               <FormH1>Employee Login:</FormH1>
-              <FormLabel htmlFor="for">Email</FormLabel>
+              <FormLabel htmlFor='for'>Email</FormLabel>
               <FormInput
-                type="email"
-                name="email"
+                type='email'
+                name='email'
                 value={formState.username}
-                initialValue=""
+                initialValue=''
                 onChange={handleChange}
               ></FormInput>
-              <FormLabel htmlFor="for">Password:</FormLabel>
+              <FormLabel htmlFor='for'>Password:</FormLabel>
               <FormInput
-                type="password"
-                name="password"
+                type='password'
+                name='password'
                 value={formState.password}
-                initialValue=""
+                initialValue=''
                 onChange={handleChange}
               ></FormInput>
               {formState.errorMessage && (
-                <p className="error" style={{ color: "white" }}>
-                  {" "}
-                  {"Oops! Please check your details and try again"}{" "}
+                <p className='error' style={{ color: 'white' }}>
+                  {' '}
+                  {'Oops! Please check your details and try again'}{' '}
                 </p>
               )}
               <FormButton onClick={handleSubmit}>Log in</FormButton>

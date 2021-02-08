@@ -7,6 +7,7 @@ export default function Timesheets() {
   const [searchEntry, setSearchEntry] = useState("");
   const { store } = useGlobalState();
   const { timesheets } = store;
+  const { loggedInUser } = store;
 
   // search function logic and map timesheets to display in browser
   // const list = timesheets
@@ -75,7 +76,18 @@ export default function Timesheets() {
 
   return (
     <>
-      <div className="searchContainer" style={{ textAlign: "center" }}>
+      <div
+        className="searchContainer"
+        style={{ textAlign: "center", marginTop: "20px" }}
+      >
+        {loggedInUser ? (
+          ""
+        ) : (
+          <h3 style={{ marginBottom: "20px" }}>
+            <em>This portal is for company employees only!</em>
+          </h3>
+        )}
+
         <label className="searchLabel" style={{ marginRight: "20px" }}>
           Enter name or date:
         </label>

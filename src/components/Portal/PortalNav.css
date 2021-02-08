@@ -84,10 +84,23 @@ span {
   .nav-links-btn {
     width: 100px;
   }
+
+  .navLink {
+    color: var(--green);
+  }
 }
 
 #respNavbar {
   width: 100%;
   height: 80px;
   font-size: 1rem;
+}
+
+.navLink {
+  color: white;
+}
+
+.navLink:hover {
+  color: white;
+  font-size: 1.2rem;
 }

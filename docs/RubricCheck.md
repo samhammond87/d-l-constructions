@@ -92,7 +92,7 @@ The end product is deployed to two cloud hosting services: Netlify (web app) and
 
 - Unit tests performed using jest
 
-![./jest.png]
+![Unit Test](./jest.png)
 
 Run `npm test` in the terminal.
 

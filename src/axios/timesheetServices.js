@@ -30,7 +30,8 @@ export async function updateTimesheet(data) {
 		start_time: data.start_time,
 		end_time: data.end_time, 
 		total_hours: data.total_hours,
-		comments: data.comments
+		comments: data.comments,
+		processed: data.processed
 	})
 	return response.data
 	

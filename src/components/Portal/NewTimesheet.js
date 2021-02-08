@@ -22,11 +22,11 @@ export default function NewTimesheet() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
-  const { dispatch } = useGlobalState();
+  const { store, dispatch } = useGlobalState();
+  const { loggedInUser } = store;
   let history = useHistory();
   let { id } = useParams();
-
-
+  const [checked, setChecked] = React.useState(true);
 
   useEffect(() => {
     if (id) {
@@ -39,6 +39,7 @@ export default function NewTimesheet() {
           end_time: timesheet.end_time,
           total_hours: timesheet.total_hours,
           comments: timesheet.comments,
+          processed: timesheet.processed
         });
       });
     }
@@ -49,6 +50,10 @@ export default function NewTimesheet() {
       ...formState,
       [e.target.name]: e.target.value,
     });
+    e.persist();
+    console.log(e.target.checked);
+    setChecked({ checked: !e.target.checked });
+
   }
   function handleClick(e) {
     e.preventDefault();
@@ -131,6 +136,18 @@ export default function NewTimesheet() {
               onChange={handleChange}
               cols="3"
             />
+          </div>
+          <div>
+          {loggedInUser === "Xinyu" && (
+            <input
+              type="checkbox"
+              name="processed"
+              value={formState.processed}
+              onChange={handleChange}
+              className="input"
+              >
+            </input>
+          )}
           </div>
 
           <div className="buttonContainer">

@@ -36,7 +36,7 @@ export default function SignIn({history}) {
 		e.preventDefault()
 		signIn(formState)
 		.then(({username, jwt}) => {
-			sessionStorage.setItem("token", jwt) // setItem allows a key and a value 
+			sessionStorage.setItem("token", jwt) 
 			sessionStorage.setItem("user", username)
 			dispatch({type: 'setLoggedInUser', data: username})
 			dispatch({type: 'setToken', data: jwt})

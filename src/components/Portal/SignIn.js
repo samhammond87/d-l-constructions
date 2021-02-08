@@ -64,7 +64,7 @@ export default function SignIn({history}) {
 						<div>
 						<br/>
             	{ formState.errorMessage &&
-								<h3 className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </h3> }
+								<p className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </p> }
           	</div>
 						<div>
 							<Panel>
@@ -79,19 +79,4 @@ export default function SignIn({history}) {
 		</Container>
 	</>
 	)
-  //             <div>
-  //               <br />
-  //               {formState.errorMessage && (
-  //                 <h3 className="error" style={{ color: "white" }}>
-  //                   {" "}
-  //                   {"Oops! Please check your details and try again"}{" "}
-  //                 </h3>
-  //               )}
-  //             </div>
-  //           </Form>
-  //         </FormContent>
-  //       </FormWrap>
-  //     </Container>
-  //   </>
-  // );
 }

@@ -67,9 +67,9 @@ export default function NewTimesheet() {
           dispatch({ type: "addTimesheet", data: timesheet });
           history.push("/portal");
         })
-        .catch((err) => {
-          setFormState({ errorMessage: err.message });
-        });
+        .catch(err => { 
+          setFormState(Object.assign({}, formState, { errorMessage: err.message }));
+        })
     }
   }
   return (
@@ -151,13 +151,13 @@ export default function NewTimesheet() {
               id="btn"
             />
           </div>
-
-          <div>
-            <Panel>
-              <Button onClick={() => history.push(`/portal`)}>Back</Button>
-            </Panel>
-
-          </div>
+            <br />
+              {formState.errorMessage && (
+                   <p className="error" style={{ color: "white" }}>
+                    {" "}
+                     {"Oops! Please check your details and try again"}{" "}
+                  </p>
+                )}
         </form>
       </div>
     </>

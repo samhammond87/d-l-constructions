@@ -29,7 +29,6 @@ export default function TimesheetDetails() {
       history.push("/portal");
     });
   }
-
   
   return (
     <>

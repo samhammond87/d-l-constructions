@@ -17,6 +17,9 @@ export default function NewUser() {
 
   const [formState, setFormState] = useState(initialFormState);
   const { dispatch } = useGlobalState();
+  const isEnabled = formState.username.length > 0 && 
+                    formState.email.length > 0 && 
+                    formState.password.length > 0;
 
   let history = useHistory();
 
@@ -25,6 +28,7 @@ export default function NewUser() {
       ...formState,
       [e.target.name]: e.target.value,
     });
+    console.log(formState)
   }
 
   function handleRegister(e) {
@@ -81,22 +85,8 @@ export default function NewUser() {
           placeholder='Confirm your password'
         ></UserInput>
         <br />
-        {/* <div>
-          <Panel>
-            <Button onClick={() => history.push(`/portal`)}>Back</Button>
-          </Panel>
-        </div> */}
         <UserButton onClick={handleRegister}>Register</UserButton>
         <UserButton onClick={() => history.push(`/portal`)}>Back</UserButton>
-
-        <div>
-          {formState.errorMessage && (
-            <h3 className='error' style={{ color: 'black' }}>
-              {' '}
-              {'Oops! Please check your details and try again'}{' '}
-            </h3>
-          )}
-        </div>
       </UserPanel>
     </>
   );

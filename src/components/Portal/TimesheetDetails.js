@@ -29,7 +29,7 @@ export default function TimesheetDetails() {
       history.push("/portal");
     });
   }
-  
+
   return (
     <>
       <table class="rTable">
@@ -41,7 +41,6 @@ export default function TimesheetDetails() {
           <th>Comments</th>
           <th>Submitted By</th>
           <th>Posted On</th>
-          <th>Paid?</th>
         </thead>
         <tbody>
           <tr className="active-row">
@@ -54,7 +53,6 @@ export default function TimesheetDetails() {
             <td data-label="Submitted On">
               <Moment format="D MMM YYYY">{timesheet.posted}</Moment>
             </td>
-            <td data-label="Processed">{timesheet.processed ? '✅' : '❌'}</td>
           </tr>
         </tbody>
       </table>
@@ -76,6 +74,7 @@ export default function TimesheetDetails() {
               Update
             </Button>
             <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={() => history.push(`/portal`)}>Back</Button>
           </Panel>
         )}
       </div>

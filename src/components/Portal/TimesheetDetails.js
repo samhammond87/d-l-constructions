@@ -58,21 +58,40 @@ export default function TimesheetDetails() {
       <div>
         {loggedInUser === timesheet.name && ( // && is used for hiding and showing in jsx
           <Panel>
-            <Button onClick={() => history.push(`/portal/update/${id}`)}>
+            <Button
+              className="showButtons"
+              onClick={() => history.push(`/portal/update/${id}`)}
+            >
               Update
             </Button>
-            <Button onClick={handleDelete}>Delete</Button>
-            <Button onClick={() => history.push(`/portal`)}>Back</Button>
+            <Button className="showButtons" onClick={handleDelete}>
+              Delete
+            </Button>
+            <Button
+              className="showButtons"
+              onClick={() => history.push(`/portal`)}
+            >
+              Back
+            </Button>
           </Panel>
         )}
         {loggedInUser === "Xinyu" && (
-          
           <Panel>
-            <Button onClick={() => history.push(`/portal/update/${id}`)}>
+            <Button
+              className="showButtons"
+              onClick={() => history.push(`/portal/update/${id}`)}
+            >
               Update
             </Button>
-            <Button onClick={handleDelete}>Delete</Button>
-            <Button onClick={() => history.push(`/portal`)}>Back</Button>
+            <Button className="showButtons" onClick={handleDelete}>
+              Delete
+            </Button>
+            <Button
+              className="showButtons"
+              onClick={() => history.push(`/portal`)}
+            >
+              Back
+            </Button>
           </Panel>
         )}
       </div>

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Header = styled.h1`
-  font-family: 'Encode Sans Expanded', sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,15 +36,16 @@ export const UserParagraph = styled.div`
 export const Span = styled.span`
   padding: 0.5em;
   margin: 1em;
-  font-family: 'Encode Sans Expanded', sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
 `;
 
 export const Button = styled.button`
-  background-color: #4caf50;
+  background-color: #03214f;
   color: white;
-  padding: 16px 20px;
+  padding: 16px 10px;
   margin: 0px 0;
-  width: 100%;
+  width: 20%;
+  margin-right: 10px;
   opacity: 0.7;
   border: none;
   cursor: pointer;
@@ -94,12 +95,12 @@ export const CommentTextInput = styled(Input)`
 `;
 
 export const Label = styled.span`
-  font-family: 'Encode Sans Expanded', sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   color: black;
 `;
 
 export const UserLabel = styled.label`
-  font-family: 'Encode Sans Expanded', sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   color: white;
   text-align: left;
 `;
@@ -108,7 +109,7 @@ export const Line = styled.div`
   color: black;
   background-color: white;
   font-size: 1.5em;
-  font-family: 'Encode Sans Expanded', sans-serif;
+  font-family: "Encode Sans Expanded", sans-serif;
   padding: 0.5em;
 `;
 

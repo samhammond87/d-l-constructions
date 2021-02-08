@@ -65,8 +65,8 @@ export default function Timesheets() {
               {timesheet.name}
             </Link>
           </td>
-          <td>
-            <Moment format="DD/MM/YYYY">{timesheet.date}</Moment>
+          <td data-label="Date">
+            <Moment format="YYYY-MM-DD">{timesheet.date}</Moment>
           </td>
           <td data-label="Start Time">{timesheet.start_time}</td>
           <td data-label="End Time">{timesheet.end_time}</td>

@@ -7,7 +7,7 @@ import {
 } from "../../axios/timesheetServices";
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
-// import { Button, Panel } from "./Styled";
+import { Button, Panel } from "./Styled";
 
 // create new timesheet form
 
@@ -152,7 +152,7 @@ export default function NewTimesheet() {
             />
           </div>
 
-          {/* <div>
+          <div>
             <Panel>
               <Button onClick={() => history.push(`/portal`)}>Back</Button>
             </Panel>

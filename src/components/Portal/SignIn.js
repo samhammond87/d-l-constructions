@@ -9,8 +9,8 @@ import {
   FormLabel,
   FormInput,
   FormButton,
-  // Button,
-  // Panel,
+  Button,
+  Panel,
 } from "./Styled";
 import { signIn } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";
@@ -74,19 +74,19 @@ export default function SignIn({history}) {
 		</Container>
 	</>
 	)
-              <div>
-                <br />
-                {formState.errorMessage && (
-                  <h3 className="error" style={{ color: "white" }}>
-                    {" "}
-                    {"Oops! Please check your details and try again"}{" "}
-                  </h3>
-                )}
-              </div>
-            </Form>
-          </FormContent>
-        </FormWrap>
-      </Container>
-    </>
-  );
+  //             <div>
+  //               <br />
+  //               {formState.errorMessage && (
+  //                 <h3 className="error" style={{ color: "white" }}>
+  //                   {" "}
+  //                   {"Oops! Please check your details and try again"}{" "}
+  //                 </h3>
+  //               )}
+  //             </div>
+  //           </Form>
+  //         </FormContent>
+  //       </FormWrap>
+  //     </Container>
+  //   </>
+  // );
 }

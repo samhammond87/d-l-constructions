@@ -18,14 +18,15 @@ export default function NewTimesheet() {
     start_time: "",
     end_time: "",
     total_hours: "",
-    comments: "",
+    comments: ""
   };
 
   const [formState, setFormState] = useState(initialFormState);
+  const { dispatch } = useGlobalState();
   let history = useHistory();
   let { id } = useParams();
 
-  const { dispatch } = useGlobalState();
+
 
   useEffect(() => {
     if (id) {

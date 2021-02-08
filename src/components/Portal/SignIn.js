@@ -23,6 +23,10 @@ export default function SignIn({history}) {
 	}
 	const [formState, setFormState] = useState(initialFormState)
 	const {dispatch} = useGlobalState()
+  const isEnabled =	formState.email.length > 0 && 
+                    formState.password.length > 0;
+
+
 	function handleChange(e) {
 		setFormState({
 			...formState,
@@ -56,7 +60,7 @@ export default function SignIn({history}) {
 						<FormInput type='email' name='email' value={formState.username} onChange={handleChange}></FormInput>
 						<FormLabel htmlFor="for">Password:</FormLabel>
 						<FormInput type='password' name='password' value={formState.password} onChange={handleChange}></FormInput>
-						<FormButton onClick={handleSubmit}>Log in</FormButton>
+						<FormButton disabled={!isEnabled} onClick={handleSubmit}>Log in</FormButton>
 						<div>
 							<br/>
             	{ formState.errorMessage &&

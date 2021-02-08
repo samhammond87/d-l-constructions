@@ -9,6 +9,7 @@ import {
   ServicesP,
 } from './ServicesElements';
 import Fade from 'react-reveal/Fade';
+// import react reveal library to implement animation and effects
 
 const Services = () => {
   return (
@@ -16,6 +17,7 @@ const Services = () => {
       <ServicesH1>Why us?</ServicesH1>
 
       <ServicesWrapper>
+        {/* react reveal effect attributes */}
         <Fade bottom duration={3000}>
           <ServicesCard>
             <ServicesIcon src='https://full-stack-app.s3-ap-southeast-2.amazonaws.com/images/svg-4.png' />

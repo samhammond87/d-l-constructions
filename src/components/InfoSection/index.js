@@ -14,6 +14,7 @@ import {
   ImgWrap,
   Img,
 } from './InfoElements';
+// import react reveal library to implement animation and effects
 import Slide from 'react-reveal/Slide';
 
 const InfoSection = ({

@@ -7,7 +7,7 @@ import {
 } from "../../axios/timesheetServices";
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
-import {Button, Panel} from "./Styled";
+import { Button, Panel } from "./Styled";
 
 // create new timesheet form
 
@@ -18,14 +18,15 @@ export default function NewTimesheet() {
     start_time: "",
     end_time: "",
     total_hours: "",
-    comments: "",
+    comments: ""
   };
 
   const [formState, setFormState] = useState(initialFormState);
+  const { dispatch } = useGlobalState();
   let history = useHistory();
   let { id } = useParams();
 
-  const { dispatch } = useGlobalState();
+
 
   useEffect(() => {
     if (id) {
@@ -141,20 +142,21 @@ export default function NewTimesheet() {
               id="btn"
             />
           </div>
+          <div className="buttonContainer">
+            <input
+              type="submit"
+              onClick={() => history.push(`/portal`)}
+              value="Back"
+              className="btn"
+              id="btn"
+            />
+          </div>
+
           <div>
             <Panel>
-              <Button onClick={() => history.push(`/portal`)}>
-                Back
-              </Button>
+              <Button onClick={() => history.push(`/portal`)}>Back</Button>
             </Panel>
-          </div>
-          <div>
-            {formState.errorMessage && (
-              <h3 className="error">
-                {" "}
-                {"Oops! Please check your details and try again"}{" "}
-              </h3>
-            )}
+
           </div>
         </form>
       </div>

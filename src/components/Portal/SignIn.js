@@ -8,9 +8,9 @@ import {
   FormH1,
   FormLabel,
   FormInput,
-	FormButton,
-	Button,
-	Panel
+  FormButton,
+  Button,
+  Panel,
 } from "./Styled";
 import { signIn } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";
@@ -23,6 +23,10 @@ export default function SignIn({history}) {
 	}
 	const [formState, setFormState] = useState(initialFormState)
 	const {dispatch} = useGlobalState()
+  const isEnabled =	formState.email.length > 0 && 
+                    formState.password.length > 0;
+
+
 	function handleChange(e) {
 		setFormState({
 			...formState,
@@ -56,12 +60,7 @@ export default function SignIn({history}) {
 						<FormInput type='email' name='email' value={formState.username} onChange={handleChange}></FormInput>
 						<FormLabel htmlFor="for">Password:</FormLabel>
 						<FormInput type='password' name='password' value={formState.password} onChange={handleChange}></FormInput>
-						<FormButton onClick={handleSubmit}>Log in</FormButton>
-						<div>
-							<br/>
-            	{ formState.errorMessage &&
-								<h3 className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </h3> }
-          	</div>
+						<FormButton disabled={!isEnabled} onClick={handleSubmit}>Log in</FormButton>
 						<div>
 							<Panel>
               	<Button onClick={() => history.push(`/portal`)}>
@@ -75,4 +74,19 @@ export default function SignIn({history}) {
 		</Container>
 	</>
 	)
+  //             <div>
+  //               <br />
+  //               {formState.errorMessage && (
+  //                 <h3 className="error" style={{ color: "white" }}>
+  //                   {" "}
+  //                   {"Oops! Please check your details and try again"}{" "}
+  //                 </h3>
+  //               )}
+  //             </div>
+  //           </Form>
+  //         </FormContent>
+  //       </FormWrap>
+  //     </Container>
+  //   </>
+  // );
 }

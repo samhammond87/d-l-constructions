@@ -71,7 +71,7 @@ export default function Timesheets() {
           <td data-label="Start Time">{timesheet.start_time}</td>
           <td data-label="End Time">{timesheet.end_time}</td>
           <td data-label="Total Hours">{timesheet.total_hours}</td>
-          <td data-label="Processed">{timesheet.processed ? '✅' : '❌'}</td>
+          <td data-label="Processed">{timesheet.processed ? "✅" : "❌"}</td>
           <br />
           <br />
         </tr>
@@ -92,17 +92,23 @@ export default function Timesheets() {
           </h3>
         )}
 
-        <label className="searchLabel" style={{ marginRight: "20px" }}>
-          Enter name or date:
-        </label>
-        <input
-          type="text"
-          placeholder="Search......"
-          className="searchField"
-          onChange={(event) => {
-            setSearchEntry(event.target.value);
-          }}
-        />
+        {loggedInUser ? (
+          <div>
+            <label className="searchLabel" style={{ marginRight: "20px" }}>
+              Enter name or date:
+            </label>
+            <input
+              type="text"
+              placeholder="Search......"
+              className="searchField"
+              onChange={(event) => {
+                setSearchEntry(event.target.value);
+              }}
+            />
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       {/* <table className="styled-table">
         <thead>
@@ -118,17 +124,21 @@ export default function Timesheets() {
       </table>
       <br />
       <br /> */}
-      <table class="rTable">
-        <thead>
-          <th>Employee Name</th>
-          <th>Date</th>
-          <th>Start Time</th>
-          <th>End Time</th>
-          <th>Total Hours</th>
-          <th>Paid?</th>
-        </thead>
-        <tbody>{list2}</tbody>
-      </table>
+      {loggedInUser ? (
+        <table class="rTable">
+          <thead>
+            <th>Employee Name</th>
+            <th>Date</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Total Hours</th>
+            <th>Status</th>
+          </thead>
+          <tbody>{list2}</tbody>
+        </table>
+      ) : (
+        ""
+      )}
     </>
   );
 }

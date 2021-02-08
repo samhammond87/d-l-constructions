@@ -30,7 +30,7 @@ export default function PortalNav() {
             style={{ color: " #ffffff" }}
             onClick={() => history.push("/")}
           >
-          {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}
+            {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}
           </Nav.Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -43,6 +43,15 @@ export default function PortalNav() {
             >
               Home
             </Nav.Link>
+            {loggedInUser === "Andrew" && (
+              <Nav.Link
+                className="ml-auto"
+                style={{ color: " #009879" }}
+                onClick={() => history.push("/register")}
+              >
+                Register
+              </Nav.Link>
+            )}
             {loggedInUser ? (
               <>
                 <Nav.Link
@@ -62,13 +71,6 @@ export default function PortalNav() {
               </>
             ) : (
               <>
-                <Nav.Link
-                  className="ml-auto"
-                  style={{ color: " #009879" }}
-                  onClick={() => history.push("/register")}
-                >
-                  Register
-                </Nav.Link>
                 <Nav.Link
                   className="ml-auto"
                   style={{ color: " #009879" }}
@@ -138,4 +140,3 @@ export default function PortalNav() {
     </>
   );
 }
-

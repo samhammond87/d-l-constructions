@@ -1,8 +1,8 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Header = styled.h1`
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: 'Encode Sans Expanded', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,10 +29,14 @@ export const UserPanel = styled.div`
   margin-top: -23px;
 `;
 
+export const UserParagraph = styled.div`
+  color: white;
+`;
+
 export const Span = styled.span`
   padding: 0.5em;
   margin: 1em;
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: 'Encode Sans Expanded', sans-serif;
 `;
 
 export const Button = styled(Span)`
@@ -80,10 +84,10 @@ export const UserInput = styled.input`
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: #97979b;
 
   &:focus {
-    background-color: #ddd;
+    background-color: white;
     outline: none;
   }
 `;
@@ -94,12 +98,12 @@ export const CommentTextInput = styled(Input)`
 `;
 
 export const Label = styled.span`
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: 'Encode Sans Expanded', sans-serif;
   color: black;
 `;
 
 export const UserLabel = styled.label`
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: 'Encode Sans Expanded', sans-serif;
   color: white;
   text-align: left;
 `;
@@ -108,10 +112,11 @@ export const Line = styled.div`
   color: black;
   background-color: white;
   font-size: 1.5em;
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: 'Encode Sans Expanded', sans-serif;
   padding: 0.5em;
 `;
 
+// Sign in form
 export const Container = styled.div`
   min-height: 692px;
   position: fixed;

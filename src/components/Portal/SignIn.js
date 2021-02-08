@@ -23,8 +23,6 @@ export default function SignIn({history}) {
 	}
 	const [formState, setFormState] = useState(initialFormState)
 	const {dispatch} = useGlobalState()
-  const isEnabled =	formState.email.length > 0 && 
-                    formState.password.length > 0;
 
 
 	function handleChange(e) {
@@ -33,6 +31,7 @@ export default function SignIn({history}) {
 			[e.target.name]: e.target.value
 		})
 	}
+	
 	function handleSubmit(e) {
 		e.preventDefault()
 		signIn(formState)
@@ -44,10 +43,11 @@ export default function SignIn({history}) {
 			history.push('/portal')
 		})
 		.catch(err => { 
-			setFormState({errorMessage: err.message})
+			setFormState(Object.assign({}, formState, { errorMessage: err.message }));
 		})
-
+		
 	}
+	
 	return (
 	<>
 		<Container>
@@ -57,10 +57,15 @@ export default function SignIn({history}) {
 					<Form action="#">
 						<FormH1>Employee Login:</FormH1>
 						<FormLabel htmlFor="for">Email</FormLabel>
-						<FormInput type='email' name='email' value={formState.username} onChange={handleChange}></FormInput>
+						<FormInput type='email' name='email' value={formState.username} initialValue="" onChange={handleChange}></FormInput>
 						<FormLabel htmlFor="for">Password:</FormLabel>
-						<FormInput type='password' name='password' value={formState.password} onChange={handleChange}></FormInput>
-						<FormButton disabled={!isEnabled} onClick={handleSubmit}>Log in</FormButton>
+						<FormInput type='password' name='password' value={formState.password} initialValue="" onChange={handleChange}></FormInput>
+						<FormButton onClick={handleSubmit}>Log in</FormButton>
+						<div>
+						<br/>
+            	{ formState.errorMessage &&
+								<p className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </p> }
+          	</div>
 						<div>
 							<Panel>
               	<Button onClick={() => history.push(`/portal`)}>
@@ -74,19 +79,4 @@ export default function SignIn({history}) {
 		</Container>
 	</>
 	)
-  //             <div>
-  //               <br />
-  //               {formState.errorMessage && (
-  //                 <h3 className="error" style={{ color: "white" }}>
-  //                   {" "}
-  //                   {"Oops! Please check your details and try again"}{" "}
-  //                 </h3>
-  //               )}
-  //             </div>
-  //           </Form>
-  //         </FormContent>
-  //       </FormWrap>
-  //     </Container>
-  //   </>
-  // );
 }

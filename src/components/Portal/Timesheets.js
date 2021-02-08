@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useGlobalState } from "../../utils/stateContext";
+import Moment from "react-moment";
 import "./Timesheets.css";
 
 export default function Timesheets() {
@@ -64,7 +65,9 @@ export default function Timesheets() {
               {timesheet.name}
             </Link>
           </td>
-          <td data-label="Date">{timesheet.date}</td>
+          <td>
+            <Moment format="DD/MM/YYYY">{timesheet.date}</Moment>
+          </td>
           <td data-label="Start Time">{timesheet.start_time}</td>
           <td data-label="End Time">{timesheet.end_time}</td>
           <td data-label="Total Hours">{timesheet.total_hours}</td>

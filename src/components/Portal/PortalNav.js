@@ -43,7 +43,7 @@ export default function PortalNav() {
             >
               Home
             </Nav.Link>
-            {loggedInUser === "Andrew" && (
+            {loggedInUser === "Xinyu" && (
               <Nav.Link
                 className="ml-auto  navLink"
                 // style={{ color: " #009879" }}

@@ -68,6 +68,7 @@ export default function Timesheets() {
           <td data-label="Start Time">{timesheet.start_time}</td>
           <td data-label="End Time">{timesheet.end_time}</td>
           <td data-label="Total Hours">{timesheet.total_hours}</td>
+          <td data-label="Processed">{timesheet.processed ? '✅' : '❌'}</td>
           <br />
           <br />
         </tr>
@@ -121,6 +122,7 @@ export default function Timesheets() {
           <th>Start Time</th>
           <th>End Time</th>
           <th>Total Hours</th>
+          <th>Paid?</th>
         </thead>
         <tbody>{list2}</tbody>
       </table>

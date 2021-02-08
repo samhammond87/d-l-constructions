@@ -29,6 +29,8 @@ export default function TimesheetDetails() {
       history.push("/portal");
     });
   }
+
+  
   return (
     <>
       <table class="rTable">
@@ -40,6 +42,7 @@ export default function TimesheetDetails() {
           <th>Comments</th>
           <th>Submitted By</th>
           <th>Posted On</th>
+          <th>Paid?</th>
         </thead>
         <tbody>
           <tr className="active-row">
@@ -52,35 +55,10 @@ export default function TimesheetDetails() {
             <td data-label="Submitted On">
               <Moment format="D MMM YYYY">{timesheet.posted}</Moment>
             </td>
+            <td data-label="Processed">{timesheet.processed ? '✅' : '❌'}</td>
           </tr>
         </tbody>
       </table>
-      {/* <table className="styled-table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-            <th>Total Hours</th>
-            <th>Comments</th>
-            <th>Submitted By</th>
-            <th>Posted On</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr className="active-row">
-            <td>{timesheet.date}</td>
-            <td>{timesheet.start_time}</td>
-            <td>{timesheet.end_time}</td>
-            <td>{timesheet.total_hours}</td>
-            <td>{"" ? "N/A" : timesheet.comments}</td>
-            <td>{timesheet.name}</td>
-            <td>
-              <Moment format="D MMM YYYY">{timesheet.posted}</Moment>
-            </td>
-          </tr>
-        </tbody>
-      </table> */}
 
       <div>
         {loggedInUser === timesheet.name && ( // && is used for hiding and showing in jsx
@@ -92,7 +70,8 @@ export default function TimesheetDetails() {
             <Button onClick={() => history.push(`/portal`)}>Back</Button>
           </Panel>
         )}
-        {loggedInUser === "Andrew" && (
+        {loggedInUser === "Xinyu" && (
+          
           <Panel>
             <Button onClick={() => history.push(`/portal/update/${id}`)}>
               Update

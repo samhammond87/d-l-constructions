@@ -20,9 +20,14 @@ export default function NewTimesheet() {
     total_hours: "",
     comments: ""
   };
+  // const [processed, setProcessed] = useState({});
+  const [processed, setProcessed] = useState({
+    processed: false,
+  });
 
   const [formState, setFormState] = useState(initialFormState);
-  const { dispatch } = useGlobalState();
+  const { store, dispatch } = useGlobalState();
+  const { loggedInUser } = store;
   let history = useHistory();
   let { id } = useParams();
 
@@ -39,6 +44,7 @@ export default function NewTimesheet() {
           end_time: timesheet.end_time,
           total_hours: timesheet.total_hours,
           comments: timesheet.comments,
+          processed: timesheet.processed
         });
       });
     }
@@ -48,8 +54,28 @@ export default function NewTimesheet() {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
+      // [e.target.processed]: !e.target.checked
     });
+    // console.log(e.target.checked)
+    // console.log("processed", formState.processed)
+    // console.log(e.target.value)
+  
+
+  if (e.target.name === 'processed') {
+    if (processed.processed == false) {
+      setProcessed(Object.assign({}, processed, { processed: true }));
+    } else {
+      setProcessed(Object.assign({}, processed, { processed: false }));
+    }
+  } else {
+    setProcessed(
+      Object.assign({}, processed, { [e.target.name]: e.target.value })
+    );
   }
+  console.log(e.target.value)
+
+};
+
   function handleClick(e) {
     e.preventDefault();
     if (id) {
@@ -131,6 +157,21 @@ export default function NewTimesheet() {
               onChange={handleChange}
               cols="3"
             />
+          </div>
+          <div>
+          {loggedInUser === "Xinyu" && (
+            <input
+              type="checkbox"
+              name="processed"
+              value={processed.processed}
+              onChange={handleChange}
+              className="input"
+            // onChange={props.handleChange}
+            // value={props.daily_update.ate_food}
+              id='processed'
+              >
+            </input>
+          )}
           </div>
 
           <div className="buttonContainer">

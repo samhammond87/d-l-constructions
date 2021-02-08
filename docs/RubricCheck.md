@@ -20,18 +20,19 @@
 #### Write well designed code that:
 
 - Separates the program into modules that each deal with one particular focus, or concern ✅
-  - Different components that make up the entire application are separated into individual folder and file (including styling) according to its function and feature
+  - Different components that make up the entire application are separated into individual folder and file (including styling) according to its function and features
   - E.g. nav bar has its own folder called 'Navbar' that stores the JavaScript and styling files
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles ✅
-  - Code reviews are performed regularly throughout the development process to sure the DRY principle is applied
+  - Code reviews have been performed regularly throughout the development process to sure the DRY principle is applied
 - Uses appropriate libraries ✅
-  - A variety of libraries have been utilised to develop the app (more on this below)
+  - A variety of libraries have been utilised to develop the app (see further details below)
 - Demonstrates good code flow control for user stories ✅
-  - Utilising Agile project management methodology, features and functionality of the app are developed according to planned user stories in the planning phase of the project to ensure the best user experience
+  - Utilising Agile project management methodology
+  - Features and functionality of the app are developed according to planned user stories during the planning phase of the project to ensure the best user experience is achieved
 - Applies Object Oriented (OO) principles/patterns ✅
-  - Thanks to the declarative, component-based and learn once, write anywhere characteristics, Object Oriented principles can be easily implemented to ensure the code is DRY and reusable
+  - Due to the declarative, component-based and learn once, write anywhere characteristics of React framework, Object Oriented principles is easily implemented to ensure the code is DRY and reusable
 - Uses appropriate data structures ✅
-  - Different data structures were considered and discussed during the planning phase ensuring the appropriate data structures are used
+  - Different data structures were considered and discussed during the planning phase, to ensure the appropriate data structures are used
 
 ### R3
 
@@ -59,7 +60,7 @@
 #### Produce a working application that meets client and user needs ✅
 
 - The client, Nick (company owner) is communicated with regularly to ensure app is built to meet business and internal staff needs
-- Production site is tested by the client and got the tick of approval
+- Production site is tested by the client and approval has been received
 
 ### R6
 

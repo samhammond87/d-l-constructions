@@ -83,7 +83,6 @@ export default function ContactUs() {
           />
           <ContactFormButton
             type='submit'
-            {/* emailAlert function to send popup alert once user click submit */}
             onClick={emailAlert}
             disabled={loading}
           >

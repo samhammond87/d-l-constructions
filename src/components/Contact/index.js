@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import emailjs from 'emailjs-com';
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 import {
   ContactFormContent,
   ContactForm,
@@ -8,16 +8,16 @@ import {
   ContactFormInput,
   ContactFormTextMessageInput,
   ContactFormButton,
-} from './ContactFormElements';
+} from "./ContactFormElements";
 
 export default function ContactUs() {
-  const [loading, setLoading] = useState(false);
+  const [loading] = useState(false);
 
   function fun() {
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('subject').value = '';
-    document.getElementById('message').value = '';
+    document.getElementById("name").value = "";
+    document.getElementById("email").value = "";
+    document.getElementById("subject").value = "";
+    document.getElementById("message").value = "";
   }
 
   function sendEmail(e) {
@@ -27,10 +27,10 @@ export default function ContactUs() {
     // emailjs configuration
     emailjs
       .sendForm(
-        'service_4aatm2p',
-        'template_3ww3nz1',
+        "service_4aatm2p",
+        "template_3ww3nz1",
         e.target,
-        'user_AI5Txgn8xAtQwnf1LvUBq'
+        "user_AI5Txgn8xAtQwnf1LvUBq"
       )
       .then(
         (result) => {
@@ -53,42 +53,42 @@ export default function ContactUs() {
 
   return (
     <>
-      <ContactFormContent id='contact'>
+      <ContactFormContent id="contact">
         <ContactForm onSubmit={sendEmail}>
           <ContactFormH1>Contact Us</ContactFormH1>
-          <ContactFormLabel htmlFor='for'>Name</ContactFormLabel>
+          <ContactFormLabel htmlFor="for">Name</ContactFormLabel>
           <ContactFormInput
-            type='text'
-            className='form-control'
-            name='name'
-            id='name'
+            type="text"
+            className="form-control"
+            name="name"
+            id="name"
           />
-          <ContactFormLabel htmlFor='for'>Email</ContactFormLabel>
+          <ContactFormLabel htmlFor="for">Email</ContactFormLabel>
           <ContactFormInput
-            type='email'
-            className='form-control'
-            name='email'
-            id='email'
+            type="email"
+            className="form-control"
+            name="email"
+            id="email"
           />
-          <ContactFormLabel htmlFor='for'>Subject</ContactFormLabel>
+          <ContactFormLabel htmlFor="for">Subject</ContactFormLabel>
           <ContactFormInput
-            type='text'
-            className='form-control'
-            name='subject'
-            id='subject'
+            type="text"
+            className="form-control"
+            name="subject"
+            id="subject"
           />
-          <ContactFormLabel htmlFor='for'>Message</ContactFormLabel>
+          <ContactFormLabel htmlFor="for">Message</ContactFormLabel>
           <ContactFormTextMessageInput
-            className='form-control'
-            name='message'
-            id='message'
+            className="form-control"
+            name="message"
+            id="message"
           />
           <ContactFormButton
-            type='submit'
+            type="submit"
             onClick={emailAlert}
             disabled={loading}
           >
-            {loading && <i style={{ marginRight: '5px' }} />}
+            {loading && <i style={{ marginRight: "5px" }} />}
             {loading && <span>Sending your message...</span>}
             {!loading && <span>Send Message</span>}
             {/* Send Message */}

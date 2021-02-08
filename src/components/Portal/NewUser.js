@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { UserLabel, UserInput, UserButton, UserPanel } from "./Styled";
 import { signUp } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";
-import {Button, Panel} from "./Styled"
+// import { Button, Panel } from "./Styled";
 
 // new user registration page
 
@@ -29,15 +29,16 @@ export default function NewUser() {
 
   function handleRegister(e) {
     e.preventDefault();
-    signUp(formState).then((data) => {
-      sessionStorage.setItem("token", data.jwt);
-      sessionStorage.setItem("user", data.username);
-      dispatch({ type: "setLoggedInUser", data: data.username });
-      history.push("/portal");
-    })
-    .catch(err => { 
-      setFormState({errorMessage: err.message})
-    })
+    signUp(formState)
+      .then((data) => {
+        sessionStorage.setItem("token", data.jwt);
+        sessionStorage.setItem("user", data.username);
+        dispatch({ type: "setLoggedInUser", data: data.username });
+        history.push("/portal");
+      })
+      .catch((err) => {
+        setFormState({ errorMessage: err.message });
+      });
   }
   return (
     <>
@@ -80,18 +81,22 @@ export default function NewUser() {
           placeholder="Confirm your password"
         ></UserInput>
         <br />
-        <div>
+        {/* <div>
           <Panel>
-            <Button onClick={() => history.push(`/portal`)}>
-              Back
-            </Button>
+            <Button onClick={() => history.push(`/portal`)}>Back</Button>
           </Panel>
-        </div>
+        </div> */}
         <UserButton onClick={handleRegister}>Register</UserButton>
-          <div>
-            { formState.errorMessage &&
-              <h3 className="error" style={{color: "black"}}> { "Oops! Please check your details and try again"} </h3> }
-          </div>
+        <UserButton onClick={() => history.push(`/portal`)}>Back</UserButton>
+
+        <div>
+          {formState.errorMessage && (
+            <h3 className="error" style={{ color: "black" }}>
+              {" "}
+              {"Oops! Please check your details and try again"}{" "}
+            </h3>
+          )}
+        </div>
       </UserPanel>
     </>
   );

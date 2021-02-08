@@ -37,16 +37,16 @@ export default function PortalNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             <Nav.Link
-              className="ml-auto"
-              style={{ color: " #009879" }}
+              className="ml-auto navLink"
+              // style={{ color: " #009879" }}
               onClick={() => history.push("/portal")}
             >
               Home
             </Nav.Link>
             {loggedInUser === "Andrew" && (
               <Nav.Link
-                className="ml-auto"
-                style={{ color: " #009879" }}
+                className="ml-auto  navLink"
+                // style={{ color: " #009879" }}
                 onClick={() => history.push("/register")}
               >
                 Register
@@ -55,15 +55,15 @@ export default function PortalNav() {
             {loggedInUser ? (
               <>
                 <Nav.Link
-                  className="ml-auto"
-                  style={{ color: " #009879" }}
+                  className="ml-auto navLink"
+                  // style={{ color: " #009879" }}
                   onClick={() => history.push("/portal/new")}
                 >
                   Add Timesheet
                 </Nav.Link>
                 <Nav.Link
-                  className="ml-auto"
-                  style={{ color: " #009879" }}
+                  className="ml-auto navLink"
+                  // style={{ color: " #009879" }}
                   onClick={handleSignOut}
                 >
                   Sign Out
@@ -72,8 +72,8 @@ export default function PortalNav() {
             ) : (
               <>
                 <Nav.Link
-                  className="ml-auto"
-                  style={{ color: " #009879" }}
+                  className="ml-auto navLink"
+                  // style={{ color: " #009879" }}
                   onClick={() => history.push("/sign_in")}
                 >
                   Sign In

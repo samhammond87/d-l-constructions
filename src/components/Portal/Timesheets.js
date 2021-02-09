@@ -10,36 +10,6 @@ export default function Timesheets() {
   const { timesheets } = store;
   const { loggedInUser } = store;
 
-  // search function logic and map timesheets to display in browser
-  // const list = timesheets
-  //   .filter((entry) => {
-  //     if (searchEntry === "") {
-  //       return entry;
-  //     } else if (entry.name.toLowerCase().includes(searchEntry.toLowerCase())) {
-  //       return entry;
-  //     } else if (entry.date.toLowerCase().includes(searchEntry.toLowerCase())) {
-  //       return entry;
-  //     }
-  //   })
-  //   .map((timesheet, index) => {
-  //     return (
-  //       <tr className="active-row" key={index}>
-  //         <td>
-  //           <Link
-  //             style={{ color: "#009879" }}
-  //             key={timesheet.id}
-  //             to={`/portal/${timesheet.id}`}
-  //           >
-  //             {timesheet.name}
-  //           </Link>
-  //         </td>
-  //         <td>{timesheet.date}</td>
-  //         <td>{timesheet.start_time}</td>
-  //         <td>{timesheet.end_time}</td>
-  //         <td>{timesheet.total_hours}</td>
-  //       </tr>
-  //     );
-  //   });
 
   const list2 = timesheets
     .filter((entry) => {
@@ -110,20 +80,7 @@ export default function Timesheets() {
           ""
         )}
       </div>
-      {/* <table className="styled-table">
-        <thead>
-          <tr>
-            <th data-label="name">Employee Name</th>
-            <th data-label="date">Date</th>
-            <th data-label="start">Start Time</th>
-            <th data-label="end">End Time</th>
-            <th data-label="total">Total Hours</th>
-          </tr>
-        </thead>
-        <tbody>{list}</tbody>
-      </table>
-      <br />
-      <br /> */}
+
       {loggedInUser ? (
         <table class="rTable">
           <thead>

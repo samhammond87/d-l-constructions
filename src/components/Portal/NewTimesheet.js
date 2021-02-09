@@ -20,10 +20,8 @@ export default function NewTimesheet() {
     total_hours: '',
     comments: '',
   };
+
   // const [processed, setProcessed] = useState({});
-  const [paid, setPaid] = useState({
-    processed: false,
-  });
 
   const [formState, setFormState] = useState(initialFormState);
   const { store, dispatch } = useGlobalState();
@@ -52,23 +50,22 @@ export default function NewTimesheet() {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
-      // [e.target.processed]: !e.target.checked
     });
-    // console.log(e.target.checked)
-    // console.log("processed", formState.processed)
-    // console.log(e.target.value)
 
-    if (e.target.name === 'processed') {
-      if (paid.processed == false) {
-        setPaid(Object.assign({}, paid, { processed: true }));
-      } else {
-        setPaid(Object.assign({}, paid, { processed: false }));
-      }
+  if (e.target.name === "processed") {
+    if (formState.processed == false) {
+      setFormState(Object.assign({}, formState, { processed: true }));
     } else {
-      setPaid(Object.assign({}, paid, { [e.target.name]: e.target.value }));
+      setFormState(Object.assign({}, formState, { processed: false }));
     }
-    console.log(e.target.value);
+  } else {
+    setFormState(
+      Object.assign({}, formState, { [e.target.name]: e.target.value })
+    );
   }
+  console.log(e.target.value)
+  
+};
 
   function handleClick(e) {
     e.preventDefault();
@@ -77,6 +74,7 @@ export default function NewTimesheet() {
         .then(() => {
           dispatch({ type: 'updateTimesheet', data: { id: id, ...formState } });
           history.push(`/portal/${id}`);
+          console.log(formState)
         })
         .catch((err) => {
           setFormState({ errorMessage: err.message });
@@ -154,20 +152,20 @@ export default function NewTimesheet() {
               cols='3'
             />
           </div>
-          <div className='labelContainer'>
-            {loggedInUser === 'Xinyu' && (
-              <div>
-                <label className='labelText'>Processed</label>
-                <input
-                  type='checkbox'
-                  name='processed'
-                  value={!paid.processed}
-                  onChange={handleChange}
-                  className='input'
-                  id='processed'
-                ></input>
-              </div>
-            )}
+
+          <div>
+          {loggedInUser === "Xinyu" && (
+            <input
+              type="checkbox"
+              name="processed"
+              value={!formState.processed}
+              onChange={handleChange}
+              className="input"
+              id='processed'
+              >
+            </input>
+          )}
+
           </div>
           <div className='buttonContainer'>
             <input

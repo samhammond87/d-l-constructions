@@ -56,7 +56,7 @@ export default function TimesheetDetails() {
       </table>
 
       <div>
-        {loggedInUser === timesheet.name && ( // && is used for hiding and showing in jsx
+        {(loggedInUser === timesheet.name || loggedInUser === "Xinyu") && ( // && is used for hiding and showing in jsx
           <Panel>
             <Button
               className="showButtons"
@@ -75,7 +75,7 @@ export default function TimesheetDetails() {
             </Button>
           </Panel>
         )}
-        {loggedInUser === "Xinyu" && (
+        {/* {loggedInUser === "Xinyu" && (
           <Panel>
             <Button
               className="showButtons"
@@ -93,7 +93,7 @@ export default function TimesheetDetails() {
               Back
             </Button>
           </Panel>
-        )}
+        )} */}
       </div>
     </>
   );

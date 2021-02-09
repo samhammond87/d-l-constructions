@@ -20,10 +20,8 @@ export default function NewTimesheet() {
     total_hours: "",
     comments: ""
   };
+
   // const [processed, setProcessed] = useState({});
-  const [paid, setPaid] = useState({
-    processed: false,
-  });
 
   const [formState, setFormState] = useState(initialFormState);
   const { store, dispatch } = useGlobalState();
@@ -54,26 +52,22 @@ export default function NewTimesheet() {
     setFormState({
       ...formState,
       [e.target.name]: e.target.value,
-      // [e.target.processed]: !e.target.checked
     });
-    // console.log(e.target.checked)
-    // console.log("processed", formState.processed)
-    // console.log(e.target.value)
-  
 
-  if (e.target.name === 'processed') {
-    if (paid.processed == false) {
-      setPaid(Object.assign({}, paid, { processed: true }));
+
+  if (e.target.name === "processed") {
+    if (formState.processed == false) {
+      setFormState(Object.assign({}, formState, { processed: true }));
     } else {
-      setPaid(Object.assign({}, paid, { processed: false }));
+      setFormState(Object.assign({}, formState, { processed: false }));
     }
   } else {
-    setPaid(
-      Object.assign({}, paid, { [e.target.name]: e.target.value })
+    setFormState(
+      Object.assign({}, formState, { [e.target.name]: e.target.value })
     );
   }
   console.log(e.target.value)
-
+  
 };
 
   function handleClick(e) {
@@ -83,6 +77,7 @@ export default function NewTimesheet() {
         .then(() => {
           dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
           history.push(`/portal/${id}`);
+          console.log(formState)
         })
         .catch((err) => {
           setFormState({ errorMessage: err.message });
@@ -159,17 +154,17 @@ export default function NewTimesheet() {
             />
           </div>
           <div>
-          {loggedInUser === "Xinyu" && (
+          {/* {loggedInUser === "Xinyu" && ( */}
             <input
               type="checkbox"
               name="processed"
-              value={!paid.processed}
+              value={!formState.processed}
               onChange={handleChange}
               className="input"
               id='processed'
               >
             </input>
-          )}
+          {/* )} */}
           </div>
 
           <div className="buttonContainer">

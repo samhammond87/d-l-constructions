@@ -25,6 +25,7 @@ const Portal = () => {
   useEffect(() => {
     getTimesheets()
       .then((timesheets) => {
+        console.log(timesheets)
         return timesheets;
       })
       .then((timesheets) =>

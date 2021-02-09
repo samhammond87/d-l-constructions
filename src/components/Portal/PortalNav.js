@@ -38,7 +38,7 @@ export default function PortalNav() {
           <Nav className="ml-auto">
             <Nav.Link
               className="ml-auto navLink"
-              // style={{ color: " #009879" }}
+              style={{ color: " #20A4F3" }}
               onClick={() => history.push("/portal")}
             >
               Home
@@ -46,7 +46,7 @@ export default function PortalNav() {
             {loggedInUser === "Xinyu" && (
               <Nav.Link
                 className="ml-auto  navLink"
-                // style={{ color: " #009879" }}
+                style={{ color: " #20A4F3" }}
                 onClick={() => history.push("/register")}
               >
                 Register
@@ -56,14 +56,14 @@ export default function PortalNav() {
               <>
                 <Nav.Link
                   className="ml-auto navLink"
-                  // style={{ color: " #009879" }}
+                  style={{ color: " #20A4F3" }}
                   onClick={() => history.push("/portal/new")}
                 >
                   Add Timesheet
                 </Nav.Link>
                 <Nav.Link
                   className="ml-auto navLink"
-                  // style={{ color: " #009879" }}
+                  style={{ color: " #20A4F3" }}
                   onClick={handleSignOut}
                 >
                   Sign Out
@@ -73,7 +73,7 @@ export default function PortalNav() {
               <>
                 <Nav.Link
                   className="ml-auto navLink"
-                  // style={{ color: " #009879" }}
+                  style={{ color: " #20A4F3" }}
                   onClick={() => history.push("/sign_in")}
                 >
                   Sign In

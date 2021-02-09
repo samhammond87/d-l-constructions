@@ -1,90 +1,90 @@
-## Manual Testing logs
+# Manual Testing logs
 
-#### Development Testing - Desktop API
+### Development Testing - Desktop API
 
-#
+Tested by Sajith Hewagama
 
-| Type         | Task                                                   | Outcome | Comments |
-| ------------ | ------------------------------------------------------ | ------- | -------- |
-| Authenticate | Employee can log in                                    |         |          |
-| Authenticate | Employee can log out                                   |         |          |
-| Authenticate | Admin can log in                                       |         |          |
-| Authenticate | Admin can log out                                      |         |          |
-| Authenticate | Admin can create new employee login                    |         |          |
-| Search       | Employee can search by name                            |         |          |
-| Search       | Employee can search by date                            |         |          |
-| Search       | Admin can search by name                               |         |          |
-| Search       | Admin can search by date                               |         |          |
-| Create       | Employee can add new timesheet                         |         |          |
-| Create       | Admin can add new timesheet                            |         |          |
-| Read         | Employee can read all timesheets they created          |         |          |
-| Read         | Admin can read all timesheets created by all employees |         |          |
-| Update       | Employee can update their timesheet                    |         |          |
-| Update       | Admin can update any user timesheet                    |         |          |
-| Update       | Admin can update timesheet status                      |         |          |
-| Delete       | Employee can delete their own timesheet                |         |          |
-| Delete       | Admin can delete any timesheet                         |         |          |
+<br>
 
-#
+| Type         | Task                                                   | Outcome | Comments                                                           |     |
+| ------------ | ------------------------------------------------------ | ------- | ------------------------------------------------------------------ | --- |
+| Authenticate | Employee can log in                                    | Success |                                                                    |     |
+| Authenticate | Employee can log out                                   | Success |                                                                    |     |
+| Authenticate | Admin can log in                                       | Success |                                                                    |     |
+| Authenticate | Admin can log out                                      | Success |                                                                    |     |
+| Authenticate | Admin can create new employee login                    | Success | Create button click area is too small                              |     |
+| Search       | Employee can search by name                            | Success |                                                                    |     |
+| Search       | Employee can search by date                            | Success |                                                                    |     |
+| Search       | Admin can search by name                               | Success |                                                                    |     |
+| Search       | Admin can search by date                               | Success |                                                                    |     |
+| Create       | Employee can add new timesheet                         | Success |                                                                    |     |
+| Create       | Admin can add new timesheet                            | Success |                                                                    |     |
+| Read         | Employee can read all timesheets they created          | Success |                                                                    |     |
+| Read         | Admin can read all timesheets created by all employees | Success |                                                                    |     |
+| Update       | Employee can update their timesheet                    | Success | Prefer to have update and delete buttons to show on the index page |     |
+| Update       | Admin can update any user timesheet                    | Success |                                                                    |     |
+| Update       | Admin can update timesheet status                      | Success |                                                                    |     |
+| Delete       | Employee can delete their own timesheet                | Success | Prefer to have update and delete buttons to show on the index page |     |
+| Delete       | Admin can delete any timesheet                         | Success |                                                                    |     |
 
-#### Development Testing - Client Side Web
+<br>
 
-| Table                | Task                                          | Outcome | Comments |
-| -------------------- | --------------------------------------------- | ------- | -------- |
-| Navbar               | Go to About us section                        |         |          |
-| Navbar               | Go to Services section                        |         |          |
-| Navbar               | Go to Why us? section                         |         |          |
-| Navbar               | Go to Careers section                         |         |          |
-| Navbar               | Go to Employee portal page                    |         |          |
-| Hero Section         | Background video auto play                    |         |          |
-| Hero Section         | Contact link go to the contact section        |         |          |
-| About Us Section     | Animation renders                             |         |          |
-| About Us Section     | Contact link go to the contact section        |         |          |
-| About Us Section     | AWS image renders                             |         |          |
-| Services Section     | Animation renders                             |         |          |
-| Services Section     | Contact link go to the contact section        |         |          |
-| Services Section     | AWS image renders                             |         |          |
-| Why Us Section       | Animation renders                             |         |          |
-| Why Us Section       | Contact link go to the contact section        |         |          |
-| Careers Section      | Contact link go to the contact section        |         |          |
-| Careers Section      | Animation renders                             |         |          |
-| Careers Section      | AWS image renders                             |         |          |
-| Contact Form Section | Alert pop when send message button is clicked |         |          |
-| Client Testimonials  | Carousel auto play after 5 seconds            |         |          |
-| Client Testimonials  | AWS images render                             |         |          |
-| Footer               | Social media icons go to the external sites   |         |          |
-|                      |                                               |         |          |
-|                      |                                               |         |          |
+### Development Testing - Client Side Web
 
-#
+Tested by Andrew Bui
 
-#### Development Testing - Client Side Mobile
+| Type                 | Task                                          | Outcome | Comments                                   |     |
+| -------------------- | --------------------------------------------- | ------- | ------------------------------------------ | --- |
+| Navbar               | Go to About us section                        | Success |                                            |     |
+| Navbar               | Go to Services section                        | Success |                                            |     |
+| Navbar               | Go to Why us? section                         | Success |                                            |     |
+| Navbar               | Go to Careers section                         | Success |                                            |     |
+| Navbar               | Go to Employee portal page                    | Success |                                            |     |
+| Hero Section         | Background video auto play                    | Success |                                            |     |
+| Hero Section         | Contact link go to the contact section        | Success |                                            |     |
+| About Us Section     | Animation renders                             | Success |                                            |     |
+| About Us Section     | Contact link go to the contact section        | Success |                                            |     |
+| About Us Section     | AWS image renders                             | Success |                                            |     |
+| Services Section     | Animation renders                             | Success |                                            |     |
+| Services Section     | Contact link go to the contact section        | Success |                                            |     |
+| Services Section     | AWS image renders                             | Success |                                            |     |
+| Why Us Section       | Animation renders                             | Success |                                            |     |
+| Why Us Section       | Contact link go to the contact section        | Success |                                            |     |
+| Careers Section      | Contact link go to the contact section        | Success |                                            |     |
+| Careers Section      | Animation renders                             | Success |                                            |     |
+| Careers Section      | AWS image renders                             | Success |                                            |     |
+| Contact Form Section | Alert pop when send message button is clicked | Success |                                            |     |
+| Client Testimonials  | Carousel auto play after 5 seconds            | Success | Carousel takes more than 5 seconds to load |     |
+| Client Testimonials  | AWS images render                             | Success |                                            |     |
+| Footer               | Social media icons go to the external sites   | Success |                                            |     |
 
 #
 
-| Table                | Task                                          | Outcome | Comments |
-| -------------------- | --------------------------------------------- | ------- | -------- |
-| Navbar               | Go to About us section                        |         |          |
-| Navbar               | Go to Services section                        |         |          |
-| Navbar               | Go to Why us? section                         |         |          |
-| Navbar               | Go to Careers section                         |         |          |
-| Navbar               | Go to Employee portal page                    |         |          |
-| Hero Section         | Background video auto play                    |         |          |
-| Hero Section         | Contact link go to the contact section        |         |          |
-| About Us Section     | Animation renders                             |         |          |
-| About Us Section     | Contact link go to the contact section        |         |          |
-| About Us Section     | AWS image renders                             |         |          |
-| Services Section     | Animation renders                             |         |          |
-| Services Section     | Contact link go to the contact section        |         |          |
-| Services Section     | AWS image renders                             |         |          |
-| Why Us Section       | Animation renders                             |         |          |
-| Why Us Section       | Contact link go to the contact section        |         |          |
-| Careers Section      | Contact link go to the contact section        |         |          |
-| Careers Section      | Animation renders                             |         |          |
-| Careers Section      | AWS image renders                             |         |          |
-| Contact Form Section | Alert pop when send message button is clicked |         |          |
-| Client Testimonials  | Carousel auto play after 5 seconds            |         |          |
-| Client Testimonials  | AWS images render                             |         |          |
-| Footer               | Social media icons go to the external sites   |         |          |
-|                      |                                               |         |          |
-|                      |                                               |         |          |
+### Development Testing - Client Side Mobile
+
+Tested by Andrew Bui
+
+| Type                 | Task                                          | Outcome | Comments                                                                                     |     |
+| -------------------- | --------------------------------------------- | ------- | -------------------------------------------------------------------------------------------- | --- |
+| Navbar               | Go to About us section                        | Success |                                                                                              |     |
+| Navbar               | Go to Services section                        | Success |                                                                                              |     |
+| Navbar               | Go to Why us? section                         | Success |                                                                                              |     |
+| Navbar               | Go to Careers section                         | Success |                                                                                              |     |
+| Navbar               | Go to Employee portal page                    | Success |                                                                                              |     |
+| Hero Section         | Background video auto play                    | Success |                                                                                              |     |
+| Hero Section         | Contact link go to the contact section        | Success |                                                                                              |     |
+| About Us Section     | Animation renders                             | Success | A known bug when animation renders there is an additional white space on the right hand side |     |
+| About Us Section     | Contact link go to the contact section        | Success |                                                                                              |     |
+| About Us Section     | AWS image renders                             | Success |                                                                                              |     |
+| Services Section     | Animation renders                             | Success | A known bug when animation renders there is an additional white space on the right-hand side |     |
+| Services Section     | Contact link go to the contact section        | Success |                                                                                              |     |
+| Services Section     | AWS image renders                             | Success |                                                                                              |     |
+| Why Us Section       | Animation renders                             | Success | A known bug when animation renders there is an additional white space on the right-hand side |     |
+| Why Us Section       | Contact link go to the contact section        | Success |                                                                                              |     |
+| Careers Section      | Contact link go to the contact section        | Success |                                                                                              |     |
+| Careers Section      | Animation renders                             | Success | A known bug when animation renders there is an additional white space on the right hand side |     |
+| Careers Section      | AWS image renders                             | Success |                                                                                              |     |
+| Contact Form Section | Alert pop when send message button is clicked | Success |                                                                                              |     |
+| Client Testimonials  | Carousel auto play after 5 seconds            | Success |                                                                                              |     |
+| Client Testimonials  | AWS images render                             | Success |                                                                                              |     |
+| Footer               | Social media icons go to the external sites   | Success |

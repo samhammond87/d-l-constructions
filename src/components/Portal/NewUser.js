@@ -16,6 +16,7 @@ import { useGlobalState } from '../../utils/stateContext';
 // similar logic to './NewTimesheet.js'
 
 export default function NewUser() {
+  // sets the initial state of the form when the page is first loaded
   const initialFormState = {
     username: '',
     email: '',
@@ -23,16 +24,19 @@ export default function NewUser() {
     password_confirmation: '',
   };
 
+   // calls use state (which returns an array with 2 elements [first is list of the formState that is set above, and the 2nd is a function)
   const [formState, setFormState] = useState(initialFormState);
+
+  // dispatch pass's the reducer action.
   const { dispatch } = useGlobalState();
 
   let history = useHistory();
 
   function handleChange(e) {
-    setFormState({
+    setFormState({ // update whats currently in our form data state
       ...formState,
       [e.target.name]: e.target.value,
-    });
+    });  // key/value pair: target name key for target value
   }
 
   function handleRegister(e) {
@@ -45,7 +49,7 @@ export default function NewUser() {
         history.push('/portal'); //redirects back to the index page
       })
       .catch((err) => {
-        setFormState({ errorMessage: err.message });
+        setFormState({ errorMessage: err.message }); // attach the jsx error below to the form if incorrect details are received.  Object.assign and formState keeps the correct fields populated
       });
   }
   return (
@@ -93,6 +97,7 @@ export default function NewUser() {
         <br />
         <UserButton onClick={handleRegister}>Register</UserButton>
           <div>
+           {/* attach the jsx error below to the form if incorrect details are received.  Object.assign and formState keeps the correct fields populated */}
             { formState.errorMessage &&
 								<p className="error" style={{color: "white"}}> { "Oops! Please check your details and try again"} </p> }
           	</div>

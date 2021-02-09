@@ -20,6 +20,9 @@ export const Button = styled(Link)`
 
   &:hover {
     transition: all 0.2s ease-in-out;
-    background: ${({ primary }) => (primary ? "#ffffff" : "#faed64")};
+    /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+    text-decoration: none !important;
+    color: black;
+    background: ${({ primary }) => (primary ? "#fff" : "#faed64")} !important;
   }
 `;

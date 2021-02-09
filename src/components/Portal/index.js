@@ -9,7 +9,7 @@ import PortalNav from "./PortalNav";
 import SignIn from "./SignIn";
 import NewTimesheet from "./NewTimesheet";
 import NewUser from "./NewUser";
-import { Header } from "./Styled";
+// import { Header } from "./Styled";
 
 // employee portal index page
 
@@ -25,6 +25,7 @@ const Portal = () => {
   useEffect(() => {
     getTimesheets()
       .then((timesheets) => {
+        console.log(timesheets)
         return timesheets;
       })
       .then((timesheets) =>
@@ -41,7 +42,7 @@ const Portal = () => {
       <StateContext.Provider value={{ store, dispatch }}>
         <Router>
           <PortalNav />
-          <Header> Employee Portal </Header>
+          {/* <Header> Employee Portal </Header> */}
           <Switch>
             <Route exact path="/portal" component={Timesheets} />
             <Route exact path="/portal/new" component={NewTimesheet} />

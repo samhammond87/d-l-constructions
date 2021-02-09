@@ -7,7 +7,7 @@ import {
 } from "../../axios/timesheetServices";
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
-import {Button, Panel} from "./Styled";
+// import { Button, Panel } from "./Styled";
 
 // create new timesheet form
 
@@ -21,11 +21,13 @@ export default function NewTimesheet() {
     comments: "",
   };
 
+  // const [processed, setProcessed] = useState({});
+
   const [formState, setFormState] = useState(initialFormState);
+  const { store, dispatch } = useGlobalState();
+  const { loggedInUser } = store;
   let history = useHistory();
   let { id } = useParams();
-
-  const { dispatch } = useGlobalState();
 
   useEffect(() => {
     if (id) {
@@ -38,6 +40,7 @@ export default function NewTimesheet() {
           end_time: timesheet.end_time,
           total_hours: timesheet.total_hours,
           comments: timesheet.comments,
+          processed: timesheet.processed,
         });
       });
     }
@@ -48,7 +51,21 @@ export default function NewTimesheet() {
       ...formState,
       [e.target.name]: e.target.value,
     });
+
+    if (e.target.name === "processed") {
+      if (formState.processed == false) {
+        setFormState(Object.assign({}, formState, { processed: true }));
+      } else {
+        setFormState(Object.assign({}, formState, { processed: false }));
+      }
+    } else {
+      setFormState(
+        Object.assign({}, formState, { [e.target.name]: e.target.value })
+      );
+    }
+    console.log(e.target.value);
   }
+
   function handleClick(e) {
     e.preventDefault();
     if (id) {
@@ -56,6 +73,7 @@ export default function NewTimesheet() {
         .then(() => {
           dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
           history.push(`/portal/${id}`);
+          console.log(formState);
         })
         .catch((err) => {
           setFormState({ errorMessage: err.message });
@@ -67,7 +85,9 @@ export default function NewTimesheet() {
           history.push("/portal");
         })
         .catch((err) => {
-          setFormState({ errorMessage: err.message });
+          setFormState(
+            Object.assign({}, formState, { errorMessage: err.message })
+          );
         });
     }
   }
@@ -132,6 +152,21 @@ export default function NewTimesheet() {
             />
           </div>
 
+          <div className="labelContainer">
+            {loggedInUser === "Xinyu" && (
+              <div>
+                <label className="labelText">Processed</label>
+                <input
+                  type="checkbox"
+                  name="processed"
+                  value={!formState.processed}
+                  onChange={handleChange}
+                  className="input"
+                  id="processed"
+                ></input>
+              </div>
+            )}
+          </div>
           <div className="buttonContainer">
             <input
               type="submit"
@@ -141,21 +176,22 @@ export default function NewTimesheet() {
               id="btn"
             />
           </div>
-          <div>
-            <Panel>
-              <Button onClick={() => history.push(`/portal`)}>
-                Back
-              </Button>
-            </Panel>
+          <div className="buttonContainer">
+            <input
+              type="submit"
+              onClick={() => history.push(`/portal`)}
+              value="Back"
+              className="btn"
+              id="btn"
+            />
           </div>
-          <div>
-            {formState.errorMessage && (
-              <h3 className="error">
-                {" "}
-                {"Oops! Please check your details and try again"}{" "}
-              </h3>
-            )}
-          </div>
+          <br />
+          {formState.errorMessage && (
+            <p className="error" style={{ color: "white" }}>
+              {" "}
+              {"Oops! Please check your details and try again"}{" "}
+            </p>
+          )}
         </form>
       </div>
     </>

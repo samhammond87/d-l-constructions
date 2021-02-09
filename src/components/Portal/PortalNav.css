@@ -54,6 +54,8 @@
 .nav-link:hover {
   color: var(--green);
   transition: all 0.2s ease-out;
+  /* noted that this is not the best practice, but we really couldn't figure out why it won't work without it =( */
+  text-decoration: none !important;
 }
 
 .nav-links-btn {
@@ -82,10 +84,23 @@ span {
   .nav-links-btn {
     width: 100px;
   }
+
+  .navLink {
+    color: var(--green);
+  }
 }
 
 #respNavbar {
   width: 100%;
   height: 80px;
   font-size: 1rem;
+}
+
+.navLink {
+  color: white;
+}
+
+.navLink:hover {
+  color: white;
+  font-size: 1.2rem;
 }

@@ -22,10 +22,15 @@ export const Panel = styled.div`
 
 export const UserPanel = styled.div`
   text-align: center;
-  height: 720px;
-  margin-bottom: 30px;
-  width: 480px;
-  padding: 32px;
+  /* height: 720px; */
+  /* margin-bottom 30px; */
+  /* width: 480px; */
+  /* padding: 32px; */
+  margin-top: -23px;
+`;
+
+export const UserParagraph = styled.div`
+  color: white;
 `;
 
 export const Span = styled.span`
@@ -34,22 +39,19 @@ export const Span = styled.span`
   font-family: "Encode Sans Expanded", sans-serif;
 `;
 
-export const Button = styled(Span)`
-  cursor: pointer;
-  text-align: center;
-  border-radius: 4px;
-  border: 1px solid black;
-  background: #009879;
+export const Button = styled.button`
+  background-color: #03214f;
   color: white;
+  padding: 16px 10px;
+  margin: 0px 0;
+  width: 20%;
+  margin-right: 10px;
+  opacity: 0.7;
+  border: none;
+  cursor: pointer;
 
   &:hover {
-    background: white;
-    color: #009879;
-    padding: 6px 15px;
-    border-radius: 10px;
-    border: solid 2px #009879;
-    transition: all 0.2s ease-out;
-    cursor: pointer;
+    opacity: 1;
   }
 `;
 
@@ -79,10 +81,10 @@ export const UserInput = styled.input`
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background: #97979b;
 
   &:focus {
-    background-color: #ddd;
+    background-color: white;
     outline: none;
   }
 `;
@@ -111,16 +113,18 @@ export const Line = styled.div`
   padding: 0.5em;
 `;
 
+// Sign in form
 export const Container = styled.div`
-  min-height: 692px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  z-index: 0;
-  overflow: hidden;
-  background: #faed64;
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+
+  &:focus {
+    background-color: white;
+    outline: none;
+  }
 `;
 
 export const FormWrap = styled.div`
@@ -160,7 +164,7 @@ export const FormContent = styled.div`
 `;
 
 export const Form = styled.form`
-  background: #010101;
+  background: #03214f;
   max-width: 400px;
   height: auto;
   width: 100%;
@@ -194,17 +198,29 @@ export const FormInput = styled.input`
   margin-bottom: 32px;
   border: none;
   border-radius: 4px;
+  background: #97979b;
+
+  &:focus {
+    background-color: white;
+    outline: none;
+  }
 `;
 
 export const FormButton = styled.button`
-  background: #faed64;
-  padding: 16px 0;
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  width: 100%;
+  opacity: 0.7;
   border: none;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 20px;
   cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
+
 export const idLink = styled.link`
   text-align: center;
   margin-top: 24px;

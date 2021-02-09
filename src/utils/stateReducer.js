@@ -1,16 +1,19 @@
+
+//reducer calls a current state(state) and an action. A reducer function is a switch statement on action type. And in that switch statement we'll have a case statement for every action we want to perform
 export default function reducer(state, action) {
   switch (action.type) {
     case "setTimesheets": {
       return {
-        ...state,
-        timesheets: action.data,
+        ...state, //...state destructures the current state which creates a copy of the current state object
+        timesheets: action.data, // make a change to timesheets. action.data has the new state value 
       };
-    }
+    } // we're always going to be returning a new state object. We want to include what is currently in state (setTimesheets)
     
+    // repeat process for all cases
     case "addTimesheet": {
       return {
         ...state,
-        timesheets: [action.data, ...state.timesheets],
+        timesheets: [action.data, ...state.timesheets], // action.data is the new timesheet in this case
       };
     }
 
@@ -54,6 +57,7 @@ export default function reducer(state, action) {
         timesheets: [updatedTimesheet, ...theRest],
       };
     }
+    // if nothing matches, return the current state (react wont update anything)
     default:
       return state;
   }

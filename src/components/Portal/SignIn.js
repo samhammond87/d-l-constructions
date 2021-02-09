@@ -4,15 +4,15 @@ import { useHistory } from "react-router-dom";
 import {
   Container,
   FormWrap,
-  Icon,
+  // Icon,
   FormContent,
   Form,
   FormH1,
   FormLabel,
   FormInput,
   FormButton,
-  Button,
-  Panel,
+  // Button,
+  // Panel,
 } from "./Styled";
 import { signIn } from "../../axios/authServices";
 import { useGlobalState } from "../../utils/stateContext";

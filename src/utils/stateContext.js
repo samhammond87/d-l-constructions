@@ -3,7 +3,7 @@
 // The useContext hook returns whatever value is provided by that context provider.
 import {createContext, useContext} from 'react'
 
-export const StateContext = createContext()
+export const StateContext = createContext({})
 
 // useGlobalState is the name given to the useContext hook
 export const useGlobalState = () => useContext(StateContext)

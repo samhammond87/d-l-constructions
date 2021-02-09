@@ -7,10 +7,10 @@ import "./Timesheets.css";
 export default function Timesheets() {
   const [searchEntry, setSearchEntry] = useState("");
   const { store } = useGlobalState();
-  const { timesheets } = store;
+  const { timesheets } = store; // pulling the piece of state out of the 'store' (in this case its timesheets). 'Like taking an item off a shelf in a grocery store'
   const { loggedInUser } = store;
 
-
+// search bar function for name and date
   const list2 = timesheets
     .filter((entry) => {
       if (searchEntry === "") {
@@ -20,7 +20,8 @@ export default function Timesheets() {
       } else if (entry.date.toLowerCase().includes(searchEntry.toLowerCase())) {
         return entry;
       }
-    })
+    }) 
+    // map through all timesheets 
     .map((timesheet, index) => {
       return (
         <tr className="active-row" key={index}>
@@ -54,6 +55,7 @@ export default function Timesheets() {
         className="searchContainer"
         style={{ textAlign: "center", marginTop: "20px" }}
       >
+        {/* check to see if the user is signed and render "This portal is for company employees only!" */}
         {loggedInUser ? (
           ""
         ) : (
@@ -61,7 +63,7 @@ export default function Timesheets() {
             <em>This portal is for company employees only!</em>
           </h3>
         )}
-
+          {/* If user is signed in, render the search bar and timesheets */}
         {loggedInUser ? (
           <div>
             <label className="searchLabel" style={{ marginRight: "20px" }}>

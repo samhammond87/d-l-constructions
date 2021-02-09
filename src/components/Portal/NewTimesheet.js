@@ -7,11 +7,11 @@ import {
 } from "../../axios/timesheetServices";
 import { useGlobalState } from "../../utils/stateContext";
 import "./NewTimesheetElements.css";
-// import { Button, Panel } from "./Styled";
 
 // create new timesheet form
 
 export default function NewTimesheet() {
+// sets the initial state of the form when the add timesheet page is first loaded
   const initialFormState = {
     name: "",
     date: "",
@@ -21,9 +21,11 @@ export default function NewTimesheet() {
     comments: "",
   };
 
-  // const [processed, setProcessed] = useState({});
-
+ // calls use state (which returns an array with 2 elements [first is list of the formState that is set above, and the 2nd is a function)
   const [formState, setFormState] = useState(initialFormState);
+  
+// useGlobalState gives us the value of stateContext in '../../utils/stateContext.js'
+// dispatch pass's the reducer action.
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
   let history = useHistory();
@@ -47,16 +49,17 @@ export default function NewTimesheet() {
   }, [id]);
 
   function handleChange(e) {
-    setFormState({
+    setFormState({ // update whats currently in our form data state
       ...formState,
       [e.target.name]: e.target.value,
-    });
+    }); // key/value pair: target name key for target value
 
+    // if the checkbox called processed value is changed
     if (e.target.name === "processed") {
       if (formState.processed == false) {
-        setFormState(Object.assign({}, formState, { processed: true }));
+        setFormState(Object.assign({}, formState, { processed: true })); // if the formState of the boolean was false, assign a true value to that boolean
       } else {
-        setFormState(Object.assign({}, formState, { processed: false }));
+        setFormState(Object.assign({}, formState, { processed: false })); // and vice-verca
       }
     } else {
       setFormState(
@@ -66,12 +69,13 @@ export default function NewTimesheet() {
     console.log(e.target.value);
   }
 
+  // When the user clicks the submit button a put request is sent to the server to update the timesheet with the correct id
   function handleClick(e) {
     e.preventDefault();
     if (id) {
-      updateTimesheet({ id: id, ...formState })
+      updateTimesheet({ id: id, ...formState }) // updateTimesheet is the request to the server found in '../../axios/timesheetServices' if a timesheet id is found
         .then(() => {
-          dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
+          dispatch({ type: "updateTimesheet", data: { id: id, ...formState } }); // "updateTimesheet" is the reducer case statement found in '../../utils/stateReducer'
           history.push(`/portal/${id}`);
           console.log(formState);
         })
@@ -81,12 +85,12 @@ export default function NewTimesheet() {
     } else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
-          dispatch({ type: "addTimesheet", data: timesheet });
+          dispatch({ type: "addTimesheet", data: timesheet }); // "addTimesheet" is the request to the server found in '../../axios/timesheetServices' if a timesheet id ISN'T found
           history.push("/portal");
         })
         .catch((err) => {
           setFormState(
-            Object.assign({}, formState, { errorMessage: err.message })
+            Object.assign({}, formState, { errorMessage: err.message }) // attach the jsx error below to the form if incorrect details are received.  Object.assign and formState keeps the correct fields populated
           );
         });
     }
@@ -102,7 +106,7 @@ export default function NewTimesheet() {
                 type="text"
                 name="name"
                 value={formState.name}
-                onChange={handleChange}
+                onChange={handleChange} // updates the state when the field gets updated by the user
                 className="input"
                 placeholder="Your Name"
                 required
@@ -186,6 +190,7 @@ export default function NewTimesheet() {
             />
           </div>
           <br />
+          {/* attach the jsx error below to the form if incorrect details are received.  Object.assign and formState keeps the correct fields populated */}
           {formState.errorMessage && (
             <p className="error" style={{ color: "white" }}>
               {" "}

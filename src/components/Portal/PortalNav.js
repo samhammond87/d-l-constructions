@@ -28,6 +28,7 @@ export default function PortalNav() {
           <Nav.Link
             className="ml-auto"
             style={{ color: " #ffffff" }}
+            href="/"
             onClick={() => history.push("/")}
           >
             {loggedInUser ? `Hi ${loggedInUser}` : "D&L Constructions"}

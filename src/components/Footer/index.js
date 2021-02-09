@@ -68,16 +68,32 @@ const Footer = () => {
               {new Date().getFullYear()} © All rights reserved.
             </WebsiteRights>
             <SocialIcons>
-              <SocialIconLink href="/" target="_blank" aria-label="Facebook">
+              <SocialIconLink
+                href="https://www.facebook.com/"
+                target="_blank"
+                aria-label="Facebook"
+              >
                 <FaFacebook />
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Instagram">
+              <SocialIconLink
+                href="https://www.instagram.com/"
+                target="_blank"
+                aria-label="Instagram"
+              >
                 <FaInstagram />
               </SocialIconLink>
-              <SocialIconLink href="/" target="_blank" aria-label="Youtube">
+              <SocialIconLink
+                href="https://www.youtube.com/"
+                target="_blank"
+                aria-label="Youtube"
+              >
                 <FaYoutube />
               </SocialIconLink>
-              <SocialIconLink target="_blank" aria-label="Twitter" href="/">
+              <SocialIconLink
+                target="_blank"
+                aria-label="Twitter"
+                href="https://twitter.com/"
+              >
                 <FaTwitter />
               </SocialIconLink>
             </SocialIcons>

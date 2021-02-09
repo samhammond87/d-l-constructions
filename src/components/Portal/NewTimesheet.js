@@ -12,6 +12,7 @@ import { Button, Panel } from "./Styled";
 // create new timesheet form
 
 export default function NewTimesheet() {
+// sets the initial state of the form when the add timesheet page is first loaded
   const initialFormState = {
     name: "",
     date: "",
@@ -21,9 +22,11 @@ export default function NewTimesheet() {
     comments: "",
   };
 
-  // const [processed, setProcessed] = useState({});
-
+ // calls use state (which returns an array with 2 elements [first is list of the formState that is set above, and the 2nd is a function)
   const [formState, setFormState] = useState(initialFormState);
+  
+// all useGlobalState does is give us the value of stateContext in '../../utils/stateContext.js'
+// we use dispatch to pass the reducer action.
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
   let history = useHistory();
@@ -47,16 +50,17 @@ export default function NewTimesheet() {
   }, [id]);
 
   function handleChange(e) {
-    setFormState({
+    setFormState({ // update whats currently in our form data state
       ...formState,
       [e.target.name]: e.target.value,
-    });
+    }); // key/value pair: target name key for target value
 
+    // if the checkbox called processed value is changed
     if (e.target.name === "processed") {
       if (formState.processed == false) {
-        setFormState(Object.assign({}, formState, { processed: true }));
+        setFormState(Object.assign({}, formState, { processed: true })); // if the formState of the boolean was false, assign a true value to that boolean
       } else {
-        setFormState(Object.assign({}, formState, { processed: false }));
+        setFormState(Object.assign({}, formState, { processed: false })); // and vice-verca
       }
     } else {
       setFormState(
@@ -102,7 +106,7 @@ export default function NewTimesheet() {
                 type="text"
                 name="name"
                 value={formState.name}
-                onChange={handleChange}
+                onChange={handleChange} // updates the state when the field gets updated by the user
                 className="input"
                 placeholder="Your Name"
                 required

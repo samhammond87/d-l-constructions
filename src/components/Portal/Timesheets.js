@@ -7,7 +7,7 @@ import "./Timesheets.css";
 export default function Timesheets() {
   const [searchEntry, setSearchEntry] = useState("");
   const { store } = useGlobalState();
-  const { timesheets } = store;
+  const { timesheets } = store; // pulling the piece of state out of the 'store' (in this case its timesheets). 'Like taking an item off a shelf in a grocery store'
   const { loggedInUser } = store;
 
 

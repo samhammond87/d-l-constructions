@@ -9,40 +9,47 @@ import PortalNav from "./PortalNav";
 import SignIn from "./SignIn";
 import NewTimesheet from "./NewTimesheet";
 import NewUser from "./NewUser";
-// import { Header } from "./Styled";
+
 
 // employee portal index page
 
 const Portal = () => {
+
+  // sets the initial state of the page when a user is not logged in
   const initialState = {
     timesheets: [],
     loggedInUser: sessionStorage.getItem("user") || null,
     auth: { token: sessionStorage.getItem("token") || null },
   };
 
+  // Sets the data and action from '../../utils/stateReducer.js
+   // store is the state object 
+     // dispatch is a function that we call with an action object. 
   const [store, dispatch] = useReducer(stateReducer, initialState);
+    // When we call dispatch, we pass it an action object with a particular type of data. And dispatch will call the reducer function with the current state and with that action
 
+
+  // uses axios in '../../axios/timesheetServices' to make a GET request to the server
+  // useEffect gets passed a function ( () => {} ) 
   useEffect(() => {
     getTimesheets()
       .then((timesheets) => {
-        console.log(timesheets)
         return timesheets;
       })
       .then((timesheets) =>
-        dispatch({ type: "setTimesheets", data: timesheets })
+        dispatch({ type: "setTimesheets", data: timesheets }) // Reducer case statement
       )
-      .catch((error) => {
-        dispatch({ type: "setTimesheets", data: [] });
-        console.log(error);
+      .catch(() => {
+        dispatch({ type: "setTimesheets", data: [] }); // Reducer case statment
       });
-  }, [store.auth.token]);
+  }, [store.auth.token]); // [store.auth.token] calls the hook every time the token changes state which refreshes the data
 
   return (
     <div>
+    {/* the value in the StateContext.Provider is provided by the Reducer */}
       <StateContext.Provider value={{ store, dispatch }}>
         <Router>
           <PortalNav />
-          {/* <Header> Employee Portal </Header> */}
           <Switch>
             <Route exact path="/portal" component={Timesheets} />
             <Route exact path="/portal/new" component={NewTimesheet} />

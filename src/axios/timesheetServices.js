@@ -1,6 +1,8 @@
 import constructionAPI from '../config/api';
 
 
+// HTTP requests to the server for Employee Timesheet Data
+
 export async function getTimesheets() {
 	const response = await constructionAPI.get('/api/timesheets')
 	return response.data

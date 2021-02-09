@@ -24,7 +24,7 @@ const SignIn = () => {
    // calls use state (which returns an array with 2 elements [first is list of the formState that is set above, and the 2nd is a function)
   const [formState, setFormState] = useState(initialFormState);
 
-  // dispatch pass's the reducer action.
+  // dispatch pass's the reducer action found in '../../utils/stateReducer.js
   const { dispatch } = useGlobalState();
   let history = useHistory();
 

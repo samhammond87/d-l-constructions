@@ -74,7 +74,7 @@ export default function ContactUs() {
           <ContactFormButton
             type="submit"
             onClick={emailAlert}
-          ></ContactFormButton>
+          >Send Message</ContactFormButton>
         </ContactForm>
       </ContactFormContent>
     </>

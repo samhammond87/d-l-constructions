@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useHistory, useParams } from 'react-router-dom';
 import {
   createTimesheet,
   getTimesheet,
   updateTimesheet,
-} from "../../axios/timesheetServices";
-import { useGlobalState } from "../../utils/stateContext";
-import "./NewTimesheetElements.css";
-import { Button, Panel } from "./Styled";
+} from '../../axios/timesheetServices';
+import { useGlobalState } from '../../utils/stateContext';
+import './NewTimesheetElements.css';
+import { Button, Panel } from './Styled';
 
 // create new timesheet form
 
 export default function NewTimesheet() {
   const initialFormState = {
-    name: "",
-    date: "",
-    start_time: "",
-    end_time: "",
-    total_hours: "",
-    comments: ""
+    name: '',
+    date: '',
+    start_time: '',
+    end_time: '',
+    total_hours: '',
+    comments: '',
   };
   // const [processed, setProcessed] = useState({});
   const [paid, setPaid] = useState({
@@ -31,8 +31,6 @@ export default function NewTimesheet() {
   let history = useHistory();
   let { id } = useParams();
 
-
-
   useEffect(() => {
     if (id) {
       getTimesheet(id).then((timesheet) => {
@@ -44,7 +42,7 @@ export default function NewTimesheet() {
           end_time: timesheet.end_time,
           total_hours: timesheet.total_hours,
           comments: timesheet.comments,
-          processed: timesheet.processed
+          processed: timesheet.processed,
         });
       });
     }
@@ -59,29 +57,25 @@ export default function NewTimesheet() {
     // console.log(e.target.checked)
     // console.log("processed", formState.processed)
     // console.log(e.target.value)
-  
 
-  if (e.target.name === 'processed') {
-    if (paid.processed == false) {
-      setPaid(Object.assign({}, paid, { processed: true }));
+    if (e.target.name === 'processed') {
+      if (paid.processed == false) {
+        setPaid(Object.assign({}, paid, { processed: true }));
+      } else {
+        setPaid(Object.assign({}, paid, { processed: false }));
+      }
     } else {
-      setPaid(Object.assign({}, paid, { processed: false }));
+      setPaid(Object.assign({}, paid, { [e.target.name]: e.target.value }));
     }
-  } else {
-    setPaid(
-      Object.assign({}, paid, { [e.target.name]: e.target.value })
-    );
+    console.log(e.target.value);
   }
-  console.log(e.target.value)
-
-};
 
   function handleClick(e) {
     e.preventDefault();
     if (id) {
       updateTimesheet({ id: id, ...formState })
         .then(() => {
-          dispatch({ type: "updateTimesheet", data: { id: id, ...formState } });
+          dispatch({ type: 'updateTimesheet', data: { id: id, ...formState } });
           history.push(`/portal/${id}`);
         })
         .catch((err) => {
@@ -90,113 +84,116 @@ export default function NewTimesheet() {
     } else {
       createTimesheet({ ...formState })
         .then((timesheet) => {
-          dispatch({ type: "addTimesheet", data: timesheet });
-          history.push("/portal");
+          dispatch({ type: 'addTimesheet', data: timesheet });
+          history.push('/portal');
         })
-        .catch(err => { 
-          setFormState(Object.assign({}, formState, { errorMessage: err.message }));
-        })
+        .catch((err) => {
+          setFormState(
+            Object.assign({}, formState, { errorMessage: err.message })
+          );
+        });
     }
   }
   return (
     <>
-      <div className="formContainer">
-        <h3 className="formHeader">New Timesheet</h3>
+      <div className='formContainer'>
+        <h3 className='formHeader'>New Timesheet</h3>
         <form>
-          <div className="contact-form">
-            <div className="input-fields">
+          <div className='contact-form'>
+            <div className='input-fields'>
               <input
-                type="text"
-                name="name"
+                type='text'
+                name='name'
                 value={formState.name}
                 onChange={handleChange}
-                className="input"
-                placeholder="Your Name"
+                className='input'
+                placeholder='Your Name'
                 required
               />
               <input
-                type="date"
-                name="date"
+                type='date'
+                name='date'
                 value={formState.date}
                 onChange={handleChange}
-                className="input"
+                className='input'
                 required
               />
               <input
-                type="text"
-                name="start_time"
+                type='text'
+                name='start_time'
                 value={formState.start_time}
                 onChange={handleChange}
-                className="input"
-                placeholder="Enter Start Time"
+                className='input'
+                placeholder='Enter Start Time'
               />
               <input
-                type="text"
-                name="end_time"
+                type='text'
+                name='end_time'
                 value={formState.end_time}
                 onChange={handleChange}
-                className="input"
-                placeholder="Enter End Time"
+                className='input'
+                placeholder='Enter End Time'
               />
               <input
-                type="integer"
-                name="total_hours"
+                type='integer'
+                name='total_hours'
                 value={formState.total_hours}
                 onChange={handleChange}
-                className="input"
-                placeholder="Enter Total Hours"
+                className='input'
+                placeholder='Enter Total Hours'
               />
             </div>
           </div>
 
-          <div className="msg">
+          <div className='msg'>
             <textarea
-              placeholder="Enter any comments here..."
-              name="comments"
+              placeholder='Enter any comments here...'
+              name='comments'
               value={formState.comments}
               onChange={handleChange}
-              cols="3"
+              cols='3'
             />
           </div>
-          <div>
-          {loggedInUser === "Xinyu" && (
-            <input
-              type="checkbox"
-              name="processed"
-              value={!paid.processed}
-              onChange={handleChange}
-              className="input"
-              id='processed'
-              >
-            </input>
-          )}
+          <div className='labelContainer'>
+            {loggedInUser === 'Xinyu' && (
+              <div>
+                <label className='labelText'>Processed</label>
+                <input
+                  type='checkbox'
+                  name='processed'
+                  value={!paid.processed}
+                  onChange={handleChange}
+                  className='input'
+                  id='processed'
+                ></input>
+              </div>
+            )}
           </div>
-
-          <div className="buttonContainer">
+          <div className='buttonContainer'>
             <input
-              type="submit"
+              type='submit'
               onClick={handleClick}
-              value={id ? "Update" : "Create"}
-              className="btn"
-              id="btn"
+              value={id ? 'Update' : 'Create'}
+              className='btn'
+              id='btn'
             />
           </div>
-          <div className="buttonContainer">
+          <div className='buttonContainer'>
             <input
-              type="submit"
+              type='submit'
               onClick={() => history.push(`/portal`)}
-              value="Back"
-              className="btn"
-              id="btn"
+              value='Back'
+              className='btn'
+              id='btn'
             />
           </div>
-            <br />
-              {formState.errorMessage && (
-                   <p className="error" style={{ color: "white" }}>
-                    {" "}
-                     {"Oops! Please check your details and try again"}{" "}
-                  </p>
-                )}
+          <br />
+          {formState.errorMessage && (
+            <p className='error' style={{ color: 'white' }}>
+              {' '}
+              {'Oops! Please check your details and try again'}{' '}
+            </p>
+          )}
         </form>
       </div>
     </>

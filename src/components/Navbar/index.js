@@ -103,7 +103,7 @@ const Navbar = ({ toggle }) => {
               </NavItem>
             </NavMenu>
             <NavBtn>
-              <NavBtnLink to="/portal">Go to Employee Portal</NavBtnLink>
+              <NavBtnLink to="/portal">Employee Portal</NavBtnLink>
             </NavBtn>
           </NavbarContainer>
         </Nav>
